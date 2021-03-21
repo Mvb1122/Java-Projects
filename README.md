@@ -7,3 +7,5 @@ Number 2 covers [variables.](https://www.codecademy.com/learn/learn-java/modules
 
 Number 3 covers [classes and behaviors](https://www.codecademy.com/learn/learn-java/modules/learn-java-object-oriented-java-u/cheatsheet)
 (or whatever that's called. Some call them objects.)
+
+Number 4 is the commented out solution to [this](https://www.codecademy.com/courses/learn-java/projects/basic-calculator)
