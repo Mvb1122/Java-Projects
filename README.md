@@ -9,3 +9,5 @@ Number 3 covers [classes and behaviors](https://www.codecademy.com/learn/learn-j
 (or whatever that's called. Some call them objects.)
 
 Number 4 is the commented out solution to [this](https://www.codecademy.com/courses/learn-java/projects/basic-calculator)
+
+Number 5 is just the solution to [this](https://www.codecademy.com/courses/learn-java/projects/build-a-droid) with an added Droid.transferEnergy() behavior.
