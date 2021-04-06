@@ -1,8 +1,9 @@
 public class Person {
     /*
         This is an example of a Java Class. They're kinda like returning objects
-        from functions in the way that they work. As you can see, this "class" is called "example-Person",
-        which is how we'll access it later.
+        from functions in the way that they work. As you can see, this "class" is called "Person,"
+        which is how we'll access it later. Additionally, classes have to have the same
+        name as the file in which they're declared.
     */
         int age; // Something you might want to know about a person is their age.
         String gender; // And their gender.
@@ -13,10 +14,10 @@ public class Person {
             age = ageInput;
             gender = genderInput;
             /*
-            This is an example of a behavior, it's like a function on an object in JS.
+            This is an example of a constructor, it's like a function on an object in JS.
             */
         }
-
+// Behaviour:
         public String change_gender(String newGender) {
             // ^ This means we're returning a string.
             String oldGender = gender;
@@ -43,4 +44,4 @@ public class Person {
             // Since our behavior returns a value, we can do this:
             System.out.println(Micah.change_gender("Male"));
         }
-}
+}  file
