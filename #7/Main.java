@@ -1,7 +1,7 @@
 import java.util.Arrays;
 //  See line 9
-
-
+import java.util.ArrayList;
+//  See line 36
 public class Main {
 
     public static void main(String[] args) {
@@ -32,6 +32,62 @@ public class Main {
         // except I'd have to remove the print statements.
 
 
-        // (Update Pending: Arraylists cover.)
+        /*
+        Part 2: Arraylists.
+
+        They're basically Arrays in Java; they can be resized and all, BUT they can only have one type of data.
+        You also have to use Integer when declaring them; not int.
+
+        jkjk about the one data type. If you initialize them with <assortment> they can hold whatever you want, like in JS.
+        (But otherwise, you *have* to only have one kind of data. <assortment> does not work with normal Arrays.)
+         */
+
+        ArrayList<Integer> resizeableNumbers = new ArrayList<>(); // This makes a new ArrayList called "resizeableNumbers."
+
+        resizeableNumbers.add(1); // 0
+        resizeableNumbers.add(2); // 1
+        resizeableNumbers.add(3); // 2
+        resizeableNumbers.add(4); // 3
+                                  // 4
+        resizeableNumbers.add(6); // 5
+        resizeableNumbers.add(7); // 6
+        resizeableNumbers.add(8); // 7
+        resizeableNumbers.add(9); // 8
+        resizeableNumbers.add(10);// 9
+
+        // There, resizableNumbers now contains the same info as numbersOneThroughTen. But wait, I made a mistake.
+        System.out.println("Value of resizeableNumbers (before replacement): " + resizeableNumbers); // You can print ArrayLists without anything funky.
+
+        resizeableNumbers.add(4, 5); // Fix my mistake by adding the number 5 at index 4.
+
+        System.out.println("Value of resizeableNumbers (after replacement): " + resizeableNumbers);
+
+        // .size(); is like .length(); for arrays, but for ArrayLists.
+        System.out.println("Size of resizeableNumbers: " + resizeableNumbers.size());
+
+        // Getting items from an ArrayList has us use .get(); instead of square brackets. []
+        System.out.println("Item in the 2nd index of resizeableNumbers: " + resizeableNumbers.get(2));
+
+        // You can ".set();" items in an ArrayList via .set().
+        resizeableNumbers.set(5, 69420);
+        System.out.println("List after being .set();: " + resizeableNumbers);
+
+        // Removing Items:
+        // NOTE: You can also use .remove(); with a string as a parameter. It will remove the
+        // first incident of that string being used.
+        resizeableNumbers.remove(5);
+        resizeableNumbers.add(5, 6);
+        System.out.println("List after .remove(5) and .add(5, 6): " + resizeableNumbers);
+
+        // Finding index:
+        int indexOfFive = resizeableNumbers.indexOf(5);
+        System.out.println("The index of \"5\" is: " + indexOfFive);
+
+        // Assortment ArrayLists
+        ArrayList assortmentArrayList = new ArrayList<>(3);
+        assortmentArrayList.add("Hello");
+        assortmentArrayList.add(3);
+        assortmentArrayList.add('c'); // char
+        System.out.println("Assortment Array List: " + assortmentArrayList);
     }
 }
