@@ -13,3 +13,5 @@ Number 4 is the commented out solution to [this](https://www.codecademy.com/cour
 Number 5 is just the solution to [this](https://www.codecademy.com/courses/learn-java/projects/build-a-droid) with an added Droid.transferEnergy() behavior.
 
 Number 6 covers [conditionals](https://www.codecademy.com/learn/learn-java/modules/learn-java-conditionals-control-flow-u/cheatsheet) aka control flow
+
+Number 7 covers [arrays and arraylists.](https://www.codecademy.com/learn/learn-java/modules/learn-java-arrays-and-arraylists/cheatsheet)
