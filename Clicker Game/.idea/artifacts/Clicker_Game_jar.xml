@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="Clicker Game:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Clicker_Game_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Clicker Game.jar">
+        <element id="module-output" name="Clicker Game" />
+      </element>
+    </root>
+  </artifact>
+</component>
