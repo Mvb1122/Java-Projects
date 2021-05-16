@@ -41,6 +41,9 @@ public class Main {
         JFrame f = new JFrame();
         JFrame d = new JFrame();
 
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        d.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         // Create the button, b, which you see on screen.
         JButton b = new JButton("Click me!");
         JButton c = new JButton("Wow, you clicked that button 10 times!");
