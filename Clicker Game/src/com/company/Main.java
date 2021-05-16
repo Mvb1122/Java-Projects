@@ -87,8 +87,8 @@ public class Main {
                 } else {
                     clickCounter.setValue(1);
                     b.setText("Hi, again.");
-                    d.setVisible(false);
                     f.setVisible(true);
+                    d.setVisible(false);
                     System.out.println("Reset!");
                     String fTitle = "Completions: " + completionCounter.getValue();
                     System.out.println(fTitle);
@@ -106,8 +106,8 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 clickCounter.setValue(1);
                 b.setText("Hi, again.");
-                d.setVisible(false);
                 f.setVisible(true);
+                d.setVisible(false);
                 System.out.println("Reset!");
                 String fTitle = "Completions: " + completionCounter.getValue();
                 System.out.println(fTitle);
