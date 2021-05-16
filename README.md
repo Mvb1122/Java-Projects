@@ -15,3 +15,5 @@ Number 5 is just the solution to [this](https://www.codecademy.com/courses/learn
 Number 6 covers [conditionals](https://www.codecademy.com/learn/learn-java/modules/learn-java-conditionals-control-flow-u/cheatsheet) aka control flow
 
 Number 7 covers [arrays and arraylists.](https://www.codecademy.com/learn/learn-java/modules/learn-java-arrays-and-arraylists/cheatsheet)
+
+Clicker Game is a game I made in JSwing using all of the previous information.
