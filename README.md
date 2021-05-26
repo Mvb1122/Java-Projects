@@ -17,3 +17,5 @@ Number 6 covers [conditionals](https://www.codecademy.com/learn/learn-java/modul
 Number 7 covers [arrays and arraylists.](https://www.codecademy.com/learn/learn-java/modules/learn-java-arrays-and-arraylists/cheatsheet)
 
 Clicker Game is a game I made in JSwing using all of the previous information.
+
+Exponentials App is a brief "calculator" that I made for a friend, using the previous information, and some stuff about Android.

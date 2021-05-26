@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Main" android:id="@+id/coordinatorLayout" android:background="#000000">
+    <TextView
+            android:text="@string/textview"
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:id="@+id/backgroundText" android:scaleX="1" android:scaleY="1"
+            android:translationX="0dp" android:translationY="0dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.0"/>
+    <ImageView
+            android:layout_width="101dp"
+            android:layout_height="302dp" app:srcCompat="@drawable/konata_san" android:id="@+id/konaImage"
+            app:layout_anchorGravity="end|bottom" app:layout_anchor="@+id/backgroundText"
+            android:contentDescription="@string/kona_izumi_from_lucky_star"
+            app:layout_constraintBottom_toBottomOf="@+id/backgroundText"
+            app:layout_constraintEnd_toEndOf="@+id/backgroundText"
+            android:layout_marginEnd="4dp" android:layout_marginRight="4dp" android:layout_marginBottom="4dp"
+            android:cropToPadding="false"/>
+    <TextView
+            android:text="@string/equation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/equationShower"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:background="#000000" android:textColor="#FFF9F9" android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/backgroundText"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/konaText"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="44dp" android:layout_marginStart="44dp" android:layout_marginBottom="220dp"
+            android:text="@string/konaText" android:textColor="#FFFFFF"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@string/initial_value_tap"
+            android:ems="10"
+            android:id="@+id/initVal"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="#FFFFFF" android:textAllCaps="false"
+            android:importantForAutofill="no"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@string/precentRemoved"
+            android:ems="10"
+            android:id="@+id/precentRemoved"
+            app:layout_constraintTop_toTopOf="@+id/initVal"
+            android:layout_marginTop="44dp" app:layout_constraintEnd_toEndOf="parent"
+            android:importantForAutofill="no" android:textColor="#FFFFFF"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
