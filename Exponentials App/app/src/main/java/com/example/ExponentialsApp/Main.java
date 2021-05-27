@@ -56,7 +56,6 @@ public class Main extends AppCompatActivity {
         double decVal = startingValue;
         for (int i = 1; i < 11; i++) {
             decVal = decVal * (0.01 * (100 - percentRemoved));
-            int opV = Math.toIntExact((long) startingValue);
             text.append("\nx = " + i + " y = " + decVal);
         }
         message.setText(text.toString());
