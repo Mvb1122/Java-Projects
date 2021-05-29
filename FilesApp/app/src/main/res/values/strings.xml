@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Strigoi</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Screen 1</string>
+    <string name="second_fragment_label">Screen 2</string>
+    <string name="next">Read Contents of Test file.</string>
+    <string name="previous">Go back.</string>
+    <string name="hello_first_fragment">This text is here, yes.</string>
+    <string name="hello_second_fragment">I don\'t know where this text shows and it worries me.: %1$s</string>
+</resources>
