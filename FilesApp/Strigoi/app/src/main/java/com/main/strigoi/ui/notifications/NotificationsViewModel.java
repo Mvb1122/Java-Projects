@@ -1,7 +1,5 @@
 package com.main.strigoi.ui.notifications;
 
-import android.os.Handler;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -18,10 +16,10 @@ public class NotificationsViewModel extends ViewModel {
 
         mText = new MutableLiveData<>();
 
-        // TODO: Learn how to make new threads, then implement it here.
 
-        String content = MainActivity.getEx.response;
-        mText.setValue(MainActivity.address + "\n\n\n" + content);
+        // mText.setValue(MainActivity.testReqFormDB.address + "\n\n\n" + MainActivity.testReqFormDB.parsedResponse);
+        mText.setValue(MainActivity.testReqFormDB.parsedResponse);
+
     }
 
     public LiveData<String> getText() {

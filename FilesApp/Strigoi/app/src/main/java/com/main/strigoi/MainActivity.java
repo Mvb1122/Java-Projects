@@ -1,19 +1,20 @@
 package com.main.strigoi;
 
+
 import android.content.Context;
 import android.os.Bundle;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.main.strigoi.databinding.ActivityMainBinding;
 import com.main.strigoi.ui.Reader;
 import com.main.strigoi.ui.Requests;
-
-import com.main.strigoi.databinding.ActivityMainBinding;
+import com.main.strigoi.mDB.getReq;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private static Context context;
     public static Requests getEx;
     public static String address;
+    public static getReq testReqFormDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("\n\n\n" + address + "\n\n\n");
         getEx = new Requests(address, "GET");
         Thread thread = new Thread(getEx);
-        thread.start();
+        // thread.start();
+        // TODO: Un-implement getEx, since it was an example.
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -50,9 +53,20 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-    }
 
-    // TODO: Make method which returns Context.
+        // mDB trash:
+        /*
+            mDB is my self-made (web-hosted) key-value store.
+         */
+
+        int spiritNum = 1;
+        int panelNum = 1;
+
+        testReqFormDB = new getReq(spiritNum, panelNum);
+        Thread TRFmDB = new Thread(testReqFormDB);
+        TRFmDB.start();
+
+    }
     public static Context getContext() {
         if (MainActivity.context.toString().length() > 0) {
             return MainActivity.context;
