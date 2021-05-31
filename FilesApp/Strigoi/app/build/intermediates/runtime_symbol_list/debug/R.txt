@@ -1735,6 +1735,7 @@ int id SHOW_ALL 0x7f080008
 int id SHOW_PATH 0x7f080009
 int id SHOW_PROGRESS 0x7f08000a
 int id SYM 0x7f08000b
+int id StrigoiNumBox 0x7f0801b0
 int id TOP_END 0x7f08000c
 int id TOP_START 0x7f08000d
 int id accelerate 0x7f08000e
@@ -1811,6 +1812,7 @@ int id blocking 0x7f080054
 int id bottom 0x7f080055
 int id bounce 0x7f080056
 int id buttonPanel 0x7f080057
+int id buttonPressWarning 0x7f0801b7
 int id cache_measures 0x7f080058
 int id cancel_button 0x7f080059
 int id center 0x7f08005a
@@ -2067,6 +2069,8 @@ int id snap 0x7f080154
 int id snapMargins 0x7f080155
 int id spacer 0x7f080156
 int id special_effects_controller_view_tag 0x7f080157
+int id spiritBoxInput 0x7f0801b4
+int id spiritNumBox 0x7f0801b5
 int id spline 0x7f080158
 int id split_action_bar 0x7f080159
 int id spread 0x7f08015a
@@ -2084,6 +2088,7 @@ int id staticLayout 0x7f080165
 int id staticPostLayout 0x7f080166
 int id stop 0x7f080167
 int id stretch 0x7f080168
+int id strigoiNumBoxInput 0x7f0801b6
 int id submenuarrow 0x7f080169
 int id submit_area 0x7f08016a
 int id tabMode 0x7f08016b
@@ -2338,6 +2343,7 @@ int string app_name 0x7f10001b
 int string appbar_scrolling_view_behavior 0x7f10001c
 int string bottom_sheet_behavior 0x7f10001d
 int string bottomsheet_action_expand_halfway 0x7f10001e
+int string buttonPressWarning 0x7f10006d
 int string character_counter_content_description 0x7f10001f
 int string character_counter_overflowed_content_description 0x7f100020
 int string character_counter_pattern 0x7f100021
@@ -2408,7 +2414,11 @@ int string path_password_eye_mask_strike_through 0x7f100061
 int string path_password_eye_mask_visible 0x7f100062
 int string path_password_strike_through 0x7f100063
 int string search_menu_title 0x7f100064
+int string spiritBoxText 0x7f100069
+int string spiritNumBoxHint 0x7f10006a
 int string status_bar_notification_info_overflow 0x7f100065
+int string strigoiBoxText 0x7f10006b
+int string strigoiInputBoxHint 0x7f10006c
 int string title_dashboard 0x7f100066
 int string title_home 0x7f100067
 int string title_notifications 0x7f100068

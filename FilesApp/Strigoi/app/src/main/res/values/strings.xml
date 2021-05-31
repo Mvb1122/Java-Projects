@@ -2,5 +2,10 @@
     <string name="app_name">Strigoi</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Chapter load demo</string>
+    <string name="title_notifications">Content</string>
+    <string name="strigoiBoxText">Strigoi:</string>
+    <string name="strigoiInputBoxHint">1</string>
+    <string name="spiritBoxText">Spirit:</string>
+    <string name="spiritNumBoxHint">1</string>
+    <string name="buttonPressWarning">Press the Dashboard button again.</string>
 </resources>

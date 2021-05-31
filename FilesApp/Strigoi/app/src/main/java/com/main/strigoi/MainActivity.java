@@ -3,6 +3,7 @@ package com.main.strigoi;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -13,17 +14,15 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.main.strigoi.databinding.ActivityMainBinding;
 import com.main.strigoi.ui.Reader;
-import com.main.strigoi.ui.Requests;
-import com.main.strigoi.mDB.getReq;
 
 public class MainActivity extends AppCompatActivity {
 
     private static Reader reader;
     private ActivityMainBinding binding;
     private static Context context;
-    public static Requests getEx;
     public static String address;
-    public static getReq testReqFormDB;
+    public static EditText strigoiNum;
+    public static EditText spiritNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         MainActivity.context = getApplicationContext();
 
+        /*
         int randNum = (int) Math.floor(Math.random() * 50);
         address = "https://jsonplaceholder.typicode.com/todos/" + randNum;
         System.out.println("\n\n\n" + address + "\n\n\n");
         getEx = new Requests(address, "GET");
         Thread thread = new Thread(getEx);
         // thread.start();
-        // TODO: Un-implement getEx, since it was an example.
+         */
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -54,18 +54,21 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        // mDB trash:
-        /*
-            mDB is my self-made (web-hosted) key-value store.
-         */
-
-        int spiritNum = 1;
-        int panelNum = 1;
-
-        testReqFormDB = new getReq(spiritNum, panelNum);
-        Thread TRFmDB = new Thread(testReqFormDB);
-        TRFmDB.start();
-
+        Thread strigoiAndSpiritNumLoop = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    strigoiNum = findViewById(R.id.strigoiNumBoxInput);
+                    spiritNum = findViewById(R.id.spiritBoxInput);
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        // Wake.
+                    }
+                } while (true);
+            }
+        });
+        strigoiAndSpiritNumLoop.start();
     }
     public static Context getContext() {
         if (MainActivity.context.toString().length() > 0) {

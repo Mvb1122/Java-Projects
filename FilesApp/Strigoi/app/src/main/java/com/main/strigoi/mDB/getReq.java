@@ -33,26 +33,31 @@ public class getReq implements Runnable {
         try {
             output = new JSONObject(self.response);
             parseResponse(output);
-            int numSec = output.getInt("length");
-
-            if (numSec > 1) {
-                for (int i = 2; i <= numSec; i++) {
-                    try {
-                        Requests nextSec = new Requests("https://ihaveawebsite.tk/mDB/" + spiritNum + "/" + panelNum + "/" + i + ".json", "GET");
-                        nextSec.run();
-                        JSONObject nextSecJSON = new JSONObject(nextSec.response);
-                        String lineBreak = "\n\n\n";
-                        this.parsedResponse += lineBreak + "\nNEXT PANEL:\nPanel " + i + lineBreak;
-                        parseResponse(nextSecJSON);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+            try {
+                int numSec = output.getInt("length");
+                if (numSec > 1) {
+                    for (int i = 2; i <= numSec; i++) {
+                        try {
+                            Requests nextSec = new Requests("https://ihaveawebsite.tk/mDB/" + spiritNum + "/" + panelNum + "/" + i + ".json", "GET");
+                            nextSec.run();
+                            JSONObject nextSecJSON = new JSONObject(nextSec.response);
+                            String lineBreak = "\n\n\n";
+                            this.parsedResponse += lineBreak + "\nNEXT PANEL:\nPanel " + i + lineBreak;
+                            parseResponse(nextSecJSON);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
+            } catch (JSONException e) {
+                // Do nothing.
             }
 
         } catch (JSONException e) {
-            e.printStackTrace();
+            this.parsedResponse += "Invalid Strigoi or Spirit!\nGo back to the Dashboard and try again.";
         }
+
+        this.parsedResponse += "\n\n";
     }
 
     public void parseResponse(JSONObject input) throws JSONException {

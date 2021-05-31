@@ -1736,6 +1736,7 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id StrigoiNumBox
 id TOP_END
 id TOP_START
 id accelerate
@@ -1812,6 +1813,7 @@ id blocking
 id bottom
 id bounce
 id buttonPanel
+id buttonPressWarning
 id cache_measures
 id cancel_button
 id center
@@ -2068,6 +2070,8 @@ id snap
 id snapMargins
 id spacer
 id special_effects_controller_view_tag
+id spiritBoxInput
+id spiritNumBox
 id spline
 id split_action_bar
 id spread
@@ -2085,6 +2089,7 @@ id staticLayout
 id staticPostLayout
 id stop
 id stretch
+id strigoiNumBoxInput
 id submenuarrow
 id submit_area
 id tabMode
@@ -2339,6 +2344,7 @@ string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
+string buttonPressWarning
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2409,7 +2415,11 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string search_menu_title
+string spiritBoxText
+string spiritNumBoxHint
 string status_bar_notification_info_overflow
+string strigoiBoxText
+string strigoiInputBoxHint
 string title_dashboard
 string title_home
 string title_notifications

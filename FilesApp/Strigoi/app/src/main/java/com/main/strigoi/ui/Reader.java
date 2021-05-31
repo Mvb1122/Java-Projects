@@ -2,11 +2,12 @@ package com.main.strigoi.ui;
 
 import android.content.Context;
 
+import com.main.strigoi.MainActivity;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import com.main.strigoi.MainActivity;
 
 public class Reader {
     private Context context = MainActivity.getContext();
@@ -41,7 +42,7 @@ public class Reader {
         return path.toString();
     }
 
-    public String readFile(String inputPath) {
+    public String readFile(String inputPath) throws IOException {
 
         File path = new File(context.getFilesDir(), "/" + inputPath);
         int length = (int) path.length();
@@ -55,21 +56,17 @@ public class Reader {
                 return e.toString();
             }
         } catch (IOException e) {
-            return e.toString();
+            throw e;
         }
         return new String(bytes);
     }
 
     public boolean fileExists(String path, String type) {
-        String file = this.readFile(path + type);
-        if (file.length() >= 1) {
-            /*
-            if (file.startsWith("java.io.FileNotFoundException:")) {
-                return false;
-            } else {
-                */return true;
-            // }
-        } else {
+        String file = null;
+        try {
+            file = this.readFile(path + type);
+            return true;
+        } catch (IOException e) {
             return false;
         }
     }
