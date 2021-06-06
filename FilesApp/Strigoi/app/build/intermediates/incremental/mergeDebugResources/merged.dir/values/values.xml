@@ -1143,7 +1143,7 @@
     <string name="strigoiInputBoxHint">1</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_home">Home</string>
-    <string name="title_notifications">Content</string>
+    <string name="title_notifications">Last open Spirit</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="AndroidThemeColorAccentYellow" ns2:ignore="NewApi">

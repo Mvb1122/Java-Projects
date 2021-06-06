@@ -38,7 +38,7 @@ public class getReq implements Runnable {
                 if (numSec > 1) {
                     for (int i = 2; i <= numSec; i++) {
                         try {
-                            Requests nextSec = new Requests("https://ihaveawebsite.tk/mDB/" + spiritNum + "/" + panelNum + "/" + i + ".json", "GET");
+                            Requests nextSec = new Requests("https://ihaveawebsite.tk/json/" + spiritNum + "/" + panelNum + "/" + i + ".json", "GET");
                             nextSec.run();
                             JSONObject nextSecJSON = new JSONObject(nextSec.response);
                             String lineBreak = "\n\n\n";
