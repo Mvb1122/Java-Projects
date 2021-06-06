@@ -2,7 +2,7 @@
     <string name="app_name">Strigoi</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Content</string>
+    <string name="title_notifications">Last open Spirit</string>
     <string name="strigoiBoxText">Strigoi:</string>
     <string name="strigoiInputBoxHint">1</string>
     <string name="spiritBoxText">Spirit:</string>

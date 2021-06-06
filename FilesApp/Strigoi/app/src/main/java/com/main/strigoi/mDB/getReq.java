@@ -22,7 +22,7 @@ public class getReq implements Runnable {
         this.sectionNum = 1;
         this.spiritNum = spiritNum;
         this.panelNum = panelNum;
-        address = "https://ihaveawebsite.tk/mDB/" + spiritNum + "/" + panelNum + "/" + sectionNum + ".json";
+        address = "https://ihaveawebsite.tk/json/" + spiritNum + "/" + panelNum + "/" + sectionNum + ".json";
         self = new Requests(address, "GET");
     }
 
