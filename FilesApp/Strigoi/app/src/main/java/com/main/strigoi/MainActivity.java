@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.RequiresApi;
@@ -135,27 +136,33 @@ public class MainActivity extends AppCompatActivity {
             }
 
             mDBRequest buttonReq = new mDBRequest(strigoiNum, spiritNum);
-        int finalStrigoiNum = strigoiNum;
-        int finalSpiritNum = spiritNum;
-        Thread TRFmDB = new Thread(new Runnable() {
-                @RequiresApi(api = Build.VERSION_CODES.N)
-                @Override
-                public void run() {
-                    buttonReq.run();
-                    MainActivity.content = buttonReq.parsedResponse;
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+            int finalStrigoiNum = strigoiNum;
+            int finalSpiritNum = spiritNum;
+
+            Thread TRFmDB = new Thread(new Runnable() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
+                    @Override
+                    public void run() {
+                        buttonReq.run();
+                        MainActivity.content = buttonReq.parsedResponse;
+                        try {
+                          Thread.sleep(500);
+                        } catch (InterruptedException e) {
+                           e.printStackTrace();
+                       }
+                        System.out.println("\n\n\nStrigoiNum: " + finalStrigoiNum + "\nSpiritNum: " + finalSpiritNum + "\nPARSED RESPONSE:" + MainActivity.content + "\n\n\n");
                     }
-                    System.out.println("\n\n\nStrigoiNum: " + finalStrigoiNum + "\nSpiritNum: " + finalSpiritNum + "\nPARSED RESPONSE:" + MainActivity.content + "\n\n\n");
-                }
-            });
+                });
             TRFmDB.start();
+
+        Button goButton = findViewById(R.id.goButton);
+        goButton.setText("Spirit Retrieved.");
     }
 
     public void postText(View view) {
         System.out.println("Post button clicked.");
+
+        // Get the numbers from the input boxes.
         int strigoiNum;
         int spiritNum;
         try {
@@ -173,26 +180,82 @@ public class MainActivity extends AppCompatActivity {
             spiritNum = 1;
         }
 
-
+        // Fetch content to post from the text input.
         EditText prim = findViewById(R.id.newContentInput);
         Editable primData = prim.getText();
-        String data = "{\n\t\"content\": [\n\t\t\"" + primData + "\"\n\t]\n}";
 
+
+        String[] primArr = primData.toString().split("\n");
+        String output = "";
+        for (int i = 0; i < primArr.length; i++) {
+            String item = primArr[i];
+            output += "\t\"" + item.replace("\"", "\\\"") + "\",\n\t";
+        }
+
+        // Create JSON Data to post to server.
+        String data = "{\n\t\"content\": [\n\t" + output.substring(0, output.length() - 1) + "\n\t]\n}";
+
+        // Get the info for the spirit from panel1.
         Requests baseInfo = new Requests("https://ihaveawebsite.tk/json/" + strigoiNum + "/" + spiritNum + "/1.json", "GET", "None");
         baseInfo.response = "";
-        Thread baseGetter = new Thread(baseInfo);
+        final int[] panelNum = new int[1];
+        int finalStrigoiNum = strigoiNum;
+        int finalSpiritNum = spiritNum;
+        Thread baseGetter = new Thread(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void run() {
+                baseInfo.run();
+
+                JSONObject response = null;
+                try {
+                    response = new JSONObject(baseInfo.response);
+                } catch (JSONException e) {
+                    String tempJSON = "{\n\t\"spiritType\": \"Text\",\n\"length\": 2,\n\"content\": [\n\t\"ERROR: No Content.\"\n\t]\n}";
+                    try {
+                        response = new JSONObject(tempJSON);
+                    } catch (JSONException jsonException) {
+                        jsonException.printStackTrace();
+                    }
+                }
+
+                try {
+                    int length = response.getInt("length");
+                    panelNum[0] = length + 1;
+                    System.out.println("\n\n\n Length: " + panelNum[0]);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    panelNum[0] = 5;
+                }
+
+                // Post data.
+                Requests postReq = new Requests("https://ihaveawebsite.tk/json/" + finalStrigoiNum + "/" + finalSpiritNum + "/" + panelNum[0] + ".json", "POST", data);
+                postReq.run();
+
+                // Increase length counter on panel1.
+                String panel1Json;
+                try {
+                    panel1Json = "{\n\t\"spiritType\": \"" + response.getString("spiritType") + "\",\n\t\"length\": " + (response.getInt("length") + 1) + ",\n\t\"content\": " + response.getJSONArray("content") + "\n}";
+                } catch (JSONException e) {
+                    panel1Json = "{\n\t\"spiritType\": \"Text\",\n\"length\": 2,\n\"content\": [\n\t\"ERROR: No Content.\"\n\t]\n}";
+                    e.printStackTrace();
+                }
+
+                Requests postPanel1 = new Requests("https://ihaveawebsite.tk/json/" + finalStrigoiNum + "/" + finalSpiritNum + "/1.json", "POST", panel1Json);
+                postPanel1.run();
+
+                // Update Content display after 1 second.
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                makeRequests(findViewById(R.id.updateUserButton));
+
+            }
+        });
         baseGetter.start();
-        int panelNum;
-        try {
-             JSONObject response = new JSONObject(baseInfo.response);
-             panelNum = response.getInt("length") + 1;
-             System.out.println("\n\n\n Length: " + panelNum);
-        } catch (JSONException e) {
-            panelNum = 5;
-        }
-        Requests postReq = new Requests("https://ihaveawebsite.tk/json/" + strigoiNum + "/" + spiritNum + "/" + panelNum + ".json", "POST", data);
-        Thread poster = new Thread(postReq);
-        poster.start();
+
     }
 
     public void updateUsername(View view) {

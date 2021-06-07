@@ -44,14 +44,11 @@ public final class FragmentDashboardBinding implements ViewBinding {
   @NonNull
   public final EditText strigoiNumBoxInput;
 
-  @NonNull
-  public final TextView textDashboard;
-
   private FragmentDashboardBinding(@NonNull ConstraintLayout rootView,
       @NonNull TextView StrigoiNumBox, @NonNull TextView buttonPressWarning,
       @NonNull Button goButton, @NonNull EditText newContentInput, @NonNull Button postButton,
       @NonNull EditText spiritBoxInput, @NonNull TextView spiritNumBox,
-      @NonNull EditText strigoiNumBoxInput, @NonNull TextView textDashboard) {
+      @NonNull EditText strigoiNumBoxInput) {
     this.rootView = rootView;
     this.StrigoiNumBox = StrigoiNumBox;
     this.buttonPressWarning = buttonPressWarning;
@@ -61,7 +58,6 @@ public final class FragmentDashboardBinding implements ViewBinding {
     this.spiritBoxInput = spiritBoxInput;
     this.spiritNumBox = spiritNumBox;
     this.strigoiNumBoxInput = strigoiNumBoxInput;
-    this.textDashboard = textDashboard;
   }
 
   @Override
@@ -139,15 +135,9 @@ public final class FragmentDashboardBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.text_dashboard;
-      TextView textDashboard = rootView.findViewById(id);
-      if (textDashboard == null) {
-        break missingId;
-      }
-
       return new FragmentDashboardBinding((ConstraintLayout) rootView, StrigoiNumBox,
           buttonPressWarning, goButton, newContentInput, postButton, spiritBoxInput, spiritNumBox,
-          strigoiNumBoxInput, textDashboard);
+          strigoiNumBoxInput);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

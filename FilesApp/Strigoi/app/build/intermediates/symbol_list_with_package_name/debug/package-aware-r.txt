@@ -2120,7 +2120,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id text_dashboard
 id text_home
 id text_input_end_icon
 id text_input_error_icon

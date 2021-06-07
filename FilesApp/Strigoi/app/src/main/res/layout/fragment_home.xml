@@ -43,5 +43,6 @@
         android:text="@string/updateUserButtonText"
         android:onClick="updateUsername"
         app:layout_constraintStart_toStartOf="@+id/userNameInputBox"
-        app:layout_constraintTop_toBottomOf="@+id/userNameInputBox" />
+        app:layout_constraintTop_toBottomOf="@+id/userNameInputBox"
+        tools:ignore="OnClick" />
 </androidx.constraintlayout.widget.ConstraintLayout>
