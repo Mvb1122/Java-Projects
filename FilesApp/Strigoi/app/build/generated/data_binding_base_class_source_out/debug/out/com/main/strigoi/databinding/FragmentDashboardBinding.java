@@ -4,6 +4,7 @@ package com.main.strigoi.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -26,6 +27,15 @@ public final class FragmentDashboardBinding implements ViewBinding {
   public final TextView buttonPressWarning;
 
   @NonNull
+  public final Button goButton;
+
+  @NonNull
+  public final EditText newContentInput;
+
+  @NonNull
+  public final Button postButton;
+
+  @NonNull
   public final EditText spiritBoxInput;
 
   @NonNull
@@ -39,11 +49,15 @@ public final class FragmentDashboardBinding implements ViewBinding {
 
   private FragmentDashboardBinding(@NonNull ConstraintLayout rootView,
       @NonNull TextView StrigoiNumBox, @NonNull TextView buttonPressWarning,
+      @NonNull Button goButton, @NonNull EditText newContentInput, @NonNull Button postButton,
       @NonNull EditText spiritBoxInput, @NonNull TextView spiritNumBox,
       @NonNull EditText strigoiNumBoxInput, @NonNull TextView textDashboard) {
     this.rootView = rootView;
     this.StrigoiNumBox = StrigoiNumBox;
     this.buttonPressWarning = buttonPressWarning;
+    this.goButton = goButton;
+    this.newContentInput = newContentInput;
+    this.postButton = postButton;
     this.spiritBoxInput = spiritBoxInput;
     this.spiritNumBox = spiritNumBox;
     this.strigoiNumBoxInput = strigoiNumBoxInput;
@@ -89,6 +103,24 @@ public final class FragmentDashboardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.goButton;
+      Button goButton = rootView.findViewById(id);
+      if (goButton == null) {
+        break missingId;
+      }
+
+      id = R.id.newContentInput;
+      EditText newContentInput = rootView.findViewById(id);
+      if (newContentInput == null) {
+        break missingId;
+      }
+
+      id = R.id.postButton;
+      Button postButton = rootView.findViewById(id);
+      if (postButton == null) {
+        break missingId;
+      }
+
       id = R.id.spiritBoxInput;
       EditText spiritBoxInput = rootView.findViewById(id);
       if (spiritBoxInput == null) {
@@ -114,7 +146,8 @@ public final class FragmentDashboardBinding implements ViewBinding {
       }
 
       return new FragmentDashboardBinding((ConstraintLayout) rootView, StrigoiNumBox,
-          buttonPressWarning, spiritBoxInput, spiritNumBox, strigoiNumBoxInput, textDashboard);
+          buttonPressWarning, goButton, newContentInput, postButton, spiritBoxInput, spiritNumBox,
+          strigoiNumBoxInput, textDashboard);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

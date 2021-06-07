@@ -1069,6 +1069,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1682,7 +1683,6 @@ drawable ic_clock_black_24dp
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
 drawable ic_keyboard_black_24dp
-drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
@@ -1897,6 +1897,7 @@ id forever
 id fragment_container_view_tag
 id ghost_view
 id ghost_view_holder
+id goButton
 id gone
 id graph
 id graph_wrap
@@ -1997,6 +1998,7 @@ id navigation_header_container
 id navigation_home
 id navigation_notifications
 id never
+id newContentInput
 id noScroll
 id none
 id normal
@@ -2020,6 +2022,7 @@ id peekHeight
 id percent
 id pin
 id position
+id postButton
 id postLayout
 id progress_circular
 id progress_horizontal
@@ -2149,7 +2152,9 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id updateUserButton
 id useLogo
+id userNameInputBox
 id view_offset_helper
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
@@ -2310,6 +2315,7 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu bottom_nav_menu
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation mobile_navigation
 plurals mtrl_badge_content_description
@@ -2350,6 +2356,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string dashboardRunBoxText
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -2409,11 +2416,13 @@ string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string new_content
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string post
 string search_menu_title
 string spiritBoxText
 string spiritNumBoxHint
@@ -2423,6 +2432,9 @@ string strigoiInputBoxHint
 string title_dashboard
 string title_home
 string title_notifications
+string updateUserButtonText
+string userNameInputBoxAccHint
+string userNameInputBoxText
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

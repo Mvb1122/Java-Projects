@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.main.strigoi.R;
 import com.main.strigoi.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -36,6 +35,7 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
         return root;
     }
 

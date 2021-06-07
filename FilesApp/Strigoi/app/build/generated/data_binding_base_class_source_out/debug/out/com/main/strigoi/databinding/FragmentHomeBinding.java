@@ -4,6 +4,8 @@ package com.main.strigoi.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,9 +23,18 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView textHome;
 
-  private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull TextView textHome) {
+  @NonNull
+  public final Button updateUserButton;
+
+  @NonNull
+  public final EditText userNameInputBox;
+
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull TextView textHome,
+      @NonNull Button updateUserButton, @NonNull EditText userNameInputBox) {
     this.rootView = rootView;
     this.textHome = textHome;
+    this.updateUserButton = updateUserButton;
+    this.userNameInputBox = userNameInputBox;
   }
 
   @Override
@@ -59,7 +70,20 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, textHome);
+      id = R.id.updateUserButton;
+      Button updateUserButton = rootView.findViewById(id);
+      if (updateUserButton == null) {
+        break missingId;
+      }
+
+      id = R.id.userNameInputBox;
+      EditText userNameInputBox = rootView.findViewById(id);
+      if (userNameInputBox == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((ConstraintLayout) rootView, textHome, updateUserButton,
+          userNameInputBox);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

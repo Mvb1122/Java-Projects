@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.main.strigoi.MainActivity;
 import com.main.strigoi.ui.dashboard.DashboardViewModel;
 
 public class NotificationsViewModel extends ViewModel {
@@ -19,11 +20,14 @@ public class NotificationsViewModel extends ViewModel {
         try {
             mText.setValue(DashboardViewModel.testReqFormDB.parsedResponse);
         } catch (NullPointerException e) {
-            mText.setValue("Please click on the Dashboard button.");
+            mText.setValue("Please select a Spirit.");
         }
     }
 
     public LiveData<String> getText() {
+        if (MainActivity.content != null) {
+            mText.setValue(MainActivity.content);
+        }
         return mText;
     }
 

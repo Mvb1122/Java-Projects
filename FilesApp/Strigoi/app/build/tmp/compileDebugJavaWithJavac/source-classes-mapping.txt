@@ -9,9 +9,9 @@ com/main/strigoi/databinding/FragmentDashboardBinding.java
  com.main.strigoi.databinding.FragmentDashboardBinding
 com/main/strigoi/ui/home/HomeViewModel.java
  com.main.strigoi.ui.home.HomeViewModel
-com/main/strigoi/MainActivity.java
- com.main.strigoi.MainActivity
- com.main.strigoi.MainActivity$1
+ com.main.strigoi.ui.home.HomeViewModel$1
+com/main/strigoi/ui/dashboard/DashboardViewModel.java
+ com.main.strigoi.ui.dashboard.DashboardViewModel
 com/main/strigoi/BuildConfig.java
  com.main.strigoi.BuildConfig
 com/main/strigoi/databinding/ActivityMainBinding.java
@@ -21,14 +21,18 @@ com/main/strigoi/ui/dashboard/DashboardFragment.java
  com.main.strigoi.ui.dashboard.DashboardFragment$1
 com/main/strigoi/ui/Reader.java
  com.main.strigoi.ui.Reader
+com/main/strigoi/mDB/mDBRequest.java
+ com.main.strigoi.mDB.mDBRequest
 com/main/strigoi/ui/home/HomeFragment.java
  com.main.strigoi.ui.home.HomeFragment
  com.main.strigoi.ui.home.HomeFragment$1
 com/main/strigoi/databinding/FragmentHomeBinding.java
  com.main.strigoi.databinding.FragmentHomeBinding
-com/main/strigoi/ui/dashboard/DashboardViewModel.java
- com.main.strigoi.ui.dashboard.DashboardViewModel
+com/main/strigoi/MainActivity.java
+ com.main.strigoi.MainActivity
+ com.main.strigoi.MainActivity$1
+ com.main.strigoi.MainActivity$2
+ com.main.strigoi.MainActivity$3
+ com.main.strigoi.MainActivity$4
 com/main/strigoi/ui/notifications/NotificationsViewModel.java
  com.main.strigoi.ui.notifications.NotificationsViewModel
-com/main/strigoi/mDB/getReq.java
- com.main.strigoi.mDB.getReq

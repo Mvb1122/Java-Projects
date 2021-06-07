@@ -20,7 +20,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/StrigoiNumBox"
@@ -40,14 +41,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
+        android:autofillHints="2"
         android:ems="10"
         android:hint="@string/strigoiInputBoxHint"
-        android:textSize="20sp"
         android:inputType="number"
         android:maxLines="1"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/StrigoiNumBox"
-        app:layout_constraintTop_toTopOf="@+id/StrigoiNumBox"
-        android:autofillHints="2" />
+        app:layout_constraintTop_toTopOf="@+id/StrigoiNumBox" />
 
     <TextView
         android:id="@+id/spiritNumBox"
@@ -74,14 +75,57 @@
         app:layout_constraintTop_toTopOf="@+id/spiritNumBox" />
 
     <TextView
+        android:visibility="invisible"
         android:id="@+id/buttonPressWarning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="@string/buttonPressWarning"
-        android:textSize="20sp"
         android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/newContentInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints="Write your story here."
+        android:ems="10"
+        android:hint="@string/new_content"
+        android:inputType="textPersonName"
+        android:saveEnabled="true"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/spiritBoxInput"
+        app:layout_constraintStart_toStartOf="@+id/spiritNumBox"
+        app:layout_constraintTop_toBottomOf="@+id/spiritBoxInput" />
+
+    <Button
+        android:id="@+id/goButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/dashboardRunBoxText"
+        app:layout_constraintEnd_toEndOf="@+id/newContentInput"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/newContentInput"
+        app:layout_constraintTop_toBottomOf="@+id/newContentInput"
+        android:onClick="makeRequests"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/postButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/post"
+        android:onClick="postText"
+        app:layout_constraintEnd_toEndOf="@+id/newContentInput"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/newContentInput"
+        app:layout_constraintTop_toBottomOf="@+id/newContentInput"
+        tools:ignore="OnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

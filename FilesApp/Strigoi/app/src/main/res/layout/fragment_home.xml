@@ -20,5 +20,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/userNameInputBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/userNameInputBoxAccHint"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/text_home"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_home"
+        app:layout_constraintTop_toBottomOf="@+id/text_home" />
+
+    <Button
+        android:id="@+id/updateUserButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/updateUserButtonText"
+        android:onClick="updateUsername"
+        app:layout_constraintStart_toStartOf="@+id/userNameInputBox"
+        app:layout_constraintTop_toBottomOf="@+id/userNameInputBox" />
 </androidx.constraintlayout.widget.ConstraintLayout>

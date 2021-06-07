@@ -8,4 +8,10 @@
     <string name="spiritBoxText">Spirit:</string>
     <string name="spiritNumBoxHint">1</string>
     <string name="buttonPressWarning">Press the Dashboard button again.</string>
+    <string name="new_content">New content</string>
+    <string name="dashboardRunBoxText">Get Spirit</string>
+    <string name="post">Post</string>
+    <string name="updateUserButtonText">Update Username</string>
+    <string name="userNameInputBoxText">User Name</string>
+    <string name="userNameInputBoxAccHint">The box where your username is.</string>
 </resources>
