@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,20 +21,25 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView textHome;
+  public final FrameLayout contentFragment;
 
   @NonNull
-  public final Button updateUserButton;
+  public final Button editUserButton;
 
   @NonNull
-  public final EditText userNameInputBox;
+  public final TextView userInfoText;
 
-  private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull TextView textHome,
-      @NonNull Button updateUserButton, @NonNull EditText userNameInputBox) {
+  @NonNull
+  public final ConstraintLayout userLayout;
+
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
+      @NonNull FrameLayout contentFragment, @NonNull Button editUserButton,
+      @NonNull TextView userInfoText, @NonNull ConstraintLayout userLayout) {
     this.rootView = rootView;
-    this.textHome = textHome;
-    this.updateUserButton = updateUserButton;
-    this.userNameInputBox = userNameInputBox;
+    this.contentFragment = contentFragment;
+    this.editUserButton = editUserButton;
+    this.userInfoText = userInfoText;
+    this.userLayout = userLayout;
   }
 
   @Override
@@ -64,26 +69,28 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.text_home;
-      TextView textHome = rootView.findViewById(id);
-      if (textHome == null) {
+      id = R.id.contentFragment;
+      FrameLayout contentFragment = rootView.findViewById(id);
+      if (contentFragment == null) {
         break missingId;
       }
 
-      id = R.id.updateUserButton;
-      Button updateUserButton = rootView.findViewById(id);
-      if (updateUserButton == null) {
+      id = R.id.editUserButton;
+      Button editUserButton = rootView.findViewById(id);
+      if (editUserButton == null) {
         break missingId;
       }
 
-      id = R.id.userNameInputBox;
-      EditText userNameInputBox = rootView.findViewById(id);
-      if (userNameInputBox == null) {
+      id = R.id.userInfoText;
+      TextView userInfoText = rootView.findViewById(id);
+      if (userInfoText == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, textHome, updateUserButton,
-          userNameInputBox);
+      ConstraintLayout userLayout = (ConstraintLayout) rootView;
+
+      return new FragmentHomeBinding((ConstraintLayout) rootView, contentFragment, editUserButton,
+          userInfoText, userLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

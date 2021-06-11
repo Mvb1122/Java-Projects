@@ -13,5 +13,8 @@
     <string name="post">Append</string>
     <string name="updateUserButtonText">Update Username</string>
     <string name="userNameInputBoxText">User Name</string>
-    <string name="userNameInputBoxAccHint">The box where your username is.</string>
+    <string name="userNameInputBoxAccHint">Put your new username here.</string>
+    <string name="go_to_user_fragment">Go to User Fragment</string>
+    <string name="back">Back</string>
+    <string name="editUserButtonText">Edit Your User Information</string>
 </resources>

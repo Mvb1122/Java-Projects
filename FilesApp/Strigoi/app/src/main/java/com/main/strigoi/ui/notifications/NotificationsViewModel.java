@@ -8,9 +8,6 @@ import com.main.strigoi.MainActivity;
 import com.main.strigoi.ui.dashboard.DashboardViewModel;
 
 public class NotificationsViewModel extends ViewModel {
-
-
-
     private MutableLiveData<String> mText;
 
     public NotificationsViewModel() {

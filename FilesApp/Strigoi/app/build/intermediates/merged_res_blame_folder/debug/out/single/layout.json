@@ -4,8 +4,16 @@
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\fragment_notifications.xml"
     },
     {
+        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\user_fragment.xml",
+        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\user_fragment.xml"
+    },
+    {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_dashboard.xml",
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home_sup.xml",
+        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\fragment_home_sup.xml"
     },
     {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
