@@ -1,4 +1,4 @@
-#Wed Jun 09 16:53:46 MDT 2021
+#Fri Jun 11 15:14:11 MDT 2021
 base.0=C\:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

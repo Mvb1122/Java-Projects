@@ -1683,6 +1683,7 @@ drawable ic_clock_black_24dp
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
 drawable ic_keyboard_black_24dp
+drawable ic_launcher
 drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
