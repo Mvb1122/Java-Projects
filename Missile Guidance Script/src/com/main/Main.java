@@ -53,11 +53,6 @@ public class Main {
     private static ArrayList<Double> calculateAngleOfAttack(ArrayList<Double> input1, ArrayList<Double> input2) {
         ArrayList<Double> angles = new ArrayList<>();
 
-        // TODO: Figure this out.
-
-        // Inputting: Two sets of coordinates, the missile is input1 and the target is input2.
-        // Outputting: Angles between them.
-
         for (int i = 0; i < input1.size() - 1; i++) {
             // Degrees = tan^-1 ( rise / run )
             double rise = Math.abs(input1.get(0 + i) - input2.get(0 + i));
