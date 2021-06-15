@@ -46,8 +46,8 @@ public class mDBRequest implements Runnable {
                             Requests nextSec = new Requests("https://ihaveawebsite.tk/json/" + strigoiNum + "/" + spiritNum + "/" + i + ".json", "GET", "None");
                             nextSec.run();
                             JSONObject nextSecJSON = new JSONObject(nextSec.response);
-                            String lineBreak = "\n\n\n";
-                            this.parsedResponse += lineBreak + "\nNEXT PANEL:\nPanel " + i + lineBreak;
+                            // String lineBreak = "\n\n\n";
+                            // this.parsedResponse += lineBreak + "\nNEXT PANEL:\nPanel " + i + lineBreak;
                             parseResponse(nextSecJSON);
                         } catch (JSONException e) {
                             e.printStackTrace();

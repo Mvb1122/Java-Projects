@@ -10,12 +10,13 @@ import java.util.ArrayList;
  *
  *          @author Micah Bushman
  */
+@SuppressWarnings("BusyWait")
 public class missile {
-    long procSpeed;
-    double missileSpeed;
-    ArrayList<Double> missileCoordinates;
-    ArrayList<Double> targetCoordinates;
-    int proxDet;
+    final long procSpeed;
+    final double missileSpeed;
+    final ArrayList<Double> missileCoordinates;
+    final ArrayList<Double> targetCoordinates;
+    final int proxDet;
 
 
     /**
@@ -24,7 +25,7 @@ public class missile {
      * @param missileCoordinates A Double Arraylist containing the missile's coordinates, XYZ.
      * @param targetCoordinates A Double Arraylist containing the target's coordinates, XYZ.
      * @param proxDet An int containing the distance at which the missile detonates. If blank, it tries for a direct strike.
-     * @return Returns a missile object.
+     * @author Mvb1122
      */
     public missile(long procSpeed, double missileSpeed, ArrayList<Double> missileCoordinates, ArrayList<Double> targetCoordinates, int proxDet) {
         this.procSpeed = procSpeed;
@@ -38,66 +39,64 @@ public class missile {
         final int[] numTicks = {0};
 
         // Start a new thread containing the missile's launch code.
-        Thread missile = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                do {
-                    // End loop if missile is in target.
-                    if (missileCoordinates.get(0).equals(targetCoordinates.get(0)) && missileCoordinates.get(1).equals(targetCoordinates.get(1)) && missileCoordinates.get(2).equals(targetCoordinates.get(2)) || numTicks[0] == 50) {
-                        break;
-                    }
-
-                    // Print Target and Missile location information to screen.
-                    System.out.println("\n\nThe missile is located at: " + missileCoordinates);
-                    System.out.println("The target is located at: " + targetCoordinates);
-
-                    double dist = calculateDistanceBetweenPoints(missileCoordinates.get(0), missileCoordinates.get(1), missileCoordinates.get(2), targetCoordinates.get(0), targetCoordinates.get(1), targetCoordinates.get(2));
-                    String distString = "" + dist + "";
-                    String distToFixed = distString.substring(0, distString.indexOf(".") + 2);
-                    System.out.println("The target and missile are " + distToFixed + "u apart.");
-
-                    // Detonate missile if within proximity detonation range.
-                    if (dist <= proxDet) {
-                        System.out.println("The missile detonated " + distToFixed + "u away, since it was within its proximity detonation range of " + proxDet + ".");
-                        break;
-                    }
-
-                    try {
-                        Thread.sleep(1000 * procSpeed);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    // Calculate and print angles for movement.
-                    ArrayList<Double> Angles = new ArrayList<>(calculateAngleOfAttack(missileCoordinates, targetCoordinates));
-                    System.out.println("Angles: " + Angles);
-
-                    try {
-                        Thread.sleep(1000 * procSpeed);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    // Simulate missile moving forward.
-                    // Calculate difference in missile location and target location.
-                    ArrayList<Double> deltas = new ArrayList<>();
-                    for (int i = 0; i < 3; i++) {
-                        deltas.add(targetCoordinates.get(i) - missileCoordinates.get(i));
-                    }
-                    // Move missile by its speed per tick in the direction of the target.
-                    for (int i = 0; i < 3; i++) {
-                        missileCoordinates.set(i, missileSpeed * Math.signum(deltas.get(i)) + missileCoordinates.get(i));
-                    }
-
-                    System.out.println("Deltas: " + deltas);
-                    numTicks[0]++;
-                } while (true);
-
-                if (numTicks[0] == 50) {
-                    System.out.println("\nThe missile missed.");
-                } else {
-                    System.out.println("\nTarget Destroyed.");
+        Thread missile = new Thread(() -> {
+            do {
+                System.out.println("\n\nTick number " + numTicks[0]);
+                // End loop if missile is in target.
+                if (missileCoordinates.get(0).equals(targetCoordinates.get(0)) && missileCoordinates.get(1).equals(targetCoordinates.get(1)) && missileCoordinates.get(2).equals(targetCoordinates.get(2)) || numTicks[0] == 500) {
+                    break;
                 }
+
+                // Print Target and Missile location information to screen.
+                System.out.println("The missile is located at: " + missileCoordinates);
+                System.out.println("The target is located at: " + targetCoordinates);
+
+                double dist = calculateDistanceBetweenPoints(missileCoordinates.get(0), missileCoordinates.get(1), missileCoordinates.get(2), targetCoordinates.get(0), targetCoordinates.get(1), targetCoordinates.get(2));
+                String distString = "" + dist + "";
+                String distToFixed = distString.substring(0, distString.indexOf(".") + 2);
+                System.out.println("The target and missile are " + distToFixed + "u apart.");
+
+                // Detonate missile if within proximity detonation range.
+                if (dist <= proxDet) {
+                    System.out.println("The missile detonated " + distToFixed + "u away, since it was within its proximity detonation range of " + proxDet + ".");
+                    break;
+                }
+
+                try {
+                    Thread.sleep(1000 * procSpeed);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                // Calculate and print angles for movement.
+                ArrayList<Double> Angles = new ArrayList<>(calculateAngleOfAttack(missileCoordinates, targetCoordinates));
+                System.out.println("Angles: " + Angles);
+
+                try {
+                    Thread.sleep(1000 * procSpeed);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                // Simulate missile moving forward.
+                // Calculate difference in missile location and target location.
+                ArrayList<Double> deltas = new ArrayList<>();
+                for (int i = 0; i < 3; i++) {
+                    deltas.add(targetCoordinates.get(i) - missileCoordinates.get(i));
+                }
+                // Move missile by its speed per tick in the direction of the target.
+                for (int i = 0; i < 3; i++) {
+                    missileCoordinates.set(i, missileSpeed * Math.signum(deltas.get(i)) + missileCoordinates.get(i));
+                }
+
+                System.out.println("Distances: " + deltas);
+                numTicks[0]++;
+            } while (true);
+
+            if (numTicks[0] == 500) {
+                System.out.println("\nThe missile missed.");
+            } else {
+                System.out.println("\nTarget Destroyed.");
             }
         });
         missile.start();

@@ -36,12 +36,12 @@
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\fragment_notifications.xml"
     },
     {
-        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_home_black_24dp.png.flat",
-        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_home_black_24dp.png"
-    },
-    {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home_sup.xml.flat",
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\fragment_home_sup.xml"
+    },
+    {
+        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_home_black_24dp.png.flat",
+        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_home_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_notifications_black_24dp.png.flat",
@@ -54,6 +54,10 @@
     {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\navigation_mobile_navigation.xml.flat",
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\layout_dashboard_fragment_sup.xml.flat",
+        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\dashboard_fragment_sup.xml"
     },
     {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
@@ -96,6 +100,10 @@
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\layout_edit_fragment.xml.flat",
+        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\edit_fragment.xml"
+    },
+    {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
     },
@@ -108,12 +116,12 @@
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
@@ -144,20 +152,20 @@
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_home_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_notifications_black_24dp.xml.flat",
-        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_notifications_black_24dp.xml"
-    },
-    {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_notifications_black_24dp.xml.flat",
+        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_notifications_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\drphi\\Desktop\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_home_black_24dp.png.flat",

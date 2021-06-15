@@ -1737,7 +1737,6 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
-id StrigoiNumBox
 id TOP_END
 id TOP_START
 id accelerate
@@ -1813,6 +1812,7 @@ id beginning
 id blocking
 id bottom
 id bounce
+id button
 id buttonPanel
 id buttonPressWarning
 id cache_measures
@@ -1848,6 +1848,7 @@ id counterclockwise
 id custom
 id customPanel
 id cut
+id dashboardFragment
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -1877,6 +1878,8 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id editFragBackButton
+id editSpiritText
 id editUserButton
 id edit_query
 id elastic
@@ -1939,6 +1942,7 @@ id line3
 id linear
 id listMode
 id list_item
+id loadingText
 id masked
 id material_clock_display
 id material_clock_face
@@ -2003,7 +2007,6 @@ id navigation_header_container
 id navigation_home
 id navigation_notifications
 id never
-id newContentInput
 id noScroll
 id none
 id normal
@@ -2027,7 +2030,6 @@ id peekHeight
 id percent
 id pin
 id position
-id postButton
 id postLayout
 id progress_circular
 id progress_horizontal
@@ -2097,8 +2099,10 @@ id staticLayout
 id staticPostLayout
 id stop
 id stretch
+id strigoiNumBox
 id strigoiNumBoxInput
 id submenuarrow
+id submitButton
 id submit_area
 id tabMode
 id tag_accessibility_actions
@@ -2235,6 +2239,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout custom_dialog
+layout dashboard_fragment_sup
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2250,6 +2255,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout edit_fragment
 layout fragment_dashboard
 layout fragment_home
 layout fragment_home_sup
@@ -2375,6 +2381,7 @@ string go_to_user_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string loading
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -2440,6 +2447,7 @@ string spiritNumBoxHint
 string status_bar_notification_info_overflow
 string strigoiBoxText
 string strigoiInputBoxHint
+string submit
 string title_dashboard
 string title_home
 string title_notifications

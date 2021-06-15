@@ -4,8 +4,7 @@ package com.main.strigoi.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,43 +20,16 @@ public final class FragmentDashboardBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView StrigoiNumBox;
+  public final FrameLayout dashboardFragment;
 
   @NonNull
-  public final TextView buttonPressWarning;
-
-  @NonNull
-  public final Button goButton;
-
-  @NonNull
-  public final EditText newContentInput;
-
-  @NonNull
-  public final Button postButton;
-
-  @NonNull
-  public final EditText spiritBoxInput;
-
-  @NonNull
-  public final TextView spiritNumBox;
-
-  @NonNull
-  public final EditText strigoiNumBoxInput;
+  public final TextView loadingText;
 
   private FragmentDashboardBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView StrigoiNumBox, @NonNull TextView buttonPressWarning,
-      @NonNull Button goButton, @NonNull EditText newContentInput, @NonNull Button postButton,
-      @NonNull EditText spiritBoxInput, @NonNull TextView spiritNumBox,
-      @NonNull EditText strigoiNumBoxInput) {
+      @NonNull FrameLayout dashboardFragment, @NonNull TextView loadingText) {
     this.rootView = rootView;
-    this.StrigoiNumBox = StrigoiNumBox;
-    this.buttonPressWarning = buttonPressWarning;
-    this.goButton = goButton;
-    this.newContentInput = newContentInput;
-    this.postButton = postButton;
-    this.spiritBoxInput = spiritBoxInput;
-    this.spiritNumBox = spiritNumBox;
-    this.strigoiNumBoxInput = strigoiNumBoxInput;
+    this.dashboardFragment = dashboardFragment;
+    this.loadingText = loadingText;
   }
 
   @Override
@@ -87,57 +59,20 @@ public final class FragmentDashboardBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.StrigoiNumBox;
-      TextView StrigoiNumBox = rootView.findViewById(id);
-      if (StrigoiNumBox == null) {
+      id = R.id.dashboardFragment;
+      FrameLayout dashboardFragment = rootView.findViewById(id);
+      if (dashboardFragment == null) {
         break missingId;
       }
 
-      id = R.id.buttonPressWarning;
-      TextView buttonPressWarning = rootView.findViewById(id);
-      if (buttonPressWarning == null) {
+      id = R.id.loadingText;
+      TextView loadingText = rootView.findViewById(id);
+      if (loadingText == null) {
         break missingId;
       }
 
-      id = R.id.goButton;
-      Button goButton = rootView.findViewById(id);
-      if (goButton == null) {
-        break missingId;
-      }
-
-      id = R.id.newContentInput;
-      EditText newContentInput = rootView.findViewById(id);
-      if (newContentInput == null) {
-        break missingId;
-      }
-
-      id = R.id.postButton;
-      Button postButton = rootView.findViewById(id);
-      if (postButton == null) {
-        break missingId;
-      }
-
-      id = R.id.spiritBoxInput;
-      EditText spiritBoxInput = rootView.findViewById(id);
-      if (spiritBoxInput == null) {
-        break missingId;
-      }
-
-      id = R.id.spiritNumBox;
-      TextView spiritNumBox = rootView.findViewById(id);
-      if (spiritNumBox == null) {
-        break missingId;
-      }
-
-      id = R.id.strigoiNumBoxInput;
-      EditText strigoiNumBoxInput = rootView.findViewById(id);
-      if (strigoiNumBoxInput == null) {
-        break missingId;
-      }
-
-      return new FragmentDashboardBinding((ConstraintLayout) rootView, StrigoiNumBox,
-          buttonPressWarning, goButton, newContentInput, postButton, spiritBoxInput, spiritNumBox,
-          strigoiNumBoxInput);
+      return new FragmentDashboardBinding((ConstraintLayout) rootView, dashboardFragment,
+          loadingText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

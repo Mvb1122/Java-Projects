@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/strigoiNumBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/strigoiBoxText"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/strigoiNumBoxInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:autofillHints="2"
+        android:ems="10"
+        android:hint="@string/strigoiInputBoxHint"
+        android:inputType="number"
+        android:maxLines="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/strigoiNumBox"
+        app:layout_constraintTop_toTopOf="@+id/strigoiNumBox" />
+
+    <TextView
+        android:id="@+id/spiritNumBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/spiritBoxText"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/strigoiNumBox"
+        app:layout_constraintTop_toBottomOf="@+id/strigoiNumBox" />
+
+    <EditText
+        android:id="@+id/spiritBoxInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="2"
+        android:ems="10"
+        android:hint="@string/spiritNumBoxHint"
+        android:inputType="number"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/strigoiNumBoxInput"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/strigoiNumBoxInput"
+        app:layout_constraintTop_toTopOf="@+id/spiritNumBox" />
+
+    <TextView
+        android:id="@+id/buttonPressWarning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/buttonPressWarning"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/goButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="makeRequests"
+        android:text="@string/dashboardRunBoxText"
+        app:layout_constraintEnd_toEndOf="@+id/spiritBoxInput"
+        app:layout_constraintTop_toBottomOf="@+id/spiritBoxInput" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToEditFragment"
+        android:text="Go To Edit Fragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>

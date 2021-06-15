@@ -4,10 +4,10 @@ package com.main.strigoi;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,8 +22,12 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.main.strigoi.databinding.ActivityMainBinding;
 import com.main.strigoi.mDB.mDBRequest;
+import com.main.strigoi.mDB.pushToDB;
 import com.main.strigoi.ui.Reader;
 import com.main.strigoi.ui.Requests;
+import com.main.strigoi.ui.dashboard.DashboardFragmentSup;
+import com.main.strigoi.ui.dashboard.DashboardViewModel;
+import com.main.strigoi.ui.edit.EditingFragment;
 import com.main.strigoi.ui.home.HomeFragmentTwo;
 import com.main.strigoi.ui.userFragment.userFragment;
 
@@ -31,6 +35,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import static java.lang.Integer.parseInt;
 
@@ -45,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
     public static EditText spiritNum;
     public Boolean userFragmentActive;
     private JSONObject onlineUserInfo;
+    private Boolean editFragmentActive;
+    private int spiritNumInt;
+    private int strigoiNumInt;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -73,6 +81,26 @@ public class MainActivity extends AppCompatActivity {
             do {
                 strigoiNum = findViewById(R.id.strigoiNumBoxInput);
                 spiritNum = findViewById(R.id.spiritBoxInput);
+                if (strigoiNum != null) {
+                    try {
+                        strigoiNumInt = Integer.parseInt(strigoiNum.getText().toString());
+                    } catch (NumberFormatException e) {
+                        if (strigoiNumInt != 0) {
+                            strigoiNumInt = 1;
+                        }
+                    }
+                }
+
+                if (spiritNum != null) {
+                    try {
+                        spiritNumInt = Integer.parseInt(spiritNum.getText().toString());
+                    } catch (NumberFormatException e) {
+                        if (spiritNumInt != 0) {
+                            spiritNumInt = 1;
+                        }
+                    }
+                }
+
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
@@ -108,13 +136,49 @@ public class MainActivity extends AppCompatActivity {
         userNameDisplayDelayed.start();
 
 
-        // Setup UI on startup:
+        // Setup UI on startup: (Home Fragment)
         Fragment fragment = new HomeFragmentTwo();
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.contentFragment, fragment);
         transaction.commit();
+        
+        // Setup UI on visible: (Dashboard Fragment)
+        editFragmentActive = false;
+        Thread setDashboardFragment = new Thread(() -> {
+            do {
+                View view = findViewById(R.id.dashboardFragment);
+                if (view != null && (spiritNum == null || strigoiNum == null) && !editFragmentActive) {
+                    Fragment dashboardFragment = new DashboardFragmentSup();
+
+                    FragmentManager fm2 = getSupportFragmentManager();
+                    FragmentTransaction transaction2 = fm2.beginTransaction();
+                    transaction2.replace(R.id.dashboardFragment, dashboardFragment);
+                    transaction2.commit();
+
+                    TextView loadingText = findViewById(R.id.loadingText);
+                    loadingText.setVisibility(View.INVISIBLE);
+                }
+
+                EditText editSpirit = findViewById(R.id.editSpiritText);
+
+                if (editSpirit != null && editSpirit.getText().toString().equals("")) {
+                    System.out.println("Set to dashboard fragment.");
+                    runOnUiThread(() -> editSpirit.setText(DashboardViewModel.testReqFormDB.parsedResponse));
+
+                }
+
+
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } while (true);
+        });
+        setDashboardFragment.start();
+        
     }
 
     public static Context getContext() {
@@ -169,6 +233,7 @@ public class MainActivity extends AppCompatActivity {
         // goButton.setText("Spirit Retrieved.");
     }
 
+    /*
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void postText(View view) {
         System.out.println("Post button clicked.");
@@ -267,6 +332,7 @@ public class MainActivity extends AppCompatActivity {
         });
         baseGetter.start();
     }
+    */
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void updateUsername(View view) {
@@ -332,4 +398,36 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Is the User Fragment active: " + userFragmentActive);
     }
 
+    public void goToEditFragment(View view) {
+        System.out.println("Edit Button Clicked");
+        editFragmentActive = true;
+
+        Fragment dashboardFragment = new EditingFragment();
+
+        FragmentManager fm2 = getSupportFragmentManager();
+        FragmentTransaction transaction2 = fm2.beginTransaction();
+        transaction2.replace(R.id.dashboardFragment, dashboardFragment);
+        transaction2.commit();
+    }
+
+    public void goToDashboardFragment(View view) {
+        System.out.println("Back button hit on the Edit Fragment");
+
+        Fragment dashboardFragment = new DashboardFragmentSup();
+
+        FragmentManager fm2 = getSupportFragmentManager();
+        FragmentTransaction transaction2 = fm2.beginTransaction();
+        transaction2.replace(R.id.dashboardFragment, dashboardFragment);
+        transaction2.commit();
+    }
+
+    public void postFullToDB(View view) {
+        EditText gottenText = findViewById(R.id.editSpiritText);
+        String[] textArray = gottenText.getText().toString().split("\n");
+
+        System.out.println(Arrays.toString(textArray));
+        pushToDB push = new pushToDB(strigoiNumInt, spiritNumInt, textArray);
+        Thread pusher = new Thread(push);
+        pusher.start();
+    }
 }

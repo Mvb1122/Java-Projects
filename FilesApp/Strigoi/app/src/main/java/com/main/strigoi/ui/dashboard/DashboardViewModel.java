@@ -44,6 +44,7 @@ public class DashboardViewModel extends ViewModel {
             Thread TRFmDB = new Thread(testReqFormDB);
             TRFmDB.start();
             mText.setValue(testReqFormDB.parsedResponse);
+            MainActivity.content = testReqFormDB.parsedResponse;
         }
     }
 

@@ -7,113 +7,24 @@
     tools:context=".ui.dashboard.DashboardFragment">
 
     <TextView
-        android:id="@+id/StrigoiNumBox"
+        android:id="@+id/loadingText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/strigoiBoxText"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newContentInput" />
-
-    <EditText
-        android:id="@+id/strigoiNumBoxInput"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:autofillHints="2"
-        android:ems="10"
-        android:hint="@string/strigoiInputBoxHint"
-        android:inputType="number"
-        android:maxLines="1"
-        android:textSize="20sp"
+        android:text="@string/loading"
+        app:layout_constraintBottom_toBottomOf="@+id/dashboardFragment"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/StrigoiNumBox"
-        app:layout_constraintTop_toTopOf="@+id/StrigoiNumBox" />
-
-    <TextView
-        android:id="@+id/spiritNumBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/spiritBoxText"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/StrigoiNumBox"
-        app:layout_constraintTop_toBottomOf="@+id/StrigoiNumBox" />
-
-    <EditText
-        android:id="@+id/spiritBoxInput"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:autofillHints="2"
-        android:ems="10"
-        android:hint="@string/spiritNumBoxHint"
-        android:inputType="number"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/strigoiNumBoxInput"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/strigoiNumBoxInput"
-        app:layout_constraintTop_toTopOf="@+id/spiritNumBox" />
-
-    <TextView
-        android:visibility="invisible"
-        android:id="@+id/buttonPressWarning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/buttonPressWarning"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toTopOf="@+id/dashboardFragment" />
 
-    <EditText
-        android:id="@+id/newContentInput"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:autofillHints="Write your story here."
-        android:ems="10"
-        android:gravity="top|left"
-        android:hint="@string/new_content"
-        android:inputType="textMultiLine"
-        android:isScrollContainer="true"
-        android:saveEnabled="true"
-        android:scrollbars="vertical"
-        android:singleLine="false"
-        app:layout_constraintEnd_toEndOf="@+id/spiritBoxInput"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/spiritNumBox"
-        app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:id="@+id/dashboardFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/goButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="makeRequests"
-        android:text="@string/dashboardRunBoxText"
-        app:layout_constraintEnd_toEndOf="@+id/newContentInput"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/newContentInput"
-        app:layout_constraintTop_toTopOf="@+id/postButton"
-        tools:ignore="OnClick" />
-
-    <Button
-        android:id="@+id/postButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:onClick="postText"
-        android:text="@string/post"
-        app:layout_constraintEnd_toEndOf="@+id/newContentInput"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/newContentInput"
-        app:layout_constraintTop_toBottomOf="@+id/spiritBoxInput"
-        tools:ignore="OnClick" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
