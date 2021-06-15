@@ -8,7 +8,8 @@ import com.main.strigoi.ui.Requests;
 
 import org.json.JSONObject;
 
-import java.util.Arrays;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class pushToDB implements Runnable {
     public int strigoiNum;
@@ -45,8 +46,23 @@ public class pushToDB implements Runnable {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void run() {
-        // TODO: Write code to push data to Database.
+        // TODO: Optimize code to push data to Database.
+
+        // TODO: Find the value that best optimizes for thread usage and for time to complete.
+        ExecutorService pool = Executors.newScheduledThreadPool((int) inputArr.length / 2);
+
         System.out.println("\nStrigoiNum: " + strigoiNum + "\n" + "SpiritNum: " + spiritNum);
-        System.out.println(Arrays.toString(inputArr));
+        for (int i = 1; i < inputArr.length + 1; i++) {
+            try {
+                String data = "{\n\t\"content\": [\n\t\"" + inputArr[i] + "\"\n\t]\n}";
+                if (i == 1) {
+                    data = "{\n\t\"spiritType\": \"Text\",\n\t\"length\": " + inputArr.length + ",\n\t\"content\": [\n\t\"" + inputArr[1] + "\"\n]\n}";
+                }
+                Requests requests = new Requests(address + i + ".json", "POST", data);
+                pool.submit(requests);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
