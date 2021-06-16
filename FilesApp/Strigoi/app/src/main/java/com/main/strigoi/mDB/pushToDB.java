@@ -42,7 +42,8 @@ public class pushToDB implements Runnable {
 
         System.out.println("StrigoiNum: " + strigoiNum + "SpiritNum: " + spiritNum);
         for (int i = 1; i < inputArr.length + 1; i++) {
-            String inputString = inputArr[i - 1].replaceAll("\"", "\\\"");
+            String inputString = inputArr[i - 1].replace("\"", "\\\"");
+
             try {
                 String data = "{\n\t\"content\": [\n\t\t\"" + inputString + "\"\n\t]\n}";
                 if (i == 1) {

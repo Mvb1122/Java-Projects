@@ -39,13 +39,13 @@ com/main/strigoi/ui/edit/EditingFragment.java
 com/main/strigoi/ui/home/HomeFragment.java
  com.main.strigoi.ui.home.HomeFragment
  com.main.strigoi.ui.home.HomeFragment$1
-com/main/strigoi/mDB/pushToDB.java
- com.main.strigoi.mDB.pushToDB
+com/main/strigoi/ui/notifications/NotificationsViewModel.java
+ com.main.strigoi.ui.notifications.NotificationsViewModel
 com/main/strigoi/ui/dashboard/DashboardViewModel.java
  com.main.strigoi.ui.dashboard.DashboardViewModel
 com/main/strigoi/ui/Reader.java
  com.main.strigoi.ui.Reader
+com/main/strigoi/mDB/pushToDB.java
+ com.main.strigoi.mDB.pushToDB
 com/main/strigoi/MainActivity.java
  com.main.strigoi.MainActivity
-com/main/strigoi/ui/notifications/NotificationsViewModel.java
- com.main.strigoi.ui.notifications.NotificationsViewModel
