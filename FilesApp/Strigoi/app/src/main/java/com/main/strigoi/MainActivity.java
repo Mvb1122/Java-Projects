@@ -27,7 +27,6 @@ import com.main.strigoi.mDB.pushToDB;
 import com.main.strigoi.ui.Reader;
 import com.main.strigoi.ui.Requests;
 import com.main.strigoi.ui.dashboard.DashboardFragmentSup;
-import com.main.strigoi.ui.dashboard.DashboardViewModel;
 import com.main.strigoi.ui.edit.EditingFragment;
 import com.main.strigoi.ui.home.HomeFragmentTwo;
 import com.main.strigoi.ui.userFragment.userFragment;
@@ -54,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private Boolean editFragmentActive;
     public int spiritNumInt;
     public int strigoiNumInt;
+    private boolean getEditText;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -150,7 +150,10 @@ public class MainActivity extends AppCompatActivity {
         Thread setDashboardFragment = new Thread(() -> {
             do {
                 View view = findViewById(R.id.dashboardFragment);
-                if (view != null && (spiritNum == null || strigoiNum == null) && !editFragmentActive) {
+                EditText editSpirit = findViewById(R.id.editSpiritText);
+
+                if (view != null && spiritNum == null && strigoiNum == null && !editFragmentActive) {
+                    System.out.println("Set to dashboard fragment.");
                     Fragment dashboardFragment = new DashboardFragmentSup();
 
                     FragmentManager fm2 = getSupportFragmentManager();
@@ -162,12 +165,25 @@ public class MainActivity extends AppCompatActivity {
                     loadingText.setVisibility(View.INVISIBLE);
                 }
 
-                EditText editSpirit = findViewById(R.id.editSpiritText);
-
                 if (editSpirit != null && editSpirit.getText().toString().equals("")) {
-                    System.out.println("Set to dashboard fragment.");
-                    runOnUiThread(() -> editSpirit.setText(DashboardViewModel.testReqFormDB.parsedResponse));
+                    mDBRequest request = new mDBRequest(strigoiNumInt, spiritNumInt);
 
+                    if (!getEditText) {
+                        Thread getThisFromMDB = new Thread(() -> {
+                            request.run();
+                            while (request.parsedResponse == null) {
+                                try {
+                                    Thread.sleep(100);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            runOnUiThread(() -> editSpirit.setText(request.parsedResponse));
+                        });
+                        getThisFromMDB.start();
+                        getEditText = true;
+                    }
                 }
 
                 // Set the display for which spirit you're editing.
@@ -410,6 +426,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm2 = getSupportFragmentManager();
         FragmentTransaction transaction2 = fm2.beginTransaction();
         transaction2.replace(R.id.dashboardFragment, dashboardFragment);
+        getEditText = false;
         transaction2.commit();
     }
 
