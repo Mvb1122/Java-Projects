@@ -74,7 +74,7 @@ public class mDBRequest implements Runnable {
         JSONArray tempArr = input.getJSONArray("content");
         for (int i = 0; i < tempArr.length(); i++) {
             String inputString = tempArr.getString(i);
-            this.parsedResponse += "\n" + inputString;
+            this.parsedResponse += "\n\n" + inputString;
         }
     }
 }
