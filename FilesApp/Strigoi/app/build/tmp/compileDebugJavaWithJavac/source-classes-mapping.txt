@@ -43,7 +43,6 @@ com/main/strigoi/databinding/FragmentHomeBinding.java
  com.main.strigoi.databinding.FragmentHomeBinding
 com/main/strigoi/MainActivity.java
  com.main.strigoi.MainActivity
- com.main.strigoi.MainActivity$1
 com/main/strigoi/ui/edit/EditingFragment.java
  com.main.strigoi.ui.edit.EditingFragment
 com/main/strigoi/ui/notifications/NotificationsViewModel.java

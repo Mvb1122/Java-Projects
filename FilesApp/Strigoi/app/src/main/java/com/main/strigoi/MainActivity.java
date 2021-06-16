@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
     public Boolean userFragmentActive;
     private JSONObject onlineUserInfo;
     private Boolean editFragmentActive;
-    private int spiritNumInt;
-    private int strigoiNumInt;
+    public int spiritNumInt;
+    public int strigoiNumInt;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -169,6 +170,11 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
+                // Set the display for which spirit you're editing.
+                TextView reminder = findViewById(R.id.editReminder);
+                if (reminder != null) {
+                    reminder.setText("You are editing Strigoi " + strigoiNumInt + ", Spirit " + spiritNumInt);
+                }
 
                 try {
                     Thread.sleep(200);
@@ -190,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
         return MainActivity.context;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void makeRequests(View view) {
             get1x1 = false;
             int strigoiNum;
@@ -213,20 +220,16 @@ public class MainActivity extends AppCompatActivity {
             int finalStrigoiNum = strigoiNum;
             int finalSpiritNum = spiritNum;
 
-            Thread TRFmDB = new Thread(new Runnable() {
-                    @RequiresApi(api = Build.VERSION_CODES.N)
-                    @Override
-                    public void run() {
-                        buttonReq.run();
-                        MainActivity.content = buttonReq.parsedResponse;
-                        try {
-                          Thread.sleep(500);
-                        } catch (InterruptedException e) {
-                           e.printStackTrace();
-                       }
-                        System.out.println("\n\n\nStrigoiNum: " + finalStrigoiNum + "\nSpiritNum: " + finalSpiritNum + "\nPARSED RESPONSE:" + MainActivity.content + "\n\n\n");
-                    }
-                });
+            Thread TRFmDB = new Thread(() -> {
+                buttonReq.run();
+                MainActivity.content = buttonReq.parsedResponse;
+                try {
+                  Thread.sleep(500);
+                } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+                System.out.println("\n\n\nStrigoiNum: " + finalStrigoiNum + "\nSpiritNum: " + finalSpiritNum + "\nPARSED RESPONSE:" + MainActivity.content + "\n\n\n");
+            });
             TRFmDB.start();
 
         // Button goButton = findViewById(R.id.goButton);
@@ -426,8 +429,14 @@ public class MainActivity extends AppCompatActivity {
         String[] textArray = gottenText.getText().toString().split("\n");
 
         System.out.println(Arrays.toString(textArray));
-        pushToDB push = new pushToDB(strigoiNumInt, spiritNumInt, textArray);
-        Thread pusher = new Thread(push);
-        pusher.start();
+        if (strigoiNumInt != 0 && spiritNumInt != 0) {
+            pushToDB push = new pushToDB(strigoiNumInt, spiritNumInt, textArray);
+            Thread pusher = new Thread(push);
+            pusher.start();
+        } else {
+            CharSequence errorMessage = "You can't publish to Strigoi 0 and Spirit 0, it's empty for \"reasons.\"";
+            Toast error = Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT);
+            error.show();
+        }
     }
 }

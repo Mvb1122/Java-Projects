@@ -1879,6 +1879,7 @@ id easeIn
 id easeInOut
 id easeOut
 id editFragBackButton
+id editReminder
 id editSpiritText
 id editUserButton
 id edit_query
@@ -2372,6 +2373,7 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string dashboardRunBoxText
+string editSpiritTextDefaultHint
 string editUserButtonText
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
