@@ -1,0 +1,4 @@
+com/example/ExponentialsApp/ExampleInstrumentedTest.java
+ com.example.ExponentialsApp.ExampleInstrumentedTest
+com/example/ExponentialsApp/test/BuildConfig.java
+ com.example.ExponentialsApp.test.BuildConfig

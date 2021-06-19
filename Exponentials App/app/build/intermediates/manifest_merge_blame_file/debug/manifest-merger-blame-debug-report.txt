@@ -1,0 +1,51 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.myapplication"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:5:5-22:19
+12        android:allowBackup="true"
+12-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:6:13-39
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.1.0] C:\Users\drphi\.gradle\caches\transforms-2\files-2.1\73530a2d0c1df4b3085807c82555ce12\core-1.1.0\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:7:13-47
+16        android:label="@string/app_name"
+16-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:8:13-45
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:9:13-58
+18        android:supportsRtl="true"
+18-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:10:13-39
+19        android:theme="@style/Theme.MyApplication" >
+19-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:11:13-55
+20        <activity
+20-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:12:9-21:20
+21            android:name="com.example.ExponentialsApp.Main"
+21-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:13:17-64
+22            android:label="@string/app_name"
+22-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:14:17-49
+23            android:theme="@style/Theme.MyApplication.NoActionBar" >
+23-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:15:17-71
+24            <intent-filter>
+24-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:16:13-20:29
+25                <action android:name="android.intent.action.MAIN" />
+25-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:17:17-68
+25-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:17:25-66
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:19:17-76
+27-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\Exponentials App\app\src\main\AndroidManifest.xml:19:27-74
+28            </intent-filter>
+29        </activity>
+30    </application>
+31
+32</manifest>

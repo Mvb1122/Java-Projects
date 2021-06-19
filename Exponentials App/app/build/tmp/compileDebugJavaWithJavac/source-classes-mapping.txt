@@ -1,0 +1,10 @@
+com/example/ExponentialsApp/FirstFragment.java
+ com.example.ExponentialsApp.FirstFragment
+ com.example.ExponentialsApp.FirstFragment$1
+com/example/ExponentialsApp/Main.java
+ com.example.ExponentialsApp.Main
+com/example/ExponentialsApp/SecondFragment.java
+ com.example.ExponentialsApp.SecondFragment
+ com.example.ExponentialsApp.SecondFragment$1
+com/example/ExponentialsApp/BuildConfig.java
+ com.example.ExponentialsApp.BuildConfig
