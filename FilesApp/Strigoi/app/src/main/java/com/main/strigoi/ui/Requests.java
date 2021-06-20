@@ -41,9 +41,7 @@ public class Requests implements Runnable {
                 System.out.println("Request completed.");
             } catch (IOException e) {
                 e.printStackTrace();
-                // TODO: Replace error message.
-                this.response = "REQUEST FAILED!!!";
-                System.out.println("Request failed :(");
+                this.response = e.toString();
             }
         } else if (this.type.equals("POST")) {
             try {
@@ -52,9 +50,7 @@ public class Requests implements Runnable {
                 System.out.println("Posting Posted.");
             } catch (IOException e) {
                 e.printStackTrace();
-                // TODO: Replace error message.
-                this.response = "POST FAILED!!!";
-                System.out.println("Request failed :(");
+                this.response = e.toString();
             }
         }
     }

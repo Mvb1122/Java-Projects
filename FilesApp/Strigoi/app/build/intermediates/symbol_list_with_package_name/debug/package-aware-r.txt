@@ -1801,6 +1801,7 @@ id animateToEnd
 id animateToStart
 id asConfigured
 id async
+id authorName
 id auto
 id autoComplete
 id autoCompleteToEnd
@@ -1849,6 +1850,7 @@ id custom
 id customPanel
 id cut
 id dashboardFragment
+id dateCreated
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -2067,6 +2069,8 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id seriesImage
+id seriesName
 id shortcut
 id showCustom
 id showHome
@@ -2261,6 +2265,7 @@ layout fragment_dashboard
 layout fragment_home
 layout fragment_home_sup
 layout fragment_notifications
+layout fragment_series_view
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

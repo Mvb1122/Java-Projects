@@ -24,6 +24,10 @@
         "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\dashboard_fragment_sup.xml"
     },
     {
+        "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_series_view.xml",
+        "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\fragment_series_view.xml"
+    },
+    {
         "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\edit_fragment.xml",
         "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\edit_fragment.xml"
     },

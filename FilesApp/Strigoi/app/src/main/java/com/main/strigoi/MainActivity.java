@@ -29,6 +29,7 @@ import com.main.strigoi.ui.Requests;
 import com.main.strigoi.ui.dashboard.DashboardFragmentSup;
 import com.main.strigoi.ui.edit.EditingFragment;
 import com.main.strigoi.ui.home.HomeFragmentTwo;
+import com.main.strigoi.ui.series.seriesInfo;
 import com.main.strigoi.ui.userFragment.userFragment;
 
 import org.json.JSONException;
@@ -144,6 +145,14 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.contentFragment, fragment);
         transaction.commit();
+
+        // TODO: Remove the following few lines when I'm done testing fragment_series_view.
+        Fragment fragment3 = new seriesInfo(1);
+
+        FragmentManager fm3 = getSupportFragmentManager();
+        FragmentTransaction transaction3 = fm3.beginTransaction();
+        transaction3.replace(R.id.contentFragment, fragment3);
+        transaction3.commit();
         
         // Setup UI on visible: (Dashboard Fragment)
         editFragmentActive = false;
