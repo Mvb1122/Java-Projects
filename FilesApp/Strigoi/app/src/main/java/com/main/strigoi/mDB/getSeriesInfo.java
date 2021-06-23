@@ -13,11 +13,11 @@ public class getSeriesInfo implements Runnable {
 
     private final int strigoiNum;
     public final String url;
+    public String imageURL;
     private int _creatorId;
     public String seriesName;
     public String creationDate;
     public String creatorName;
-    private String imageURL;
 
     /**
      * @param StrigoiNum The number of the Strigoi you want the information of.

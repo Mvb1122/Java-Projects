@@ -29,7 +29,7 @@ import com.main.strigoi.ui.Requests;
 import com.main.strigoi.ui.dashboard.DashboardFragmentSup;
 import com.main.strigoi.ui.edit.EditingFragment;
 import com.main.strigoi.ui.home.HomeFragmentTwo;
-import com.main.strigoi.ui.series.seriesInfo;
+import com.main.strigoi.ui.series.seriesViewer;
 import com.main.strigoi.ui.userFragment.userFragment;
 
 import org.json.JSONException;
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public int spiritNumInt;
     public int strigoiNumInt;
     private boolean getEditText;
+    private Fragment seriesViewerFragment;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -68,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         get1x1 = true;
+
+        seriesViewerFragment = new seriesViewer();
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -147,13 +150,32 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
 
         // TODO: Remove the following few lines when I'm done testing fragment_series_view.
-        Fragment fragment3 = new seriesInfo(1);
+        Fragment fragment3 = seriesViewerFragment;
 
         FragmentManager fm3 = getSupportFragmentManager();
         FragmentTransaction transaction3 = fm3.beginTransaction();
         transaction3.replace(R.id.contentFragment, fragment3);
         transaction3.commit();
-        
+
+        Thread setOnVisible = new Thread(() -> {
+            if (userFragmentActive) {
+                Fragment fragment4 = seriesViewerFragment;
+
+                FragmentManager fm4 = getSupportFragmentManager();
+                FragmentTransaction transaction4 = fm4.beginTransaction();
+                transaction4.replace(R.id.contentFragment, fragment4);
+                transaction4.commit();
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        setOnVisible.start();
+        // TODO: Stop removing here.
+
         // Setup UI on visible: (Dashboard Fragment)
         editFragmentActive = false;
         Thread setDashboardFragment = new Thread(() -> {
@@ -398,25 +420,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void goToUserFragment(View view) {
         if (userFragmentActive) {
             userFragmentActive = false;
 
             Button editUserButton = findViewById(R.id.editUserButton);
             editUserButton.setVisibility(View.VISIBLE);
-            Fragment fragment = new HomeFragmentTwo();
 
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
-            transaction.replace(R.id.contentFragment, fragment);
+            transaction.replace(R.id.contentFragment, seriesViewerFragment);
             transaction.commit();
         } else {
             userFragmentActive = true;
 
             Button editUserButton = findViewById(R.id.editUserButton);
             editUserButton.setVisibility(View.INVISIBLE);
-            Fragment fragment = new userFragment();
 
+            Fragment fragment = new userFragment();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
             transaction.replace(R.id.contentFragment, fragment);

@@ -36,12 +36,12 @@
         "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_dashboard_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_dashboard.xml.flat",
         "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_notifications_black_24dp.png.flat",

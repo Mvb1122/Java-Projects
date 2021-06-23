@@ -1,4 +1,4 @@
-#Sat Jun 19 21:56:38 MDT 2021
+#Sun Jun 20 00:03:08 MDT 2021
 base.0=C\:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

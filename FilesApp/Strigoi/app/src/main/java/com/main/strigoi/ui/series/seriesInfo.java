@@ -27,12 +27,16 @@ public class seriesInfo extends Fragment {
     private FragmentSeriesViewBinding binding;
     private Activity activity;
     private int strigoiNum;
+    private Bitmap image;
+    private getSeriesInfo getInfo;
+    private static boolean refresh;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public seriesInfo(int strigoiNum) {
         this.strigoiNum = strigoiNum;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         activity = getActivity();
 
@@ -46,23 +50,44 @@ public class seriesInfo extends Fragment {
         TextView creationDate = binding.dateCreated;
         ImageView seriesImage = binding.seriesImage;
 
-        Thread setSeriesInfo = new Thread(new Runnable() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void run() {
-                getSeriesInfo getInfo = new getSeriesInfo(strigoiNum);
-                getInfo.run();
+        Thread setSeriesInfo = new Thread(() -> {
+            getInfo = new getSeriesInfo(strigoiNum);
+            getInfo.run();
+            try {
+                URL url = new URL(getInfo.imageURL);
+                image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                activity.runOnUiThread(() -> {
+                    seriesImage.setImageBitmap(image);
+                    seriesName.setText(getInfo.seriesName);
+                    authorName.setText(getInfo.creatorName);
+                    creationDate.setText(getInfo.creationDate);
+                });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            // Reset View once every so often.
+            while (true) {
+                if (refresh) {
+                    if (binding != null) {
+                        activity.runOnUiThread(() -> {
+                            seriesImage.setImageBitmap(image);
+                            seriesName.setText(getInfo.seriesName);
+                            authorName.setText(getInfo.creatorName);
+                            creationDate.setText(getInfo.creationDate);
+                        });
+                    }
+                }
+
                 try {
-                    // TODO: Adjust seriesInfo.json schema to hold a URL for series icon.
-                    URL url = new URL("https://ihaveawebsite.tk/favicon.ico");
-                    Bitmap image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                    activity.runOnUiThread(() -> {
-                        seriesImage.setImageBitmap(image);
-                        seriesName.setText(getInfo.seriesName);
-                        authorName.setText(getInfo.creatorName);
-                        creationDate.setText(getInfo.creationDate);
-                    });
-                } catch (IOException e) {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
@@ -77,5 +102,9 @@ public class seriesInfo extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public static void refreshAll() {
+        boolean refresh = true;
     }
 }

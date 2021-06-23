@@ -8,24 +8,24 @@
 
     <ImageView
         android:id="@+id/seriesImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="256px"
+        android:layout_height="256px"
+        android:contentDescription="Series Icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher" />
+        app:srcCompat="@android:drawable/btn_dialog" />
 
     <TextView
         android:id="@+id/seriesName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:text="Series Name"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/authorName"
         app:layout_constraintStart_toEndOf="@+id/seriesImage"
         app:layout_constraintTop_toTopOf="@+id/seriesImage" />
 
@@ -42,10 +42,9 @@
         android:id="@+id/dateCreated"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:text="Date Created"
-        app:layout_constraintBottom_toBottomOf="@+id/authorName"
-        app:layout_constraintStart_toEndOf="@+id/authorName"
-        app:layout_constraintTop_toTopOf="@+id/seriesName" />
+        app:layout_constraintBottom_toTopOf="@+id/authorName"
+        app:layout_constraintEnd_toEndOf="@+id/authorName"
+        app:layout_constraintStart_toStartOf="@+id/authorName"
+        app:layout_constraintTop_toBottomOf="@+id/seriesName" />
 </androidx.constraintlayout.widget.ConstraintLayout>
