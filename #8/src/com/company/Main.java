@@ -27,7 +27,7 @@ public class Main {
         // Unary -
             // In java, unary - negates the number it's attached to, like this:
         int number = 3;
-        System.out.println(-number); // Prints -1, -number also has the value of -1.
+        System.out.println(-number); // Prints -3, -number also has the value of -3.
 
         System.out.println("\nPost and Pre Increment/Decrement: ");
         // Post and pre increment/decrement
