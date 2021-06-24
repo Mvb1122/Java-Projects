@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("\nGroups: ");
         // Groups, they let you group statements. In JS, you could replicate this with an if (true) {code-here} statement.
-            // They don't do anything different from running them outside of a group.
-            // Although they do have block-scope, so be aware of that.
+        // They don't do anything different from running them outside of a group.
+        // Although they do have block-scope, so be aware of that.
         {
             System.out.println("This is in a group.");
         }
@@ -20,30 +20,31 @@ public class Main {
             System.out.println(whatIsThisAnInstanceOf + " is an instance of the String class.");
         } else {
             // The getClass() method returns the class that the object it's used on is an instance of.
-            System.out.println(whatIsThisAnInstanceOf + " is an instance of the " + whatIsThisAnInstanceOf.getClass());
+            System.out.println("\"" + whatIsThisAnInstanceOf + "\" is an instance of the " + whatIsThisAnInstanceOf.getClass());
         }
 
         System.out.println("\nUnary minus: ");
         // Unary -
-            // In java, unary - negates the number it's attached to, like this:
+        // In java, unary - negates the number it's attached to, like this:
         int number = 3;
         System.out.println(-number); // Prints -3, -number also has the value of -3.
+        // (It doesn't store the value, like in the increment/decrement operators.)
 
         System.out.println("\nPost and Pre Increment/Decrement: ");
         // Post and pre increment/decrement
         {
             // In java, we have post and pre decrement:
-                number++; // returns the value of number, then increases the value of number
-                ++number; // increases the value of the number, then returns it.
+            number++; // returns the value of number, then increases the value of number
+            ++number; // increases the value of the number, then returns it.
             // You might be wondering, what's the difference?
-                // System.out.println(number++); prints 3
-                // System.out.println(++number); prints 4 (Without the previous statement.)
+            // System.out.println(number++); prints 3
+            // System.out.println(++number); prints 4 (Without the previous statement.)
             // So in theory, we can do a calculation like this:
             {
                 int a = 2;
                 int v = ++a + ++a * ++a; // v holds the value 23.
                 //       3  +  4  *  5 = 23
-                System.out.println(v);
+                System.out.println("v has a value of " + v);
             }
 
             // Whereas, using post-increment:
@@ -51,16 +52,19 @@ public class Main {
                 int a = 2;
                 int v = a++ + a++ * a++; // v holds the value 14.
                 //       2  + 3   * 4  = 14
-                System.out.println(v);
+                System.out.println("v has a value of " + v);
             }
 
             // Here's something cool you can do:
             {
-                int[] integerArray = new int[]{1, 0, 0};
+                int[] integerArray = new int[]{1, 0, 3};
                 int i = 1;
                 integerArray[i++] = integerArray[i] + 1;
-                // Stores the value of (index 3 + 1) in index 2
-                System.out.println(Arrays.toString(integerArray));
+                // Stores the value of (the value of index 3 + 1) in index 2
+                System.out.println(Arrays.toString(integerArray)); // Prints [1, 4, 3]
+                // Value of index 3: 3
+                // 3 + 1 = 4
+                // integerArray[2] is set to 4
             }
         }
 
@@ -80,7 +84,8 @@ public class Main {
                     // in the conditional.
                     System.out.println("i has a value of " + i);
                 }
-                System.out.println("i has a value of " + i);
+
+                System.out.println("i has a value of " + i); // Prints 3.
 
             }
 
@@ -92,10 +97,9 @@ public class Main {
 
                 // if (++i == 3 || ++i == 4) {}
                 // If the above code were to be run, the resulting value of i would be 2.
-                if (++i == 3 | ++i == 4) {
-                }
+                if (++i == 3 | ++i == 4) {}
                 // The resulting value of i is 3.
-                System.out.println("i has a value of " + i);
+                System.out.println("i has a value of " + i); // Prints 3
             }
 
             {
@@ -106,15 +110,16 @@ public class Main {
                 // if (++i == 3 || ++i == 4) {}
                 // If this code were to run, the resultant value of i would be 3.
 
-                System.out.println(i);
                 if (i++ == 3 ^ ++i == 5) {
                     // This code won't run, since both of its operators are true.
                 }
                 // HOWEVER, since both of the operators were evaluated, i holds the value of 5.
+
+                System.out.println("i has a value of " + i); // Prints 5
             }
         }
 
-        System.out.println("\nBitwise Operators: (Nothing's printed in this section)");
+        System.out.println("\nBitwise Operators: ");
         // Bitwise operators
         {
             // They directly manipulate the bits that make up a number.
@@ -124,6 +129,7 @@ public class Main {
                 // Changes 1 to 0 and 0 to 1
                 byte b = 12; // b holds the value of 0001100
                 byte c = (byte) ~b; // c now holds the value of -13.
+                System.out.println("c has a value of " + c);
                 // This is because b inverted is 1110011, which is read as -13 by java.
                 // The actual value of c is 1111111111110011, since that tells java to read it as -13.
 
@@ -135,6 +141,7 @@ public class Main {
                 byte a = 10; // 00001010
                 byte b = 7; // 00000111
                 byte c = (byte) (a & b); // 00000111, which is 2 in decimal.
+                System.out.println("c has a value of " + c);
             }
             // Bitwise OR (|)
             {
@@ -142,6 +149,7 @@ public class Main {
                 byte a = 10; // 00001010
                 byte b = 7; // 00000111
                 byte c = (byte) (a | b); // 00001111 or 15 in decimal.
+                System.out.println("c has a value of " + c);
             }
 
             // Bitwise XOR (^)
@@ -150,11 +158,12 @@ public class Main {
                 byte a = 10; // 00001010
                 byte b = 7; // 00000111
                 byte c = (byte) (a ^ b); // 00001101 or 13 in decimal.
+                System.out.println("c has a value of " + c);
             }
 
             // For the bitwise shift operations, if the number of bytes to shift exceeds the number of bits specified by
-                // its class, it's discarded.
-                // For the byte class, it has 8 functional bits.
+            // its class, it's discarded.
+            // For the byte class, it has 8 functional bits.
 
             // Bitwise left shift (<<)
             {
@@ -163,6 +172,7 @@ public class Main {
                 byte a = 10; // 00001010
                 byte b = 1; // 00000001
                 byte c = (byte) (a << b); // 00010100, which is 20 in decimal.
+                System.out.println("c has a value of " + c);
             }
 
             // Bitwise right shift (>>) (Signed)
@@ -173,15 +183,17 @@ public class Main {
                     byte a = 10; // 00001010
                     byte b = 1; // 00000001
                     byte c = (byte) (a >> b); // 00000101, which is 5 in decimal.
+                    System.out.println("c has a value of " + c);
                 }
 
                 // If the first number is negative, 1 is shifted into overlapped bits, whereas positive numbers get 0 shifted in.
                 // Don't ask me what the numerical equivalent to this is. I have no idea. Go ask Wikipedia.
-                    // Do I think that there will ever come a use for a Negative Bitwise left shift? No.
+                // Do I think that there will ever come a use for a Negative Bitwise left shift? No.
                 {
                     byte a = -10; // 11110110
                     byte b = 1; // 00000001
                     byte c = (byte) (a >> b); // 11111011, which is -5 in decimal.
+                    System.out.println("c has a value of " + c);
                 }
             }
 
@@ -193,11 +205,14 @@ public class Main {
                 byte a = -10; // 11110110
                 byte b = 1; // 00000001
                 byte c = (byte) (a >>> b); // 01111011, which is 123 in decimal.
+
+                // However, in Java, which uses 16 bit 2-signed complement numbers, it's read as -5.
+                System.out.println("c has a value of " + c);
             }
 
         }
 
-        System.out.println("\nAssignment Operators: (Nothing's printed in this section)");
+        System.out.println("\nAssignment Operators: ");
         // Assignment Operators
         {
             // Assigns an operator to itself operated by a second operator.
@@ -209,7 +224,8 @@ public class Main {
                 i *= 2; // i = 8
                 i -= 2; // i = 6
                 i /= 2; // i = 2
-                i %= 2; // i = 0
+                i %= 2; // i = 1
+                System.out.println("i has a value of " + i); // Prints 1
             }
 
             // Bitwise operators
@@ -217,7 +233,8 @@ public class Main {
                 byte i = 1; // 00000001
                 i &= 3; // 00000001 & 00000011 -> 00000001 which is decimal 1.
                 i |= 3; // 00000001 | 00000011 -> 00000011 which is decimal 3.
-                i ^= 5; // 00000011 | 00000101 -> 00000100 which is decimal 4.
+                i ^= 5; // 00000011 ^ 00000101 -> 00000110 which is decimal 6.
+                System.out.println("i has a value of " + i); // Prints 6
             }
 
             // Shift operators
@@ -226,21 +243,24 @@ public class Main {
                 i <<= 1; // 11111101 << 1 -> 11111011 which is decimal -5.
                 i >>= 1; // 11111110 >> 1 -> 11111101 which is decimal -3.
                 i >>>= 1; // 11111101 >>> 1 -> 01111110 which is decimal 126.
+
+                // However, java reads this as -2, since we did a signed shift operation on a negative value, so...
+                System.out.println("i has a value of " + i); // Prints -2
             }
 
             // Quiz problem: (Solve it if ya want.)
             byte a = 1;
             byte b = 1;
-             int c = (++a << b) + 5;
-            // System.out.println(c); // Prints the square root of the square root of 6561.
+            int c = (++a << b) + 5;
+            System.out.println("The solution to the quiz problem is " + c); // Prints the square root of the square root of 6561.
         }
 
         System.out.println("\nLambda Expressions: ");
         // Lambda Expressions
         {
             // Lambda expressions are used to define anonymous functions and are effectively
-                // the same as arrow functions in javascript. You'll know when to use it
-                // when your IDE tells you that you can, although you might remember its usage.
+            // the same as arrow functions in javascript. You'll know when to use it
+            // when your IDE tells you that you can, although you might remember its usage.
             // They look like this: (They cannot be used as statements-- THEY MUST BE USED AS PARAMETERS FOR OTHER FUNCTIONS.
             /*
             () -> {
