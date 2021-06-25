@@ -66,4 +66,6 @@ public class Cat extends Being {
         }
 
     }
+    
+    // Alright you can go to Main.java now.
 }
