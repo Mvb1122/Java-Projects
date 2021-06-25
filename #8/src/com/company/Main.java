@@ -275,5 +275,225 @@ public class Main {
             thread.start();
             System.out.println("Hello from the main thread.");
         }
+
+        // Named statements:
+        System.out.println("\nNamed statements: ");
+        {
+            // You can put a name and then a colon before a statement (group or otherwise) to name it.
+            namedStatement:
+            {
+                // This statement is named "namedStatement"
+            }
+            // Example, a named loop:
+            namedLoop:
+            for (int i = 0; i < 10; i++) {
+                print:
+                System.out.println("This is in a loop, and this run statement is named print.");
+                break namedLoop;
+            }
+        }
+
+        // Final Variables:
+        {
+            // Final variables tell Java that a variable's value is not allowed to change.
+            final String finalString = "This string's value can't be changed.";
+            final int funnyNumber = 69; // This value will never change.
+        }
+
+        // Empty Statements:
+        System.out.println("\nEmpty Statements: ");
+        {
+            ;
+            // That is an empty statement. It does nothing. Just press enter instead of doing that.
+
+            if (whatIsThisAnInstanceOf.equals("42069"));
+            // That's also another empty statement.
+
+            // One useful use is something like this:
+            int a = 0;
+            for (int i = 0; i < 10; i++, a++);
+            System.out.println(a);
+
+            /*
+                What does the above code represent?
+                Well, I'm increasing the value of a by the value of i, but not by more than 10.
+             */
+        }
+
+        // Switch Statements:
+        System.out.println("\nSwitch Statements: ");
+        {
+            int randomNumber = (int) Math.round(Math.random() * 5); // Generate a random number between 0 and 5.
+
+            switch (randomNumber) {
+                case 1: // Case statements can direct to the same piece of code, you just put the redirected ones above the
+                    // used one and leave the statement empty.
+                case 2: System.out.println("The number is 1 or 2."); break;
+                case 3: for (int i = randomNumber; randomNumber < randomNumber * 2; i++) {
+                    System.out.println("You can also use statements within cases.");
+                    break;
+                } break;
+                case 4: {
+                    System.out.println("Normally, people use groups as the statement within a case, like this.");
+                    break;
+                }
+                default: System.out.println("The random number was " + randomNumber); break;
+            }
+
+        }
+
+        // Other kinds of loops:
+        System.out.println("\nOther Loops: ");
+        {
+            // While:
+            // This loop runs the same statement over-and-over until the conditional evaluates to false.
+            System.out.println("\n\tWhile Loop: ");
+            {
+                int i = 0;
+                while (i < 2) {
+                    i++;
+                    System.out.println("\t\tThe value of i is " + i);
+                }
+            }
+
+            // Do While:
+                // This loop reruns the same code until the conditional is false, although it always runs at least once.
+            System.out.println("\n\tDo While Loop: ");
+            {
+                int i = 0;
+                do {
+                    System.out.println("\t\tThe value of i is " + ++i);
+                } while (i != 3);
+            }
+
+            // foreach:
+                // This loop reruns the same code on each element of an array.
+                // However, one limit of it is that you do not know the index of the element in question,
+                // Well, what does that mean? If you have a loop that you want to exclude the last element from,
+                // then you can't do it.
+            System.out.println("\n\tforeach Loop: ");
+            {
+                // Example, add all of the numbers in a list:
+                int[] i = new int[] {1, 2, 3};
+                int countedNumber = 0;
+                for(int numberInLoop : i) countedNumber += numberInLoop;
+                System.out.println("\t\tThe total value of " + Arrays.toString(i) + " is " + countedNumber);
+            }
+
+            // continue statement:
+                // Skips the rest of the currently running loop and starts the next one.
+            System.out.println("\n\tcontinue Statement:");
+            {
+                int a = 3;
+                for (int i = 0; i <= a; i++) {
+                    if (i != a) {System.out.println("\t\tThe value of i is not equal to a."); continue;} else {System.out.println("\t\ti is equal to a."); break;}
+                }
+            }
+
+        }
+
+        // Synchronised Statement:
+        System.out.println("\nSynchronised: ");
+        {
+            // Since Java was meant to be multithreaded, you can use synchronised statements to ensure that
+            // you don't corrupt anything.
+
+            // Here's two examples, one with Synchronised and one without it.
+            with:
+            {
+                System.out.println("\n\tWith Synchronised: ");
+                int[] i = new int[]{0}; // Declare i as a single element array, since Synchronised needs an object or array.
+                for (int b = 0; b < 10; b++) {
+                    // Create 10 new threads, each of which immediately tries to increase i[0] by one.
+                    int finalB = b;
+                    Thread c = new Thread(() -> {
+                        synchronized (i) {
+                            i[0]++;
+                        }
+                        System.out.println("\t\tThread #" + finalB + " finished. The value of i is " + i[0]);
+                    });
+                    c.start();
+                }
+
+                // You can see, that due to the staggering with starting threads, each of the threads prints a different total,
+                // However, the eventual total is correct, which is all that really matters.
+            }
+
+            // Wait for 1 second for the other threads to complete.
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            // Now, without:
+            without:
+            {
+                System.out.println("\n\tWithout Synchronised: ");
+                int[] i = new int[]{0}; // Declare i as a single element array, since Synchronised needs an object or array.
+                for (int b = 0; b < 10; b++) {
+                    // Create 10 new threads, each of which immediately tries to increase i[0] by one.
+                    int finalB = b;
+                    Thread c = new Thread(() -> {
+                        i[0]++;
+                        System.out.println("\t\tThread #" + finalB + " finished. The value of i is " + i[0]);
+                    });
+                    c.start();
+
+                    // You can see that, due to the thread's staggered start, the value of i[0] is not always 10 once the
+                    // operation completes, although you can also run into the problem that i[0] or the whole i array corrupts,
+                    // Due to it being constantly read and written.
+                }
+            }
+        }
+
+        // Wait for 1 second for the other threads to complete.
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        // Try {} catch () {}:
+        System.out.println("\n\tTry/Catch Statements:");
+        {
+            // Try-Catch is a way of trying to do something, and catching any error it may throw,
+            // For example, here's a way of looping through an array, and breaking the loop when
+            // a certain element or index is reached.
+            String[] stringArray = new String[] {"Hello", "I am", "a string element.", "but I'm not printed."};
+            int i = 0;
+            while (true) {
+                try {
+                    if (i == 3) {
+                        break;
+                    }
+                    System.out.println("\t\t" + stringArray[i]);
+                    i++;
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    // When you try to get an element from an index that doesn't exist throws
+                    // an ArrayIndexOutOfBoundsException. You catch it by declaring it.
+                    System.out.println("\t\tThere's no element for index number " + i + "!");
+                    break;
+                } finally {
+                    // Finally actions are run after the try/catch parts are run, even if an error
+                    // is thrown.
+                    System.out.println("\t\t\tLooped.");
+                }
+            }
+        }
+
+        // Assert statements
+        {
+            // They basically do nothing if you're not a professional Java dev, (working for Oracle), so don't worry about it.
+            System.out.println("\n\tAssertions:");
+            int i = (int) Math.floor(Math.random() * 5);
+            assert i == 3;
+            System.out.println("\t\ti = " + i + " when it should be three. I'm complaining.");
+        }
+
+
+
     }
+
 }
