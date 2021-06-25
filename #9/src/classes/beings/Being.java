@@ -34,4 +34,6 @@ public class Being {
     public void setName(String name) {
         this.name = name;
     }
+    
+    // You can go to Person.java now.
 }
