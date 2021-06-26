@@ -18,6 +18,8 @@ Number 7 covers [arrays and arraylists.](https://www.codecademy.com/learn/learn-
 
 Number 8 covers non-critical content, like groups.
 
+Number 9 covers import statements and covers classes in deeper detail.
+
 Clicker Game is a game I made in JSwing using all of the previous information.
 
 Exponentials App is a brief "calculator" that I made for a friend, using the previous information, and some stuff about Android.
