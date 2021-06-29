@@ -6,6 +6,6 @@ import com.main.strigoi.R;
 
 public class HomeFragmentTwo extends Fragment {
     public HomeFragmentTwo() {
-        super(R.layout.fragment_home_sup);
+        super(R.layout.fragment_home);
     }
 }

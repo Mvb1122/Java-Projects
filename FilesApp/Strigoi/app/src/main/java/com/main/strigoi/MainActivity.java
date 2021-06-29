@@ -17,10 +17,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.main.strigoi.databinding.ActivityMainBinding;
 import com.main.strigoi.mDB.mDBRequest;
 import com.main.strigoi.mDB.pushToDB;
@@ -28,7 +26,6 @@ import com.main.strigoi.ui.Reader;
 import com.main.strigoi.ui.Requests;
 import com.main.strigoi.ui.dashboard.DashboardFragmentSup;
 import com.main.strigoi.ui.edit.EditingFragment;
-import com.main.strigoi.ui.home.HomeFragmentTwo;
 import com.main.strigoi.ui.series.seriesViewer;
 import com.main.strigoi.ui.userFragment.userFragment;
 
@@ -43,6 +40,8 @@ import static java.lang.Integer.parseInt;
 public class MainActivity extends AppCompatActivity {
     public static boolean get1x1;
     public static String content;
+    public static FragmentManager supportFragmentManager;
+    private static FragmentManager fragmentManager;
     // private static Reader reader;
     private ActivityMainBinding binding;
     private static Context context;
@@ -63,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         // Only put code to run on app startup here.
         userFragmentActive = false;
         super.onCreate(savedInstanceState);
+        fragmentManager = getSupportFragmentManager();
 
         MainActivity.context = getApplicationContext();
 
@@ -70,8 +70,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         get1x1 = true;
 
-        seriesViewerFragment = new seriesViewer();
+        supportFragmentManager = getSupportFragmentManager();
 
+        /*
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -80,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(binding.navView, navController);
+        */
+
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         Thread strigoiAndSpiritNumLoop = new Thread(() -> {
@@ -142,15 +147,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Setup UI on startup: (Home Fragment)
-        Fragment fragment = new HomeFragmentTwo();
+        Fragment fragment = new seriesViewer(1);
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.contentFragment, fragment);
         transaction.commit();
 
-        // TODO: Remove the following few lines when I'm done testing fragment_series_view.
-        Fragment fragment3 = seriesViewerFragment;
+        /*
+        Fragment fragment3 = new seriesViewer(1);
 
         FragmentManager fm3 = getSupportFragmentManager();
         FragmentTransaction transaction3 = fm3.beginTransaction();
@@ -159,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
 
         Thread setOnVisible = new Thread(() -> {
             if (userFragmentActive) {
-                Fragment fragment4 = seriesViewerFragment;
+                Fragment fragment4 = new seriesViewer(1);
 
                 FragmentManager fm4 = getSupportFragmentManager();
                 FragmentTransaction transaction4 = fm4.beginTransaction();
@@ -174,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         setOnVisible.start();
-        // TODO: Stop removing here.
+        */
 
         // Setup UI on visible: (Dashboard Fragment)
         editFragmentActive = false;
@@ -231,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
             } while (true);
         });
         setDashboardFragment.start();
+
         
     }
 
@@ -423,31 +429,54 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void goToUserFragment(View view) {
         if (userFragmentActive) {
+            // Code to run if the userFragment is active:
+                // Set the fragment to inactive.
             userFragmentActive = false;
 
+                // Re-enable un-re-written UI.
+            View navView = findViewById(R.id.nav_host_fragment_activity_main);
+            navView.setVisibility(View.VISIBLE);
+
+                // Show the button to go to the user fragment.
             Button editUserButton = findViewById(R.id.editUserButton);
             editUserButton.setVisibility(View.VISIBLE);
 
+                // Commit the transfer back to the un-re-written UI.
+            Fragment homeFrag = new seriesViewer(1);
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
-            transaction.replace(R.id.contentFragment, seriesViewerFragment);
-            transaction.commit();
+            View contentFragment = findViewById(R.id.contentFragment);
+            if (contentFragment != null) {
+                transaction.replace(R.id.contentFragment, homeFrag);
+                transaction.commit();
+            }
         } else {
+            // If it isn't:
+                // Set the userFragment to be active.
             userFragmentActive = true;
+
+                // Set the Un-Re-Written UI to be gone, reduced to atoms.
+            View navView = findViewById(R.id.nav_host_fragment_activity_main);
+            navView.setVisibility(View.VISIBLE);
 
             Button editUserButton = findViewById(R.id.editUserButton);
             editUserButton.setVisibility(View.INVISIBLE);
 
+                // Commit the transfer to the re-written UI.
             Fragment fragment = new userFragment();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
-            transaction.replace(R.id.contentFragment, fragment);
-            transaction.commit();
+            View contentFragment = findViewById(R.id.nav_host_fragment_activity_main);
+            if (contentFragment != null) {
+                transaction.replace(R.id.contentFragment, fragment);
+                transaction.commit();
+            }
         }
 
         System.out.println("Is the User Fragment active: " + userFragmentActive);
     }
 
+    // TODO: Adapt this code to the UI Rewrite standard.
     public void goToEditFragment(View view) {
         System.out.println("Edit Button Clicked");
         editFragmentActive = true;
@@ -461,6 +490,7 @@ public class MainActivity extends AppCompatActivity {
         transaction2.commit();
     }
 
+    // TODO: Adapt this code to the UI Rewrite standard.
     public void goToDashboardFragment(View view) {
         System.out.println("Back button hit on the Edit Fragment");
 
@@ -474,7 +504,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void postFullToDB(View view) {
         EditText gottenText = findViewById(R.id.editSpiritText);
-        String[] textArray = gottenText.getText().toString().split("\n");
+        String[] textArray = gottenText.getText().toString().split("\n\n\n");
 
         System.out.println(Arrays.toString(textArray));
         if (strigoiNumInt != 0 && spiritNumInt != 0) {
@@ -486,5 +516,14 @@ public class MainActivity extends AppCompatActivity {
             Toast error = Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT);
             error.show();
         }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public static void setSeriesViewer() {
+        Fragment homeFrag = new seriesViewer(1);
+        FragmentManager fm = fragmentManager;
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.contentFragment, homeFrag);
+        transaction.commit();
     }
 }
