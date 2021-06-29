@@ -24,6 +24,6 @@ Clicker Game is a game I made in JSwing using all of the previous information.
 
 Exponentials App is a brief "calculator" that I made for a friend, using the previous information, and some stuff about Android.
 
-Files App is an app I am working on to store and retrieve a file from a remote server.
+Files App is an app I am working on to store and retrieve a file from on a remote server.
 
 Missile Guidance Script is exactly what it says-- A script for simulating a missile's movement in 3D space. (I'm still working on it.)
