@@ -1,3 +1,5 @@
+com/main/strigoi/ui/series/seriesCardViewer.java
+ com.main.strigoi.ui.series.seriesCardViewer
 com/main/strigoi/databinding/EditFragmentBinding.java
  com.main.strigoi.databinding.EditFragmentBinding
 com/main/strigoi/ui/series/seriesViewModel.java
@@ -19,10 +21,16 @@ com/main/strigoi/databinding/FragmentHomeBinding.java
  com.main.strigoi.databinding.FragmentHomeBinding
 com/main/strigoi/ui/edit/EditingFragment.java
  com.main.strigoi.ui.edit.EditingFragment
+com/main/strigoi/ui/series/seriesCreationFragment.java
+ com.main.strigoi.ui.series.seriesCreationFragment
 com/main/strigoi/ui/notifications/NotificationsViewModel.java
  com.main.strigoi.ui.notifications.NotificationsViewModel
+com/main/strigoi/mDB/createSeries.java
+ com.main.strigoi.mDB.createSeries
 com/main/strigoi/mDB/getSeriesInfo.java
  com.main.strigoi.mDB.getSeriesInfo
+com/main/strigoi/databinding/FragmentSeriesCreationBinding.java
+ com.main.strigoi.databinding.FragmentSeriesCreationBinding
 com/main/strigoi/ui/Requests.java
  com.main.strigoi.ui.Requests
 com/main/strigoi/ui/notifications/NotificationsFragment.java
@@ -45,6 +53,8 @@ com/main/strigoi/ui/dashboard/DashboardViewModel.java
  com.main.strigoi.ui.dashboard.DashboardViewModel
 com/main/strigoi/databinding/ActivityMainBinding.java
  com.main.strigoi.databinding.ActivityMainBinding
+com/main/strigoi/databinding/SeriesCardviewBinding.java
+ com.main.strigoi.databinding.SeriesCardviewBinding
 com/main/strigoi/databinding/UserFragmentBinding.java
  com.main.strigoi.databinding.UserFragmentBinding
 com/main/strigoi/mDB/pushToDB.java
@@ -55,5 +65,6 @@ com/main/strigoi/databinding/FragmentSeriesViewBinding.java
  com.main.strigoi.databinding.FragmentSeriesViewBinding
 com/main/strigoi/MainActivity.java
  com.main.strigoi.MainActivity
+ com.main.strigoi.MainActivity$1
 com/main/strigoi/ui/userFragment/userFragment.java
  com.main.strigoi.ui.userFragment.userFragment

@@ -24,6 +24,8 @@ public class DashboardFragment extends Fragment {
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        // FragmentTransaction fmt1 = MainActivity.supportFragmentManager.beginTransaction();
+        // fmt1.replace(R.id.dashboardFragment, new DashboardFragmentSup());
         /*
         final TextView textView = binding.textDashboard;
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {

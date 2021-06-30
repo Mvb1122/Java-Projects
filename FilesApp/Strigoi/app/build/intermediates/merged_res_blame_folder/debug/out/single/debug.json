@@ -132,6 +132,10 @@
         "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\layout_series_cardview.xml.flat",
+        "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\series_cardview.xml"
+    },
+    {
         "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
@@ -146,6 +150,10 @@
     {
         "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\layout_dashboard_fragment_sup.xml.flat",
         "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\dashboard_fragment_sup.xml"
+    },
+    {
+        "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_series_creation.xml.flat",
+        "source": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\src\\main\\res\\layout\\fragment_series_creation.xml"
     },
     {
         "merged": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",

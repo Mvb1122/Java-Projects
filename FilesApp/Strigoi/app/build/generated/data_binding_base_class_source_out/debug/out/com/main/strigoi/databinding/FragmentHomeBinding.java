@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.main.strigoi.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -24,6 +25,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final FrameLayout contentFragment;
 
   @NonNull
+  public final FloatingActionButton createSeriesButton;
+
+  @NonNull
   public final Button editUserButton;
 
   @NonNull
@@ -33,10 +37,12 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ConstraintLayout userLayout;
 
   private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
-      @NonNull FrameLayout contentFragment, @NonNull Button editUserButton,
-      @NonNull TextView userInfoText, @NonNull ConstraintLayout userLayout) {
+      @NonNull FrameLayout contentFragment, @NonNull FloatingActionButton createSeriesButton,
+      @NonNull Button editUserButton, @NonNull TextView userInfoText,
+      @NonNull ConstraintLayout userLayout) {
     this.rootView = rootView;
     this.contentFragment = contentFragment;
+    this.createSeriesButton = createSeriesButton;
     this.editUserButton = editUserButton;
     this.userInfoText = userInfoText;
     this.userLayout = userLayout;
@@ -75,6 +81,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.createSeriesButton;
+      FloatingActionButton createSeriesButton = rootView.findViewById(id);
+      if (createSeriesButton == null) {
+        break missingId;
+      }
+
       id = R.id.editUserButton;
       Button editUserButton = rootView.findViewById(id);
       if (editUserButton == null) {
@@ -89,8 +101,8 @@ public final class FragmentHomeBinding implements ViewBinding {
 
       ConstraintLayout userLayout = (ConstraintLayout) rootView;
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, contentFragment, editUserButton,
-          userInfoText, userLayout);
+      return new FragmentHomeBinding((ConstraintLayout) rootView, contentFragment,
+          createSeriesButton, editUserButton, userInfoText, userLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

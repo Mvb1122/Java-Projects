@@ -20,4 +20,8 @@
     <string name="loading">Loading...</string>
     <string name="submit">Submit</string>
     <string name="editSpiritTextDefaultHint">Write your story here.</string>
+    <string name="seriesTitleInputHint">Strigoi Name</string>
+    <string name="seriesTitleLabelText">Series Title</string>
+    <string name="seriesThumbnailURLHint">thumbnail URL</string>
+    <string name="seriesThumbnailURLLabelText">Thumbnail Image URL</string>
 </resources>

@@ -4,6 +4,7 @@ package com.main.strigoi;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,13 +20,19 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.main.strigoi.databinding.ActivityMainBinding;
+import com.main.strigoi.mDB.createSeries;
+import com.main.strigoi.mDB.getSeriesInfo;
 import com.main.strigoi.mDB.mDBRequest;
 import com.main.strigoi.mDB.pushToDB;
 import com.main.strigoi.ui.Reader;
 import com.main.strigoi.ui.Requests;
 import com.main.strigoi.ui.dashboard.DashboardFragmentSup;
 import com.main.strigoi.ui.edit.EditingFragment;
+import com.main.strigoi.ui.home.HomeFragment;
+import com.main.strigoi.ui.series.seriesCardViewer;
+import com.main.strigoi.ui.series.seriesCreationFragment;
 import com.main.strigoi.ui.series.seriesViewer;
 import com.main.strigoi.ui.userFragment.userFragment;
 
@@ -147,12 +154,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Setup UI on startup: (Home Fragment)
-        Fragment fragment = new seriesViewer(1);
+        // NOTE: To make code run on startup, put it in the HomeViewModel.java file.
+        // setSeriesViewer();
 
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
-        transaction.replace(R.id.contentFragment, fragment);
-        transaction.commit();
 
         /*
         Fragment fragment3 = new seriesViewer(1);
@@ -284,7 +288,6 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("\n\n\nStrigoiNum: " + finalStrigoiNum + "\nSpiritNum: " + finalSpiritNum + "\nPARSED RESPONSE:" + MainActivity.content + "\n\n\n");
             });
             TRFmDB.start();
-
         // Button goButton = findViewById(R.id.goButton);
         // goButton.setText("Spirit Retrieved.");
     }
@@ -390,6 +393,27 @@ public class MainActivity extends AppCompatActivity {
     }
     */
 
+    public void createNewSeries(View view) {
+        String seriesName = ((EditText) findViewById(R.id.seriesTitleInput)).getText().toString();
+        String seriesThumbURL = ((EditText) findViewById(R.id.seriesThumbNailURLInput)).getText().toString();
+        JSONObject userInfo = null;
+        Reader reader = new Reader();
+        try {
+            String inputString = reader.readFile("Registrar.json");
+            userInfo = new JSONObject(inputString);
+            createSeries series;
+            if (!(seriesThumbURL.length() < 4)) {
+                series = new createSeries(seriesName, userInfo.getInt("userId"), seriesThumbURL);
+            } else {
+                series = new createSeries(seriesName, userInfo.getInt("userId"));
+            }
+            Thread seriesPoster = new Thread(series);
+            seriesPoster.start();
+        } catch (IOException | JSONException e) {
+            System.out.println("ERROR: No user Information on Update button press.");
+        }
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void updateUsername(View view) {
 
@@ -441,15 +465,11 @@ public class MainActivity extends AppCompatActivity {
             Button editUserButton = findViewById(R.id.editUserButton);
             editUserButton.setVisibility(View.VISIBLE);
 
+            FloatingActionButton addSeriesButton = findViewById(R.id.createSeriesButton);
+            addSeriesButton.setVisibility(View.VISIBLE);
+
                 // Commit the transfer back to the un-re-written UI.
-            Fragment homeFrag = new seriesViewer(1);
-            FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-            View contentFragment = findViewById(R.id.contentFragment);
-            if (contentFragment != null) {
-                transaction.replace(R.id.contentFragment, homeFrag);
-                transaction.commit();
-            }
+            setSeriesViewer();
         } else {
             // If it isn't:
                 // Set the userFragment to be active.
@@ -461,6 +481,9 @@ public class MainActivity extends AppCompatActivity {
 
             Button editUserButton = findViewById(R.id.editUserButton);
             editUserButton.setVisibility(View.INVISIBLE);
+
+            FloatingActionButton addSeriesButton = findViewById(R.id.createSeriesButton);
+            addSeriesButton.setVisibility(View.INVISIBLE);
 
                 // Commit the transfer to the re-written UI.
             Fragment fragment = new userFragment();
@@ -502,26 +525,104 @@ public class MainActivity extends AppCompatActivity {
         transaction2.commit();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void postFullToDB(View view) {
         EditText gottenText = findViewById(R.id.editSpiritText);
         String[] textArray = gottenText.getText().toString().split("\n\n\n");
 
-        System.out.println(Arrays.toString(textArray));
-        if (strigoiNumInt != 0 && spiritNumInt != 0) {
-            pushToDB push = new pushToDB(strigoiNumInt, spiritNumInt, textArray);
-            Thread pusher = new Thread(push);
-            pusher.start();
-        } else {
-            CharSequence errorMessage = "You can't publish to Strigoi 0 and Spirit 0, it's empty for \"reasons.\"";
-            Toast error = Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT);
-            error.show();
-        }
+        Thread handler = new Thread(() -> {
+            // Get User ID for Authentication.
+            Reader reader = new Reader();
+            int uID = -1;
+            try {
+                String registrarFile = reader.readFile("Registrar.json");
+                JSONObject registrar = new JSONObject(registrarFile);
+                uID = registrar.getInt("userId");
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+            }
+
+            // Make sure that user is the author:
+            getSeriesInfo seriesInfo = new getSeriesInfo(strigoiNumInt);
+            seriesInfo.run();
+
+            if (uID == seriesInfo.creatorId) {
+                System.out.println(Arrays.toString(textArray));
+                if (strigoiNumInt != 0 && spiritNumInt != 0) {
+                    pushToDB push = new pushToDB(strigoiNumInt, spiritNumInt, textArray);
+                    Thread pusher = new Thread(push);
+                    pusher.start();
+                } else {
+                    CharSequence errorMessage = "You can't publish to Strigoi 0 and Spirit 0, it's empty for \"reasons.\"";
+                    Toast error = Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT);
+                    error.show();
+                }
+            } else {
+                // Create toast telling user that they're not authorized to post there.
+                Looper.prepare();
+                CharSequence errorMessage = "You're not allowed to publish to " + strigoiNumInt + ":" + spiritNumInt + " because you're not the author.";
+                Toast error = Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT);
+                error.show();
+            }
+
+        });
+        handler.start();
+
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public static void setSeriesViewer() {
-        Fragment homeFrag = new seriesViewer(1);
-        FragmentManager fm = fragmentManager;
+        FragmentTransaction fm2t = fragmentManager.beginTransaction();
+        fm2t.replace(R.id.contentFragment, new seriesCardViewer());
+        fm2t.commit();
+
+        Requests getNumberOfSeries = new Requests("https://ihaveawebsite.tk/seriesNumber.json", "GET");
+        Thread getter = new Thread(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void run() {
+                getNumberOfSeries.run();
+                try {
+                    JSONObject seriesNumber = new JSONObject(getNumberOfSeries.response);
+                    for (int i = 1; i < seriesNumber.getInt("number"); i++) {
+                        seriesViewer viewer = new seriesViewer(i);
+                        FragmentTransaction fm3t = fragmentManager.beginTransaction();
+                        fm3t.add(R.id.seriesViewerLinearLayout, viewer, "fragment_" + i);
+                        fm3t.commit();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        getter.start();
+    }
+
+    public void goToHomeFragment(View view) {
+        Button editUserButton = findViewById(R.id.editUserButton);
+        editUserButton.setVisibility(View.VISIBLE);
+
+        FloatingActionButton addSeriesButton = findViewById(R.id.createSeriesButton);
+        addSeriesButton.setVisibility(View.VISIBLE);
+
+        Fragment homeFrag = new HomeFragment();
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.contentFragment, homeFrag);
+        transaction.commit();
+    }
+
+
+    public void goToSeriesCreationFragment(View view) {
+        Button editUserButton = findViewById(R.id.editUserButton);
+        editUserButton.setVisibility(View.INVISIBLE);
+
+        FloatingActionButton addSeriesButton = findViewById(R.id.createSeriesButton);
+        addSeriesButton.setVisibility(View.INVISIBLE);
+
+        Fragment homeFrag = new seriesCreationFragment();
+        FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.contentFragment, homeFrag);
         transaction.commit();

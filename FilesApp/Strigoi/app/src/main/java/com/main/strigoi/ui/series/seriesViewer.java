@@ -47,10 +47,13 @@ public class seriesViewer extends Fragment {
         TextView seriesName = binding.seriesName;
         TextView authorName = binding.authorName;
         TextView creationDate = binding.dateCreated;
+        TextView strigoiNumText = binding.strigoiNumber;
+        strigoiNumText.setText("#" + strigoiNum);
         ImageView seriesImage = binding.seriesImage;
 
         Thread setSeriesInfo = new Thread(() -> {
             getInfo = new getSeriesInfo(strigoiNum);
+
             getInfo.run();
             try {
                 URL url = new URL(getInfo.imageURL);
@@ -65,6 +68,7 @@ public class seriesViewer extends Fragment {
                 e.printStackTrace();
             }
 
+            /*
             try {
                 Thread.sleep(10000);
             } catch (InterruptedException e) {
@@ -72,6 +76,7 @@ public class seriesViewer extends Fragment {
             }
 
             // Reset View once every so often.
+
             while (true) {
                 if (binding != null) {
                     activity.runOnUiThread(() -> {
@@ -88,6 +93,8 @@ public class seriesViewer extends Fragment {
                     e.printStackTrace();
                 }
             }
+
+             */
         });
         setSeriesInfo.start();
 

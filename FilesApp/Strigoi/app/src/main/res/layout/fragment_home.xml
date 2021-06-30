@@ -20,6 +20,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="OnClick" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/createSeriesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add"
+        android:onClick="goToSeriesCreationFragment"
+        app:layout_constraintBottom_toBottomOf="@+id/editUserButton"
+        app:layout_constraintEnd_toStartOf="@+id/editUserButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editUserButton" />
+
     <FrameLayout
         android:id="@+id/contentFragment"
         android:layout_width="match_parent"

@@ -1737,6 +1737,7 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id Submit
 id TOP_END
 id TOP_START
 id accelerate
@@ -1795,6 +1796,8 @@ id activity_chooser_view_content
 id add
 id alertTitle
 id aligned
+id alignment_layout
+id aliignment_layout_2
 id all
 id always
 id animateToEnd
@@ -1806,6 +1809,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id backButtonSeriesCreation
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1846,6 +1850,7 @@ id contiguous
 id coordinator
 id cos
 id counterclockwise
+id createSeriesButton
 id custom
 id customPanel
 id cut
@@ -2011,6 +2016,7 @@ id navigation_home
 id navigation_notifications
 id never
 id noScroll
+id nonNullObject
 id none
 id normal
 id notification_background
@@ -2069,8 +2075,13 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id seriesCreationReminder
 id seriesImage
 id seriesName
+id seriesThumbNailURLInput
+id seriesTitleInput
+id seriesTitleLabel
+id seriesViewerLinearLayout
 id shortcut
 id showCustom
 id showHome
@@ -2106,6 +2117,7 @@ id stop
 id stretch
 id strigoiNumBox
 id strigoiNumBoxInput
+id strigoiNumber
 id submenuarrow
 id submitButton
 id submit_area
@@ -2144,6 +2156,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id thumbnailURLInput
 id time
 id title
 id titleDividerNoCustom
@@ -2265,6 +2278,7 @@ layout fragment_dashboard
 layout fragment_home
 layout fragment_home_sup
 layout fragment_notifications
+layout fragment_series_creation
 layout fragment_series_view
 layout material_chip_input_combo
 layout material_clock_display
@@ -2317,6 +2331,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout series_cardview
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius
@@ -2449,6 +2464,10 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string post
 string search_menu_title
+string seriesThumbnailURLHint
+string seriesThumbnailURLLabelText
+string seriesTitleInputHint
+string seriesTitleLabelText
 string spiritBoxText
 string spiritNumBoxHint
 string status_bar_notification_info_overflow

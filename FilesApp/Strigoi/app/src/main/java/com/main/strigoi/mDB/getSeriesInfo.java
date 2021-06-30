@@ -14,7 +14,7 @@ public class getSeriesInfo implements Runnable {
     private final int strigoiNum;
     public final String url;
     public String imageURL;
-    private int _creatorId;
+    public int creatorId;
     public String seriesName;
     public String creationDate;
     public String creatorName;
@@ -42,10 +42,10 @@ public class getSeriesInfo implements Runnable {
         getSeriesInfoFromServer.run();
         try {
             JSONObject seriesJSON = new JSONObject(getSeriesInfoFromServer.response);
-            _creatorId = seriesJSON.getInt("creatorId");
+            creatorId = seriesJSON.getInt("creatorId");
             seriesName = seriesJSON.getString("name");
             creationDate = seriesJSON.getString("creationDate");
-            creatorName = getCreatorName(_creatorId);
+            creatorName = getCreatorName(creatorId);
 
             // Get Icon separately, so I can give it replacement.
             try {

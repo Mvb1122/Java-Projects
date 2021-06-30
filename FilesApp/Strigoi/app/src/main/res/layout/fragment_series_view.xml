@@ -2,49 +2,92 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.series.seriesViewer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    tools:context=".ui.series.seriesViewer">
 
-    <ImageView
-        android:id="@+id/seriesImage"
-        android:layout_width="256px"
-        android:layout_height="256px"
-        android:contentDescription="Series Icon"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/aliignment_layout_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_dialog" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/seriesName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:text="Series Name"
-        android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/seriesImage"
-        app:layout_constraintTop_toTopOf="@+id/seriesImage" />
+        <ImageView
+            android:id="@+id/seriesImage"
+            android:layout_width="256px"
+            android:layout_height="256px"
+            android:contentDescription="Series Icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/btn_dialog" />
 
-    <TextView
-        android:id="@+id/authorName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Author Name"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/seriesImage"
-        app:layout_constraintStart_toStartOf="@+id/seriesName" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/alignment_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/seriesImage"
+            app:layout_constraintStart_toEndOf="@+id/seriesImage"
+            app:layout_constraintTop_toTopOf="@+id/seriesImage">
 
-    <TextView
-        android:id="@+id/dateCreated"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date Created"
-        app:layout_constraintBottom_toTopOf="@+id/authorName"
-        app:layout_constraintEnd_toEndOf="@+id/authorName"
-        app:layout_constraintStart_toStartOf="@+id/authorName"
-        app:layout_constraintTop_toBottomOf="@+id/seriesName" />
+            <TextView
+                android:id="@+id/authorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author Name"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/seriesName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Series Name"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/authorName"
+                app:layout_constraintStart_toStartOf="@+id/authorName"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dateCreated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date Created"
+                app:layout_constraintBottom_toBottomOf="@+id/authorName"
+                app:layout_constraintEnd_toStartOf="@+id/strigoiNumber"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/authorName"
+                app:layout_constraintTop_toTopOf="@+id/seriesName"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <TextView
+                android:id="@+id/strigoiNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="strigoiNum"
+                app:layout_constraintBottom_toBottomOf="@+id/dateCreated"
+                app:layout_constraintEnd_toEndOf="@+id/authorName"
+                app:layout_constraintStart_toEndOf="@+id/dateCreated"
+                app:layout_constraintTop_toTopOf="@+id/dateCreated" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

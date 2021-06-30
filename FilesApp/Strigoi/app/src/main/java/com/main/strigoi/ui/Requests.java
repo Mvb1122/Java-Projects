@@ -31,6 +31,10 @@ public class Requests implements Runnable {
         this.data = data;
     }
 
+    public Requests(String s, String get) {
+        this(s, get, "None.");
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void run() {
