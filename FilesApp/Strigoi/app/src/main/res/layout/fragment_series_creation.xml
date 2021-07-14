@@ -59,15 +59,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="To create a series, you must specify a name. There is also the option to add a thumbnail, by adding its url. (Leave it blank if you don't need it.)"
+        android:gravity="center_horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="To create a series, you must specify a name.\nThere is also the option to add a thumbnail, by adding its url.\n(Leave it blank if you don't need it.)"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seriesThumbNailURLInput"
-        app:layout_constraintVertical_bias="0.0"
-        android:gravity="center_horizontal" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/Submit"
