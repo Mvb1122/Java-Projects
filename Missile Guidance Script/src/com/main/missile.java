@@ -1,6 +1,7 @@
 package com.main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -17,6 +18,7 @@ public class missile {
     final ArrayList<Double> missileCoordinates;
     final ArrayList<Double> targetCoordinates;
     final int proxDet;
+    private double numberOfTicksWhichIfPassedMeansThatTheMissileMissed;
 
 
     /**
@@ -33,6 +35,11 @@ public class missile {
         this.missileCoordinates = missileCoordinates;
         this.targetCoordinates = targetCoordinates;
         this.proxDet = proxDet;
+
+        // Calculate the number of ticks, which, if passed, means that the missile missed.
+        numberOfTicksWhichIfPassedMeansThatTheMissileMissed = calculateDistanceBetweenPoints(missileCoordinates.get(0), missileCoordinates.get(1), missileCoordinates.get(2), targetCoordinates.get(0), targetCoordinates.get(1), targetCoordinates.get(2)) / missileSpeed;
+        String numberOfTicksWhichIfPassedMeansThatTheMissileMissedButItsAString = "" + numberOfTicksWhichIfPassedMeansThatTheMissileMissed + "";
+        System.out.println("The number of ticks until the missile may have missed is: ~" + numberOfTicksWhichIfPassedMeansThatTheMissileMissedButItsAString.substring(0, numberOfTicksWhichIfPassedMeansThatTheMissileMissedButItsAString.indexOf(".")));
     }
 
     public void launch() {
@@ -43,7 +50,7 @@ public class missile {
             do {
                 System.out.println("\n\nTick number " + numTicks[0]);
                 // End loop if missile is in target.
-                if (missileCoordinates.get(0).equals(targetCoordinates.get(0)) && missileCoordinates.get(1).equals(targetCoordinates.get(1)) && missileCoordinates.get(2).equals(targetCoordinates.get(2)) || numTicks[0] == 500) {
+                if (missileCoordinates.get(0).equals(targetCoordinates.get(0)) && missileCoordinates.get(1).equals(targetCoordinates.get(1)) && missileCoordinates.get(2).equals(targetCoordinates.get(2)) || numTicks[0] >= numberOfTicksWhichIfPassedMeansThatTheMissileMissed) {
                     break;
                 }
 
@@ -93,7 +100,7 @@ public class missile {
                 numTicks[0]++;
             } while (true);
 
-            if (numTicks[0] == 500) {
+            if (numTicks[0] >= numberOfTicksWhichIfPassedMeansThatTheMissileMissed) {
                 System.out.println("\nThe missile missed.");
             } else {
                 System.out.println("\nTarget Destroyed.");
