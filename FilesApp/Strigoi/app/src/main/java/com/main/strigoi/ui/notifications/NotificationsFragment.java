@@ -18,6 +18,24 @@ public class NotificationsFragment extends Fragment {
 
     private NotificationsViewModel notificationsViewModel;
     private FragmentNotificationsBinding binding;
+    public static int shownSpirit;
+    public static int shownStrigoi;
+
+    public static void setShownSpirit(int shownSpirit) {
+        System.out.println("Shown Spirit set to " + shownSpirit);
+        NotificationsFragment.shownSpirit = shownSpirit;
+    }
+
+    public static void setShownStrigoi(int shownStrigoi) {
+        System.out.println("Shown Strigoi set to " + shownStrigoi);
+        NotificationsFragment.shownStrigoi = shownStrigoi;
+    }
+
+    public static void setShownStrigoiAndSpirit(int shownSpirit, int shownStrigoi) {
+        System.out.println("Shown Strigoi and Spirit set to: Spirit " + shownSpirit + " Strigoi: " + shownStrigoi);
+        NotificationsFragment.shownSpirit = shownSpirit;
+        NotificationsFragment.shownStrigoi = shownStrigoi;
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         notificationsViewModel = new ViewModelProvider(this).get(NotificationsViewModel.class);

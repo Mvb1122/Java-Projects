@@ -13,11 +13,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.main.strigoi.MainActivity;
 import com.main.strigoi.databinding.FragmentSeriesViewBinding;
 import com.main.strigoi.mDB.getSeriesInfo;
+import com.main.strigoi.ui.notifications.NotificationsFragment;
 
 import java.io.IOException;
 import java.net.URL;
@@ -51,18 +54,30 @@ public class seriesViewer extends Fragment {
         strigoiNumText.setText("#" + strigoiNum);
         ImageView seriesImage = binding.seriesImage;
 
+        // Display first Fragment of the selected Strigoi.
+        ConstraintLayout layoutHolder = binding.alignmentLayout;
+        layoutHolder.setOnClickListener(v -> {
+            NotificationsFragment.setShownStrigoiAndSpirit(1,strigoiNum);
+            MainActivity.goToViewerFragment(getView(), strigoiNum);
+        });
+
         Thread setSeriesInfo = new Thread(() -> {
             getInfo = new getSeriesInfo(strigoiNum);
 
             getInfo.run();
             try {
+                // Set Text A.S.A.P.
+                activity.runOnUiThread(() -> {
+                    seriesName.setText(getInfo.seriesName);
+                    authorName.setText(getInfo.creatorName);
+                    creationDate.setText(getInfo.creationDate);
+                });
+
+                // Load Series Image and display it.
                 URL url = new URL(getInfo.imageURL);
                 image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
                 activity.runOnUiThread(() -> {
                     seriesImage.setImageBitmap(image);
-                    seriesName.setText(getInfo.seriesName);
-                    authorName.setText(getInfo.creatorName);
-                    creationDate.setText(getInfo.creationDate);
                 });
             } catch (IOException e) {
                 e.printStackTrace();

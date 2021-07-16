@@ -1,6 +1,7 @@
 package com.main.strigoi;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.main.strigoi.databinding.ActivityMainBinding;
 import com.main.strigoi.mDB.createSeries;
@@ -29,8 +31,10 @@ import com.main.strigoi.mDB.pushToDB;
 import com.main.strigoi.ui.Reader;
 import com.main.strigoi.ui.Requests;
 import com.main.strigoi.ui.dashboard.DashboardFragmentSup;
+import com.main.strigoi.ui.dashboard.DashboardViewModel;
 import com.main.strigoi.ui.edit.EditingFragment;
 import com.main.strigoi.ui.home.HomeFragment;
+import com.main.strigoi.ui.notifications.NotificationsFragment;
 import com.main.strigoi.ui.series.seriesCardViewer;
 import com.main.strigoi.ui.series.seriesCreationFragment;
 import com.main.strigoi.ui.series.seriesViewer;
@@ -49,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public static String content;
     public static FragmentManager supportFragmentManager;
     private static FragmentManager fragmentManager;
+    private static Activity activity;
     // private static Reader reader;
     private ActivityMainBinding binding;
     private static Context context;
@@ -59,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     private JSONObject onlineUserInfo;
     private Boolean editFragmentActive;
     public int spiritNumInt;
-    public int strigoiNumInt;
+    public static int strigoiNumInt;
     private boolean getEditText;
     private Fragment seriesViewerFragment;
 
@@ -70,13 +75,10 @@ public class MainActivity extends AppCompatActivity {
         userFragmentActive = false;
         super.onCreate(savedInstanceState);
         fragmentManager = getSupportFragmentManager();
-
         MainActivity.context = getApplicationContext();
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         get1x1 = true;
-
         supportFragmentManager = getSupportFragmentManager();
 
         /*
@@ -207,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (editSpirit != null && editSpirit.getText().toString().equals("")) {
                     mDBRequest request = new mDBRequest(strigoiNumInt, spiritNumInt);
+                    NotificationsFragment.setShownStrigoiAndSpirit(spiritNumInt, strigoiNumInt);
 
                     if (!getEditText) {
                         Thread getThisFromMDB = new Thread(() -> {
@@ -241,7 +244,6 @@ public class MainActivity extends AppCompatActivity {
         });
         setDashboardFragment.start();
 
-        
     }
 
     public static Context getContext() {
@@ -274,6 +276,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             mDBRequest buttonReq = new mDBRequest(strigoiNum, spiritNum);
+            NotificationsFragment.setShownStrigoiAndSpirit(spiritNum, strigoiNum);
             int finalStrigoiNum = strigoiNum;
             int finalSpiritNum = spiritNum;
 
@@ -514,6 +517,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // TODO: Adapt this code to the UI Rewrite standard.
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public static void goToViewerFragment(View view, int strigoiNum) {
+        System.out.println("Series thing clicked");
+
+        Thread goToViewerFragment = new Thread(() -> {
+            // Load text off of server.
+            DashboardViewModel.ensureTestReqIsNotNull();
+            NotificationsFragment.setShownStrigoiAndSpirit(1, strigoiNum);
+            mDBRequest getFromServer = new mDBRequest(strigoiNum, 1);
+            getFromServer.run();
+            MainActivity.content = getFromServer.parsedResponse + "\n\n\n";
+
+            // Navigate to the notifications/viewing fragment.
+            activity = (Activity) view.getContext();
+            activity.runOnUiThread(() -> {
+                BottomNavigationItemView goToViewerButton = activity.findViewById(R.id.navigation_notifications);
+                goToViewerButton.callOnClick();
+            });
+        });
+        goToViewerFragment.start();
+    }
+
+    // TODO: Adapt this code to the UI Rewrite standard.
     public void goToDashboardFragment(View view) {
         System.out.println("Back button hit on the Edit Fragment");
 
@@ -613,7 +639,6 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-
     public void goToSeriesCreationFragment(View view) {
         Button editUserButton = findViewById(R.id.editUserButton);
         editUserButton.setVisibility(View.INVISIBLE);
@@ -626,5 +651,27 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.contentFragment, homeFrag);
         transaction.commit();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void viewNextSpirit(View view) {
+        System.out.println("Next spirit button clicked.");
+
+        Thread goToViewerFragment = new Thread(() -> {
+            // Load text off of server.
+            DashboardViewModel.ensureTestReqIsNotNull();
+            mDBRequest getFromServer = new mDBRequest(NotificationsFragment.shownStrigoi, NotificationsFragment.shownSpirit + 1);
+            NotificationsFragment.setShownSpirit(NotificationsFragment.shownSpirit + 1);
+            getFromServer.run();
+            MainActivity.content = getFromServer.parsedResponse;
+
+            // Navigate to the notifications/viewing fragment.
+            activity = (Activity) view.getContext();
+            activity.runOnUiThread(() -> {
+                BottomNavigationItemView goToViewerButton = activity.findViewById(R.id.navigation_notifications);
+                goToViewerButton.callOnClick();
+            });
+        });
+        goToViewerFragment.start();
     }
 }

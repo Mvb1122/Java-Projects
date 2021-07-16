@@ -48,6 +48,10 @@ public class DashboardViewModel extends ViewModel {
         }
     }
 
+    public static void ensureTestReqIsNotNull() {
+        testReqFormDB = new mDBRequest(1, 1);
+    }
+
     public LiveData<String> getText() {
         try {
             mText.setValue(MainActivity.content);

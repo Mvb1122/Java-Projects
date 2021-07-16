@@ -1797,7 +1797,7 @@ id add
 id alertTitle
 id aligned
 id alignment_layout
-id aliignment_layout_2
+id alignment_layout_2
 id all
 id always
 id animateToEnd
@@ -1909,6 +1909,7 @@ id flip
 id floating
 id forever
 id fragment_container_view_tag
+id full
 id ghost_view
 id ghost_view_holder
 id goButton
@@ -2183,6 +2184,7 @@ id userFragment
 id userInfoText
 id userLayout
 id userNameInputBox
+id viewNextSpiritButton
 id view_offset_helper
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner

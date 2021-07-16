@@ -4,6 +4,8 @@ package com.main.strigoi.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,12 +21,21 @@ public final class FragmentNotificationsBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ScrollView scrollView;
+
+  @NonNull
   public final TextView textNotifications;
 
+  @NonNull
+  public final Button viewNextSpiritButton;
+
   private FragmentNotificationsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView textNotifications) {
+      @NonNull ScrollView scrollView, @NonNull TextView textNotifications,
+      @NonNull Button viewNextSpiritButton) {
     this.rootView = rootView;
+    this.scrollView = scrollView;
     this.textNotifications = textNotifications;
+    this.viewNextSpiritButton = viewNextSpiritButton;
   }
 
   @Override
@@ -54,13 +65,26 @@ public final class FragmentNotificationsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.scrollView;
+      ScrollView scrollView = rootView.findViewById(id);
+      if (scrollView == null) {
+        break missingId;
+      }
+
       id = R.id.text_notifications;
       TextView textNotifications = rootView.findViewById(id);
       if (textNotifications == null) {
         break missingId;
       }
 
-      return new FragmentNotificationsBinding((ConstraintLayout) rootView, textNotifications);
+      id = R.id.viewNextSpiritButton;
+      Button viewNextSpiritButton = rootView.findViewById(id);
+      if (viewNextSpiritButton == null) {
+        break missingId;
+      }
+
+      return new FragmentNotificationsBinding((ConstraintLayout) rootView, scrollView,
+          textNotifications, viewNextSpiritButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

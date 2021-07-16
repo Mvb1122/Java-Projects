@@ -22,7 +22,7 @@
 15        android:allowBackup="true"
 15-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\FilesApp\Strigoi\app\src\main\AndroidManifest.xml:6:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.5.0] C:\Users\drphi\.gradle\caches\transforms-2\files-2.1\07adfc08fe16d3453ab9291511ec05fe\core-1.5.0\AndroidManifest.xml:24:18-86
+16-->[androidx.core:core:1.5.0] C:\Users\drphi\.gradle\caches\transforms-2\files-2.1\cc5e9dcdc56dc39042f72c501235e83f\core-1.5.0\AndroidManifest.xml:24:18-86
 17        android:debuggable="true"
 18        android:icon="@mipmap/ic_launcher"
 18-->C:\Users\drphi\Desktop\Everything that's not Star Citizen\Java-Projects\FilesApp\Strigoi\app\src\main\AndroidManifest.xml:7:9-43
