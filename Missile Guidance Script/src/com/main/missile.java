@@ -39,7 +39,7 @@ public class missile {
         // Calculate the number of ticks, which, if passed, means that the missile missed.
         numberOfTicksWhichIfPassedMeansThatTheMissileMissed = calculateDistanceBetweenPoints(missileCoordinates.get(0), missileCoordinates.get(1), missileCoordinates.get(2), targetCoordinates.get(0), targetCoordinates.get(1), targetCoordinates.get(2)) / missileSpeed;
         String numberOfTicksWhichIfPassedMeansThatTheMissileMissedButItsAString = "" + numberOfTicksWhichIfPassedMeansThatTheMissileMissed + "";
-        System.out.println("The number of ticks until the missile may have missed is: ~" + numberOfTicksWhichIfPassedMeansThatTheMissileMissedButItsAString.substring(0, numberOfTicksWhichIfPassedMeansThatTheMissileMissedButItsAString.indexOf(".")));
+        System.out.println("Expected number of ticks until impact: ~" + numberOfTicksWhichIfPassedMeansThatTheMissileMissedButItsAString.substring(0, numberOfTicksWhichIfPassedMeansThatTheMissileMissedButItsAString.indexOf(".")));
     }
 
     public void launch() {
