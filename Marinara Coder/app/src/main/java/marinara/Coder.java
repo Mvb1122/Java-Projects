@@ -15,6 +15,10 @@ public class Coder {
         codes[6] = new char[]{'!', '?', '.', ',', ';', '"', ' '};
     }
 
+    /**
+     * @param input A string consisting of Two numbers, EG: "11" which corresponds to an index in the codes.
+     * @return the cooresponding char object which is help at the specified index.
+     */
     public static char decode(String input) {
         if (input.equals(" ")) return ' ';
         int[] coordinates = new int[]{Integer.parseInt(input.substring(0, 1)), Integer.parseInt(input.substring(1))};
@@ -22,6 +26,10 @@ public class Coder {
         else return ' '; // Assume that anybody who messes up and puts a 0 means SPACE.
     }
 
+    /**
+     * @param input a char, holding your character to encode.
+     * @return a String, consisting of Two numbers, EG: "11" which corresponds to the char you passed in.
+     */
     public static String encode(char input) {
         // Search codes list for character
         for (int i = 0; i < codes.length; i++) {

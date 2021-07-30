@@ -1,0 +1,21 @@
+com/ihaveawebsitetk/marinaracoder/BuildConfig.java
+ com.ihaveawebsitetk.marinaracoder.BuildConfig
+com/ihaveawebsitetk/marinaracoder/guideFragment.java
+ com.ihaveawebsitetk.marinaracoder.guideFragment
+com/ihaveawebsitetk/marinaracoder/settingsFragment.java
+ com.ihaveawebsitetk.marinaracoder.settingsFragment
+com/ihaveawebsitetk/marinaracoder/mainMenuFragment.java
+ com.ihaveawebsitetk.marinaracoder.mainMenuFragment
+com/ihaveawebsitetk/marinaracoder/cellFragment.java
+ com.ihaveawebsitetk.marinaracoder.cellFragment
+com/ihaveawebsitetk/marinaracoder/coderFragment.java
+ com.ihaveawebsitetk.marinaracoder.coderFragment
+ com.ihaveawebsitetk.marinaracoder.coderFragment$1
+com/ihaveawebsitetk/marinaracoder/MainActivity.java
+ com.ihaveawebsitetk.marinaracoder.MainActivity
+com/ihaveawebsitetk/marinaracoder/tableFragment.java
+ com.ihaveawebsitetk.marinaracoder.tableFragment
+com/ihaveawebsitetk/marinaracoder/helpFragment.java
+ com.ihaveawebsitetk.marinaracoder.helpFragment
+marinara/Coder.java
+ marinara.Coder

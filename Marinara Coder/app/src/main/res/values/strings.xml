@@ -3,4 +3,5 @@
     <string name="background_image_desc">Background Image</string>
     <string name="menu_button_text">Button</string>
     <string name="back">Back</string>
+    <string name="an_image_of_a_down_arrow">An image of a down-arrow.</string>
 </resources>

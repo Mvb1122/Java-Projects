@@ -105,7 +105,7 @@ public class coderFragment extends Fragment {
                                     continue;
                                 }
 
-                                parsedOutput += Coder.encode(s.charAt(i));
+                                parsedOutput += Coder.encode(Character.toLowerCase(s.charAt(i)));
                             }
                         } else {
                             if (s.length() >= 1) {
@@ -135,9 +135,7 @@ public class coderFragment extends Fragment {
                     }
 
                     @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
+                    public void afterTextChanged(Editable s) {}
                 });
             });
         });
