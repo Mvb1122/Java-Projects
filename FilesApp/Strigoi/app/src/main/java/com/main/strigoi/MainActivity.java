@@ -1,6 +1,8 @@
 package com.main.strigoi;
 
 
+import static java.lang.Integer.parseInt;
+
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
@@ -45,8 +47,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Arrays;
-
-import static java.lang.Integer.parseInt;
 
 public class MainActivity extends AppCompatActivity {
     public static boolean get1x1;
@@ -289,10 +289,14 @@ public class MainActivity extends AppCompatActivity {
                    e.printStackTrace();
                }
                 System.out.println("\n\n\nStrigoiNum: " + finalStrigoiNum + "\nSpiritNum: " + finalSpiritNum + "\nPARSED RESPONSE:" + MainActivity.content + "\n\n\n");
+
+                // Swap to the reading fragment, properly.
+                runOnUiThread(() -> {
+                    BottomNavigationItemView goButton = findViewById(R.id.navigation_notifications);
+                    goButton.callOnClick();
+                });
             });
             TRFmDB.start();
-        // Button goButton = findViewById(R.id.goButton);
-        // goButton.setText("Spirit Retrieved.");
     }
 
     /*
