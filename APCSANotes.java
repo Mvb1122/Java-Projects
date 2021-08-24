@@ -1,6 +1,6 @@
 // Notes taken during AP CSA Class.
 
-import java.utils.Scanner;
+import java.util.Scanner;
 public class APCSANotes {
     public static void main(String[] args) {
       // Most computers hold values in named storage locations; eg-- variables.
@@ -68,7 +68,7 @@ public class APCSANotes {
         // There are several methods, so I'm not going to cover them.
 
         // There's also some constants built in:
-        final float pi2 = Math.PI; // pi = 3.14...
+        final double pi2 = Math.PI; // pi = 3.14...
 
       // Casting
         // We can convert one conversable type to another via casting:
