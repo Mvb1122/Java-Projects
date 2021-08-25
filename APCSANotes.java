@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 public class APCSANotes {
-    public static void main(String[] args) {
+    public static void notesOfAugust25() {
       // Most computers hold values in named storage locations; eg-- variables.
 
       // They’re initialized like
@@ -81,14 +81,26 @@ public class APCSANotes {
         // Scanner is an in-built library used for 
         // getting user input, it's imported like:
         // import java.util.Scanner;
-        // Which is put at the beginning of the program.
+        // Which is put at the beginning of the program in order to tell the compiler to include the Scanner library.
 
       {
+        // When we use it, we first have to initialize it:
         Scanner s = new Scanner(System.in);
-      }
-        // As for actually using Scanner, we're going to
-        // cover it in the future.
 
-      System.out.println("Ran.");
+        // Then, we can get input from it, like this:
+        System.out.println("Enter a number.");
+        int b = s.nextInt();
+        System.out.println(b + " squared is " + Math.pow(b, 2));
+
+      }
+    }
+
+    public static void notesOfAugust27() {
+      // System.out.println("Fill this in, eventually.");
+    }
+
+    public static void main(String[] args) {
+      notesOfAugust25();
+      notesOfAugust27();
     }
 }
