@@ -1,2 +1,2 @@
 language = "shell"
-run = "./compileCSA.sh"
+run = "\"./AP CSA Notes/compileCSA.sh\""

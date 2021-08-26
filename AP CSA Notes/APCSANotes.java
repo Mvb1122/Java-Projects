@@ -36,8 +36,7 @@ public class APCSANotes {
 
       {
       // Variable Modifiers:
-        // We can declare variables as being final, in order to lock them down
-        // and keep them the same.
+        // We can declare variables as being final, in order to lock them down to ensure that they don't change.
       final double pi = 3.14;
         // For instance, PI will always be 3.14, so it won't ever change.
       }
@@ -50,13 +49,13 @@ public class APCSANotes {
         */
 
         /**
-        *  and JavaDoc comments, which document your code for people using
-        *  it.
+        *  and JavaDoc comments, which document your code for people 
+        *  using it.
         */
     
       // Overflow errors:
         // Because of how numbers work, a computer can only store a number up
-        // to a certain size. So then, when a value tries to go over the value,
+        // to a certain size. So then, when a value tries to go over its value,
         // it causes an "Overflow" error:
           // int x = 2147483648; 
         // This will cause an Overflow error, since int values can only hold up to 2147483647 or as low as -2147483648.
