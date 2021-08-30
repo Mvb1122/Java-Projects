@@ -1,6 +1,10 @@
 // Notes taken during AP CSA Class.
 
 import java.util.Scanner;
+import classes.SubClassExample;
+import classes.SuperClassExample;
+import August.*;
+
 public class APCSANotes {
     public static void notesOfAugust25() {
       // Most computers hold values in named storage locations; eg-- variables.
@@ -71,7 +75,7 @@ public class APCSANotes {
 
       // Casting
         // We can convert one conversable type to another via casting:
-      int d = (int) 3.14; // i now holds 3
+        int d = (int) 3.14; // i now holds 3
         // When casting from a double to an int, it doens't round, it just
         // cuts off the values.
       }
@@ -95,11 +99,39 @@ public class APCSANotes {
     }
 
     public static void notesOfAugust27() {
-      // System.out.println("Fill this in, eventually.");
+      // Sometimes, we need to add additonal features to an already-existing class.
+      // We use the `extends` keyword when we use it.
+      {
+        SuperClassExample s = new SuperClassExample(3);
+      }
+      
+      // Subclasses can be widened automatically-- converted to their superclasses,
+      // if we had a function that accepted a SuperClassExample as a parameter, we 
+      // could pass a SubClassExample to it, and the compiler would widen it out 
+      // automatically.
+
+      // Additionally, we can also widen a class like so:
+      {
+        // Declare a new subclass.
+        SubClassExample sub = new SubClassExample(3);
+        // Widen it to be a superclass.
+        SuperClassExample sup = sub;
+      }
+
+      // Sometimes, we can also force a superclass down into a subclass by
+      // "casting" it, like so:
+      /*
+        SuperClassExample a = new SuperClassExample(5);
+        SubClassExample b = (SubClassExample) a;
+        // This code would cause an erorr, since only primatives (eg, int -> double) can be casted like this.
+      */
+    
+
     }
 
     public static void main(String[] args) {
       notesOfAugust25();
       notesOfAugust27();
+      August.notes_Of_8_30_2021.runNotes();
     }
 }
