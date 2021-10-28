@@ -62,7 +62,7 @@ public class Main {
 
         System.out.println("Value of resizeableNumbers (after replacement): " + resizeableNumbers);
 
-        // .size(); is like .length(); for arrays, but for ArrayLists.
+        // .size() is like .length for arrays, but for ArrayLists.
         System.out.println("Size of resizeableNumbers: " + resizeableNumbers.size());
 
         // Getting items from an ArrayList has us use .get(); instead of square brackets. []
