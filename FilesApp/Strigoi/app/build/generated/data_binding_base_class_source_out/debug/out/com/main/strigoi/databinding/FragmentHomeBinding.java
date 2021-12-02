@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.main.strigoi.R;
 import java.lang.NullPointerException;
@@ -76,25 +77,25 @@ public final class FragmentHomeBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.contentFragment;
-      FrameLayout contentFragment = rootView.findViewById(id);
+      FrameLayout contentFragment = ViewBindings.findChildViewById(rootView, id);
       if (contentFragment == null) {
         break missingId;
       }
 
       id = R.id.createSeriesButton;
-      FloatingActionButton createSeriesButton = rootView.findViewById(id);
+      FloatingActionButton createSeriesButton = ViewBindings.findChildViewById(rootView, id);
       if (createSeriesButton == null) {
         break missingId;
       }
 
       id = R.id.editUserButton;
-      Button editUserButton = rootView.findViewById(id);
+      Button editUserButton = ViewBindings.findChildViewById(rootView, id);
       if (editUserButton == null) {
         break missingId;
       }
 
       id = R.id.userInfoText;
-      TextView userInfoText = rootView.findViewById(id);
+      TextView userInfoText = ViewBindings.findChildViewById(rootView, id);
       if (userInfoText == null) {
         break missingId;
       }

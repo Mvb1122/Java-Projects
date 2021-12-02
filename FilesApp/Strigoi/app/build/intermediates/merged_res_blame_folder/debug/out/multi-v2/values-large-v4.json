@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\drphi\\Desktop\\Everything that's not Star Citizen\\Java-Projects\\FilesApp\\Strigoi\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\drphi\\.gradle\\caches\\transforms-2\\files-2.1\\693bb3a314b1429001795c2bfe831eaa\\material-1.3.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\drphi\\.gradle\\caches\\transforms-3\\fc0e4e87d95d67f047ecdbed3a04c4cc\\transformed\\material-1.3.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\drphi\\.gradle\\caches\\transforms-2\\files-2.1\\77c7b97873973e149b09819f46c0a153\\appcompat-1.3.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\drphi\\.gradle\\caches\\transforms-3\\95f820288b7f7039630dc8608cc8dd13\\transformed\\appcompat-1.3.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

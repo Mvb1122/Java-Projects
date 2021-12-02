@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.main.strigoi.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -66,19 +67,19 @@ public final class FragmentNotificationsBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.scrollView;
-      ScrollView scrollView = rootView.findViewById(id);
+      ScrollView scrollView = ViewBindings.findChildViewById(rootView, id);
       if (scrollView == null) {
         break missingId;
       }
 
       id = R.id.text_notifications;
-      TextView textNotifications = rootView.findViewById(id);
+      TextView textNotifications = ViewBindings.findChildViewById(rootView, id);
       if (textNotifications == null) {
         break missingId;
       }
 
       id = R.id.viewNextSpiritButton;
-      Button viewNextSpiritButton = rootView.findViewById(id);
+      Button viewNextSpiritButton = ViewBindings.findChildViewById(rootView, id);
       if (viewNextSpiritButton == null) {
         break missingId;
       }

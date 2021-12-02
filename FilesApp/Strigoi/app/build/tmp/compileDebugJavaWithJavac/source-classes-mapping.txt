@@ -1,33 +1,34 @@
-com/main/strigoi/ui/series/seriesCardViewer.java
- com.main.strigoi.ui.series.seriesCardViewer
 com/main/strigoi/databinding/EditFragmentBinding.java
  com.main.strigoi.databinding.EditFragmentBinding
-com/main/strigoi/databinding/FragmentSeriesViewBinding.java
- com.main.strigoi.databinding.FragmentSeriesViewBinding
-com/main/strigoi/mDB/pushToDB.java
- com.main.strigoi.mDB.pushToDB
+com/main/strigoi/ui/series/seriesCardViewer.java
+ com.main.strigoi.ui.series.seriesCardViewer
+com/main/strigoi/ui/series/seriesViewModel.java
+ com.main.strigoi.ui.series.seriesViewModel
+com/main/strigoi/ui/series/seriesViewer.java
+ com.main.strigoi.ui.series.seriesViewer
 com/main/strigoi/ui/home/HomeFragmentTwo.java
  com.main.strigoi.ui.home.HomeFragmentTwo
 com/main/strigoi/BuildConfig.java
  com.main.strigoi.BuildConfig
 com/main/strigoi/ui/dashboard/DashboardFragment.java
  com.main.strigoi.ui.dashboard.DashboardFragment
-com/main/strigoi/mDB/mDBRequest.java
- com.main.strigoi.mDB.mDBRequest
-com/main/strigoi/databinding/UserFragmentBinding.java
- com.main.strigoi.databinding.UserFragmentBinding
 com/main/strigoi/databinding/FragmentHomeBinding.java
  com.main.strigoi.databinding.FragmentHomeBinding
-com/main/strigoi/ui/edit/EditingFragment.java
- com.main.strigoi.ui.edit.EditingFragment
+com/main/strigoi/ui/home/HomeFragment.java
+ com.main.strigoi.ui.home.HomeFragment
+ com.main.strigoi.ui.home.HomeFragment$1
+com/main/strigoi/mDB/mDBRequest.java
+ com.main.strigoi.mDB.mDBRequest
 com/main/strigoi/ui/series/seriesCreationFragment.java
  com.main.strigoi.ui.series.seriesCreationFragment
-com/main/strigoi/databinding/SeriesCardviewBinding.java
- com.main.strigoi.databinding.SeriesCardviewBinding
-com/main/strigoi/mDB/createSeries.java
- com.main.strigoi.mDB.createSeries
+com/main/strigoi/ui/edit/EditingFragment.java
+ com.main.strigoi.ui.edit.EditingFragment
+com/main/strigoi/ui/notifications/NotificationsViewModel.java
+ com.main.strigoi.ui.notifications.NotificationsViewModel
 com/main/strigoi/mDB/getSeriesInfo.java
  com.main.strigoi.mDB.getSeriesInfo
+com/main/strigoi/mDB/createSeries.java
+ com.main.strigoi.mDB.createSeries
 com/main/strigoi/databinding/FragmentSeriesCreationBinding.java
  com.main.strigoi.databinding.FragmentSeriesCreationBinding
 com/main/strigoi/ui/Requests.java
@@ -39,32 +40,31 @@ com/main/strigoi/databinding/FragmentHomeSupBinding.java
  com.main.strigoi.databinding.FragmentHomeSupBinding
 com/main/strigoi/databinding/DashboardFragmentSupBinding.java
  com.main.strigoi.databinding.DashboardFragmentSupBinding
-com/main/strigoi/ui/dashboard/DashboardFragmentSup.java
- com.main.strigoi.ui.dashboard.DashboardFragmentSup
 com/main/strigoi/databinding/FragmentNotificationsBinding.java
  com.main.strigoi.databinding.FragmentNotificationsBinding
+com/main/strigoi/ui/dashboard/DashboardFragmentSup.java
+ com.main.strigoi.ui.dashboard.DashboardFragmentSup
 com/main/strigoi/databinding/FragmentDashboardBinding.java
  com.main.strigoi.databinding.FragmentDashboardBinding
 com/main/strigoi/ui/home/HomeViewModel.java
  com.main.strigoi.ui.home.HomeViewModel
  com.main.strigoi.ui.home.HomeViewModel$1
-com/main/strigoi/ui/userFragment/userFragment.java
- com.main.strigoi.ui.userFragment.userFragment
-com/main/strigoi/databinding/ActivityMainBinding.java
- com.main.strigoi.databinding.ActivityMainBinding
-com/main/strigoi/ui/series/seriesViewModel.java
- com.main.strigoi.ui.series.seriesViewModel
 com/main/strigoi/ui/dashboard/DashboardViewModel.java
  com.main.strigoi.ui.dashboard.DashboardViewModel
+com/main/strigoi/databinding/ActivityMainBinding.java
+ com.main.strigoi.databinding.ActivityMainBinding
+com/main/strigoi/databinding/UserFragmentBinding.java
+ com.main.strigoi.databinding.UserFragmentBinding
+com/main/strigoi/databinding/SeriesCardviewBinding.java
+ com.main.strigoi.databinding.SeriesCardviewBinding
+com/main/strigoi/mDB/pushToDB.java
+ com.main.strigoi.mDB.pushToDB
 com/main/strigoi/ui/Reader.java
  com.main.strigoi.ui.Reader
-com/main/strigoi/ui/home/HomeFragment.java
- com.main.strigoi.ui.home.HomeFragment
- com.main.strigoi.ui.home.HomeFragment$1
-com/main/strigoi/ui/series/seriesViewer.java
- com.main.strigoi.ui.series.seriesViewer
+com/main/strigoi/databinding/FragmentSeriesViewBinding.java
+ com.main.strigoi.databinding.FragmentSeriesViewBinding
 com/main/strigoi/MainActivity.java
  com.main.strigoi.MainActivity
  com.main.strigoi.MainActivity$1
-com/main/strigoi/ui/notifications/NotificationsViewModel.java
- com.main.strigoi.ui.notifications.NotificationsViewModel
+com/main/strigoi/ui/userFragment/userFragment.java
+ com.main.strigoi.ui.userFragment.userFragment
