@@ -1,9 +1,9 @@
 Purchaser,Quantity,Total Amount,Seller,Seller's Team,Delivered,Paid?
-Nick Romero,12,$120,Coach Romero,President,No,Yes
+Nick Romero,7,$70,Coach Romero,President,No,Yes
 Mike Omlor,5,$50,Coach Romero,President,No,No
 Lawrence Robledo,4,$40,Coach Romero,President,No,Yes
 Claire Kowalski,1,$10,Coach Romero,President,No ,No
-Marisa Cogan,1,$10,Coach Romero,President ,No,No
+Marisa Cogan,2,$20,Coach Romero,President ,No,No
 David Bass,2,$20,Coach Romero,President,No,No
 Adam Churchill,1,$10,Coach Romero,President ,No ,Yes
 Drew Townes ,1,$10,Coach Romero,President,No,No
@@ -11,23 +11,27 @@ Coach Sandoval ,1,$10,Coach Romero,President,No,No
 Kai Radius,1,$10,Coach Romero,President,No,Yes
 Gabbi Romero,1,$10,Coach Romero,President,No,Yes
 Renee Robledo,1,$10,Coach Romero,President,No,No
-Gea Hantzolpolous,1,$10,Coach Romero,President,No,No
-Olivia Martinez,2,$20,Coach Romero,President,No,No
+Gea Hantzolpolous,2,$20,Coach Romero,President,No,No
+Olivia Martinez,2,$20,Coach Romero,President,No,Yes
 Jake Stevens,3,$30,Coach Romero,President,No,Yes
 Lisa Van Lewen ,1,$10,Coach Romero,President,No,Yes
 Patti Baldinger,1,$10,Coach Romero,President,No,Yes
 Christine Loidolt,2,$20,Coach Romero,President,no,no
-Emily Bryl    c,2,$20,Danny Archuleta,Ssbu varsity,No,No
-Daniel Archuleta Sr  c,1,$10,Danny Archuleta,Ssbu varsity,No,No
-Theresa Archuleta  cl,1,$10,Danny Archuleta,Ssbu varsity,No,No
-Marcie Lovato    c,1,$10,Danny Archuleta,Ssbu varsity,No,No
+Emily Bryl    c,2,$20,Danny Archuleta,SSBU Varsity,No,No
+Daniel Archuleta Sr  c,1,$10,Danny Archuleta,SSBU Varsity,No,No
+Theresa Archuleta  cl,1,$10,Danny Archuleta,SSBU Varsity,No,No
+Marcie Lovato    c,1,$10,Danny Archuleta,SSBU Varsity,No,No
 Jamina Hajagos,1,$10,Eli Hajagos,RL Varsity,No,Yes
 Janos Hajagos,1,$10,Eli Hajagos,RL Varsity,No,Yes
 Anna Hadley,1,$10,Titus Nichols,RL JV,No,No
 Rachael McClair ,1,$10,Titus Nichols,RL JV,No ,No
 Sarah Fredrickson,2,$20,Titus Nichols,RL JV,No,No
-Dori Bushman,5,$50,Micah Bushman,SSBU JV Blue,No,No
-Nikki Swanson,4,$40,Kaiden Swanson,SSBU JV Blue,No,No
+Dori Bushman,5,$50,Micah Bushman,SSBU JV Blue,No,Yes
+Nikki Swanson,4,$40,Kaiden Swanson,SSBU JV Blue,No,Yes
 Victoria Vazquez,5,$50,Elijah Vazquez,SSBU JV Silver,No,No
 Todd Wedel,2,$20,Todd Wedel,RL JV,No,Yes
-Mike Smith,2,$20,Zach Smith,SSBU JV Silver,no,No
+Mike Smith,2,$20,Zach Smith,SSBU JV Silver,No,Yes
+Peter Duanmu,5,$50,Peter Duanmu,LOL Varsity,No,Yes
+Andrew Kim,1,$10,Andrew Kim,LOL Varsity,No,No
+Nico Grayson,5,$50,Nico Grayson,LOL Varsity,No,No
+Lindsey Gutierrez,2,$20,Coach Romero,President,No,No
