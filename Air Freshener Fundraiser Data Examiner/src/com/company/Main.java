@@ -2,6 +2,7 @@ package com.company;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -67,19 +68,47 @@ public class Main {
         System.out.println("People who have sold their 5:");
             // Create an arraylist to hold people who have sold, but not all of theirs.
         ArrayList<Player> peopleWhoHaventSoldFiveYet = new ArrayList<>(0);
-        for (Team team : teams) for (Player p : team.members) if (p.numSold >= 5) System.out.printf("\tName: %15s, Number Sold: %s%n", p.name, p.numSold);
+        for (Team team : teams) for (Player p : team.members) if (p.numSold >= 5) System.out.printf("\tName: %20s, Number Sold: %s%n", p.name, p.numSold);
                                                               else peopleWhoHaventSoldFiveYet.add(p);
 
         // Output a list of people who havne't sold their five yet, but have sold at least one.
         System.out.println("\nPeople who have sold at least one, but not five:");
-        for (Player p : peopleWhoHaventSoldFiveYet) System.out.printf("\tName: %15s, Number Sold: %s%n", p.name, p.numSold);
+        for (Player p : peopleWhoHaventSoldFiveYet) System.out.printf("\tName: %20s, Number Sold: %s%n", p.name, p.numSold);
 
         // Output the number sold for each team:
         System.out.println("\nTeam Breakdown:");
-        for (Team team : teams) System.out.printf("\tTeam Name: %15s, Total Number Sold: %s%n", team.name, team.totalNumSold);
+        for (Team team : teams) System.out.printf("\tTeam Name: %18s, Total Number Sold: %s%n", team.name, team.totalNumSold);
 
 
-        System.out.println("Done.");
+        // Import the list of names and check through them.
+        ArrayList<String> listOfPeople = new ArrayList<>(0);
+        try {
+            Scanner reader = new Scanner(new File("Names.csv"));
+            while (reader.hasNextLine()) listOfPeople.add(reader.nextLine());
+        } catch (FileNotFoundException ignored) {;}
+
+        // Check through that list.
+        personLoop:
+        for (int i = 0; i < listOfPeople.size(); i++) {
+            for (Team team : teams) for (Player p : team.members)
+                if (listOfPeople.size() != 0) {
+                    String personToCheck = listOfPeople.get(i);
+                    boolean isThisTheSamePerson = p.name.toLowerCase().equals(personToCheck.toLowerCase());
+                    if (isThisTheSamePerson && p.numSold != 0) {
+                        listOfPeople.remove(i);
+                        i = 0;
+                        continue personLoop;
+                    }
+                } else break personLoop;
+        }
+
+        // Output that to the screen.
+        System.out.println("\nPeople who have not sold any:");
+        for (int i = 0; i < listOfPeople.size(); i++) {
+            System.out.printf("\tName: %-10s%n", listOfPeople.get(i));
+        }
+
+        System.out.println("\nDone.");
     }
 
     private static boolean containsTeamWithName(String name, ArrayList<Team> array) {

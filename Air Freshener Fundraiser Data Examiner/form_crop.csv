@@ -1,8 +1,8 @@
 Purchaser,Quantity,Total Amount,Seller,Seller's Team,Delivered,Paid?
-Nick Romero,7,$70,Coach Romero,President,No,Yes
+Nick Romero,12,$120,Coach Romero,President,No,Yes
 Mike Omlor,5,$50,Coach Romero,President,No,No
 Lawrence Robledo,4,$40,Coach Romero,President,No,Yes
-Claire Kowalski,1,$10,Coach Romero,President,No ,No
+Claire Kowalski,2,$20,Coach Romero,President,No ,No
 Marisa Cogan,2,$20,Coach Romero,President ,No,No
 David Bass,2,$20,Coach Romero,President,No,No
 Adam Churchill,1,$10,Coach Romero,President ,No ,Yes
@@ -16,22 +16,60 @@ Olivia Martinez,2,$20,Coach Romero,President,No,Yes
 Jake Stevens,3,$30,Coach Romero,President,No,Yes
 Lisa Van Lewen ,1,$10,Coach Romero,President,No,Yes
 Patti Baldinger,1,$10,Coach Romero,President,No,Yes
-Christine Loidolt,2,$20,Coach Romero,President,no,no
+Christine Loidolt,2,$20,Coach Romero,President,No,No
 Emily Bryl    c,2,$20,Danny Archuleta,SSBU Varsity,No,No
 Daniel Archuleta Sr  c,1,$10,Danny Archuleta,SSBU Varsity,No,No
 Theresa Archuleta  cl,1,$10,Danny Archuleta,SSBU Varsity,No,No
 Marcie Lovato    c,1,$10,Danny Archuleta,SSBU Varsity,No,No
 Jamina Hajagos,1,$10,Eli Hajagos,RL Varsity,No,Yes
 Janos Hajagos,1,$10,Eli Hajagos,RL Varsity,No,Yes
-Anna Hadley,1,$10,Titus Nichols,RL JV,No,No
-Rachael McClair ,1,$10,Titus Nichols,RL JV,No ,No
-Sarah Fredrickson,2,$20,Titus Nichols,RL JV,No,No
+Anna Hadley,1,$10,Titus Nichols,RL JV Black,No,No
+Rachael McClair ,1,$10,Titus Nichols,RL JV Black,No ,No
+Sarah Fredrickson,2,$20,Titus Nichols,RL JV Black,No,Yes
 Dori Bushman,5,$50,Micah Bushman,SSBU JV Blue,No,Yes
 Nikki Swanson,4,$40,Kaiden Swanson,SSBU JV Blue,No,Yes
-Victoria Vazquez,5,$50,Elijah Vazquez,SSBU JV Silver,No,No
-Todd Wedel,2,$20,Todd Wedel,RL JV,No,Yes
+Victoria Vazquez,5,$50,Elijah Vazquez,SSBU JV Silver,No,Yes
+Todd Wedel,2,$20,Todd Wedel,RL JV Black,No,Yes
 Mike Smith,2,$20,Zach Smith,SSBU JV Silver,No,Yes
 Peter Duanmu,5,$50,Peter Duanmu,LOL Varsity,No,Yes
-Andrew Kim,1,$10,Andrew Kim,LOL Varsity,No,No
-Nico Grayson,5,$50,Nico Grayson,LOL Varsity,No,No
+Andrew Kim,1,$10,Andrew Kim,LOL Varsity,No,Yes
+Nico Grayson,5,$50,Nico Grayson,LOL Varsity,No,Yes
 Lindsey Gutierrez,2,$20,Coach Romero,President,No,No
+DJ Aragon,2,$20,DJ Aragon,RL JV White,No,No
+Franco Noriega ,2,$20,Franco Noriega,RL JV Blue,No,No
+Max Omeila,2,$20,Max Omeila,SSBU Varsity,No,No
+Diego Martinez,5,$50,Diego Martinez,SSBU JV Silver,No,No
+Skyler Gilbertson,2,$20,Skyler Gilbertson,RL JV Black,No,No
+Uriel Quintero,2,$20,Uriel Quintero,RL JV Blue,No,No
+Vance Wildes,2,$20,Vance Wildes,RL JV White,No,No
+Connor Green,5,$50,Connor Green,RL JV Blue,No,Yes
+Cesar Rodriguez,1,$10,Cesar Rodriguez,LOL JV,No,Yes
+Jackson Daley,1,$10,Jackson Daley,SSBU Varsity,No,No
+Daniel Hiatt,1,$10,Daniel Hiatt,SSBU Silver,No,No
+Aiden Mascerenas,2,$20,Aiden Mascernas,RL JV White,No,No
+Trevor Huskinson,3,$30,Trevor Huskinson,RL JV White,No,No
+Zack Welch,1,$10,Zack Welch,LOL JV,No,No
+Leon Chen,1,$10,Leon Chen,LOL JV,No,No
+Caden Grublenik,2,$20,Caden Grublenik,RL JV White,No,Yes
+Mason Barone,1,$10,Mason Barone,RL Varsity,No,No
+Bryan Judy,5,$50,Bryan Judy,RL JV Black,No,No
+Omar Ortiz-Acosta,5,$50,Omar Ortiz-Acosta,LOL JV,No,No
+Van Vo,1,$10,Huy (Jet) Nguyen,LOL Varsity,No,No
+Tarah Fournier ,1,$10,Joshua 4nier,RL Varsity ,No,No
+Johnny Martinez,2,$20,Johnny Martinez,RL JV Blue,No,Yes
+Isaac Johnson,1,$10,Isaac Johnson,Mario Kart Varsity,No,No
+Andy Liu,3,$30,Andy Liu,LOL Varsity,No,No
+Colleen Cleland,3,$30,Todd Wedel,RL JV Black,No,Yes
+John Brannon,1,$10,John Brannon,LOL JV,No,Yes
+Michelle Reyner,2,$20,Kylen Reyner,RL JV Black,No,No
+Hannah Park,2,$20,Hannah Park,LOL JV,No,No
+Caden Box,2,$20,Caden Box,RL Varsity ,No,No
+Taylor Patterson,1,$10,Titus Nichols,RL JV,No,No
+Elena Grosiak,5,$50,Elena Grosiak,Mario Kart Varsity,No,Yes
+Noah Shaw,1,$10,Noah Shaw,Mario Kart Varsity,No,No
+Alberto Griego,2,$20,Caden Box,RL Varsity,No,No
+Joseph Baca,5,$50,Joseph Baca,Madden Varsity,No,No
+Alex Lumanog,1,10$,Alex Lumanog,LOL Varsity,No,No
+Eric Zhao,1,$10,Eric Zhao,LOL Varsity,No,No
+Christa Shou,2,$20,Christa Shou,LOL JV,No,No
+Rocket League Varsity,20,$200,Eli Hajagos,RL Varsity,No,No
