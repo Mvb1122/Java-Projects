@@ -1,75 +1,89 @@
 Purchaser,Quantity,Total Amount,Seller,Seller's Team,Delivered,Paid?
-Nick Romero,12,$120,Coach Romero,President,No,Yes
-Mike Omlor,5,$50,Coach Romero,President,No,No
-Lawrence Robledo,4,$40,Coach Romero,President,No,Yes
-Claire Kowalski,2,$20,Coach Romero,President,No ,No
-Marisa Cogan,2,$20,Coach Romero,President ,No,No
-David Bass,2,$20,Coach Romero,President,No,No
-Adam Churchill,1,$10,Coach Romero,President ,No ,Yes
-Drew Townes ,1,$10,Coach Romero,President,No,No
-Coach Sandoval ,1,$10,Coach Romero,President,No,No
+Nick Romero,11,$110,Coach Romero,President,Yes,Yes
+Mike Omlor,5,$50,Coach Romero,President,Yes,Yes
+Lawrence Robledo,4,$40,Coach Romero,President,Yes,Yes
+Claire Kowalski,2,$20,Coach Romero,President,No,Yes
+Marisa Cogan,2,$20,Coach Romero,President,Yes,Yes
+David Bass,2,$20,Coach Romero,President,Yes,Yes
+Adam Churchill,1,$10,Coach Romero,President,Yes,Yes
+Drew Townes,1,$10,Coach Romero,President,Yes,Yes
+Coach Sandoval,1,$10,Coach Romero,President,Yes,No
 Kai Radius,1,$10,Coach Romero,President,No,Yes
-Gabbi Romero,1,$10,Coach Romero,President,No,Yes
+Gabbi Romero,1,$10,Coach Romero,President,Yes,Yes
 Renee Robledo,1,$10,Coach Romero,President,No,No
-Gea Hantzolpolous,2,$20,Coach Romero,President,No,No
-Olivia Martinez,2,$20,Coach Romero,President,No,Yes
-Jake Stevens,3,$30,Coach Romero,President,No,Yes
-Lisa Van Lewen ,1,$10,Coach Romero,President,No,Yes
-Patti Baldinger,1,$10,Coach Romero,President,No,Yes
-Christine Loidolt,2,$20,Coach Romero,President,No,No
-Emily Bryl    c,2,$20,Danny Archuleta,SSBU Varsity,No,No
-Daniel Archuleta Sr  c,1,$10,Danny Archuleta,SSBU Varsity,No,No
-Theresa Archuleta  cl,1,$10,Danny Archuleta,SSBU Varsity,No,No
-Marcie Lovato    c,1,$10,Danny Archuleta,SSBU Varsity,No,No
-Jamina Hajagos,1,$10,Eli Hajagos,RL Varsity,No,Yes
-Janos Hajagos,1,$10,Eli Hajagos,RL Varsity,No,Yes
-Anna Hadley,1,$10,Titus Nichols,RL JV Black,No,No
-Rachael McClair ,1,$10,Titus Nichols,RL JV Black,No ,No
-Sarah Fredrickson,2,$20,Titus Nichols,RL JV Black,No,Yes
-Dori Bushman,5,$50,Micah Bushman,SSBU JV Blue,No,Yes
-Nikki Swanson,4,$40,Kaiden Swanson,SSBU JV Blue,No,Yes
-Victoria Vazquez,5,$50,Elijah Vazquez,SSBU JV Silver,No,Yes
-Todd Wedel,2,$20,Todd Wedel,RL JV Black,No,Yes
-Mike Smith,2,$20,Zach Smith,SSBU JV Silver,No,Yes
-Peter Duanmu,5,$50,Peter Duanmu,LOL Varsity,No,Yes
-Andrew Kim,1,$10,Andrew Kim,LOL Varsity,No,Yes
-Nico Grayson,5,$50,Nico Grayson,LOL Varsity,No,Yes
+Gea Hantzolpolous,2,$20,Coach Romero,President,Yes,Yes
+Olivia Martinez,2,$20,Coach Romero,President,Yes,Yes
+Jake Stevens,3,$30,Coach Romero,President,Yes,Yes
+Lisa Van Lewen,1,$10,Coach Romero,President,Yes,Yes
+Patti Baldinger,1,$10,Coach Romero,President,Yes,Yes
+Christine Loidolt,2,$20,Coach Romero,President,Yes,Yes
 Lindsey Gutierrez,2,$20,Coach Romero,President,No,No
+Emily Bryl c,2,$20,Danny Archuleta,SSBU Varsity,Yes,Yes
+Daniel Archuleta Sr c,1,$10,Danny Archuleta,SSBU Varsity,Yes,Yes
+Theresa Archuleta cl,1,$10,Danny Archuleta,SSBU Varsity,Yes,Yes
+Marcie Lovato c,1,$10,Danny Archuleta,SSBU Varsity,Yes,Yes
+Jamina Hajagos,1,$10,Eli Hajagos,RL Varsity,Yes,Yes
+Janos Hajagos,1,$10,Eli Hajagos,RL Varsity,Yes,Yes
+Anna Hadley,1,$10,Titus Nichols,RL JV Black,Yes,Yes
+Rachael McClair,1,$10,Titus Nichols,RL JV Black,Yes,Yes
+Sarah Fredrickson,2,$20,Titus Nichols,RL JV Black,Yes,Yes
+Dori Bushman,5,$50,Micah Bushman,SSBU JV Blue,Yes,Yes
+Nikki Swanson,4,$40,Kaiden Swanson,SSBU JV Blue,Yes,Yes
+Victoria Vazquez,5,$50,Elijah Vazquez,SSBU JV Silver,Yes,Yes
+Todd Wedel,2,$20,Todd Wedel,RL JV Black,Yes,Yes
+Mike Smith,2,$20,Zach Smith,SSBU JV Silver,Yes,Yes
+Peter Duanmu,5,$50,Peter Duanmu,LOL Varsity,Yes,Yes
+Andrew Kim,1,$10,Andrew Kim,LOL Varsity,Yes,Yes
+Nico Grayson,5,$50,Nico Grayson,LOL Varsity,Yes,Yes
 DJ Aragon,2,$20,DJ Aragon,RL JV White,No,No
-Franco Noriega ,2,$20,Franco Noriega,RL JV Blue,No,No
-Max Omeila,2,$20,Max Omeila,SSBU Varsity,No,No
-Diego Martinez,5,$50,Diego Martinez,SSBU JV Silver,No,No
-Skyler Gilbertson,2,$20,Skyler Gilbertson,RL JV Black,No,No
+Franco Noriega,3,$30,Franco Noriega,RL JV Blue,Yes,Yes
+Diego Martinez,5,$50,Diego Martinez,SSBU JV Silver,Yes ,Yes
+Skyler Gilbertson,2,$20,Skyler Gilbertson,RL JV Black,Yes,Yes
 Uriel Quintero,2,$20,Uriel Quintero,RL JV Blue,No,No
-Vance Wildes,2,$20,Vance Wildes,RL JV White,No,No
-Connor Green,5,$50,Connor Green,RL JV Blue,No,Yes
-Cesar Rodriguez,1,$10,Cesar Rodriguez,LOL JV,No,Yes
-Jackson Daley,1,$10,Jackson Daley,SSBU Varsity,No,No
-Daniel Hiatt,1,$10,Daniel Hiatt,SSBU Silver,No,No
-Aiden Mascerenas,2,$20,Aiden Mascernas,RL JV White,No,No
-Trevor Huskinson,3,$30,Trevor Huskinson,RL JV White,No,No
-Zack Welch,1,$10,Zack Welch,LOL JV,No,No
-Leon Chen,1,$10,Leon Chen,LOL JV,No,No
-Caden Grublenik,2,$20,Caden Grublenik,RL JV White,No,Yes
-Mason Barone,1,$10,Mason Barone,RL Varsity,No,No
-Bryan Judy,5,$50,Bryan Judy,RL JV Black,No,No
-Omar Ortiz-Acosta,5,$50,Omar Ortiz-Acosta,LOL JV,No,No
-Van Vo,1,$10,Huy (Jet) Nguyen,LOL Varsity,No,No
-Tarah Fournier ,1,$10,Joshua 4nier,RL Varsity ,No,No
-Johnny Martinez,2,$20,Johnny Martinez,RL JV Blue,No,Yes
-Isaac Johnson,1,$10,Isaac Johnson,Mario Kart Varsity,No,No
+Vance Wildes,5,$50,Vance Wildes,RL JV White,Yes,Yes
+Connor Green,5,$50,Connor Green,RL JV Blue,Yes ,Yes
+Cesar Rodriguez,1,$10,Cesar Rodriguez,LOL JV,Yes,Yes
+Jackson Daley,1,$10,Jackson Daley,SSBU Varsity,Yes,Yes
+Daniel Hiatt,1,$10,Daniel Hiatt,SSBU Silver,Yes,Yes
+Aiden Mascerenas,2,$20,Aiden Mascernas,RL JV White,Yes,Yes
+Trevor Huskinson,3,$30,Trevor Huskinson,RL JV White,Yes,Yes
+Zack Welch,1,$10,Zack Welch,LOL JV,Yes,Yes
+Leon Chen,1,$10,Leon Chen,LOL JV,Yes,Yes
+Caden Grublenik,2,$20,Caden Grublenik,RL JV White,Yes,Yes
+Mason Barone,1,$10,Mason Barone,RL Varsity,Yes,Yes
+Bryan Judy,5,$50,Bryan Judy,RL JV Black,Yes,Yes
+Omar Ortiz-Acosta,5,$50,Omar Ortiz-Acosta,LOL JV,Yes,Yes
+Van Vo,1,$10,Huy (Jet) Nguyen,LOL Varsity,Yes,Yes
+Tarah Fournier ,1,$10,Joshua 4nier,RL Varsity ,Ye,Yes
+Johnny Martinez,2,$20,Johnny Martinez,RL JV Blue,Yes,Yes
+Isaac Johnson,1,$10,Isaac Johnson,Mario Kart Varsity,Yes ,Yes
 Andy Liu,3,$30,Andy Liu,LOL Varsity,No,No
-Colleen Cleland,3,$30,Todd Wedel,RL JV Black,No,Yes
-John Brannon,1,$10,John Brannon,LOL JV,No,Yes
-Michelle Reyner,2,$20,Kylen Reyner,RL JV Black,No,No
+Colleen Cleland,3,$30,Todd Wedel,RL JV Black,Yes,Yes
+John Brannon,1,$10,John Brannon,LOL JV,Yes,Yes
+Michelle Reyner,2,$20,Kylen Reyner,RL JV Black,Yes,Yes
 Hannah Park,2,$20,Hannah Park,LOL JV,No,No
 Caden Box,2,$20,Caden Box,RL Varsity ,No,No
-Taylor Patterson,1,$10,Titus Nichols,RL JV,No,No
-Elena Grosiak,5,$50,Elena Grosiak,Mario Kart Varsity,No,Yes
-Noah Shaw,1,$10,Noah Shaw,Mario Kart Varsity,No,No
+Elena Grosiak,5,$50,Elena Grosiak,Mario Kart Varsity,Yes ,Yes
+Noah Shaw,1,$10,Noah Shaw,Mario Kart Varsity,Yes,Yes
 Alberto Griego,2,$20,Caden Box,RL Varsity,No,No
-Joseph Baca,5,$50,Joseph Baca,Madden Varsity,No,No
+Joseph Baca,5,$50,Joseph Baca,Madden Varsity,Yes,Yes
 Alex Lumanog,1,10$,Alex Lumanog,LOL Varsity,No,No
-Eric Zhao,1,$10,Eric Zhao,LOL Varsity,No,No
-Christa Shou,2,$20,Christa Shou,LOL JV,No,No
+Eric Zhao,1,$10,Eric Zhao,LOL Varsity,Yes,Yes
+Christa Shou,2,$20,Christa Shou,LOL JV,Yes,Yes
 Rocket League Varsity,20,$200,Eli Hajagos,RL Varsity,No,No
+Preston Burgess,2,$20,Preston Burgess,Super Smash Bros,Yes ,Yes
+Alynna Zamora,1,$10,Alynna Zamora,LOL JV,Yes,Yes
+Caden Grublenik,3,$30,Caden Grublenik,RL JV White,Yes,Yes
+Van Vo ,1,$10,Van Vo,LOL Varsity,Yes,Yes
+Michael Lehoucq,2,$20,Michael Lehoucq,LOL Pink,No,No
+Shang Duong,2,$20,Shang Duoung ,LOL Pink,Yes,Yes
+Espyn Shneyders,2,$20,Espen Shneyders,Smash Bros JV,Yes,Yes
+Karis Daskalos,1,$10,Karis Daskalos,Mario Kart Varsity,Yes,Yes
+Justin Tran,3,$30,Justin Tran,LOL Varsity,Yes,Yes
+Brooke Chavez,5,$50,Brooke Chavez,LOL Pink,Yes,Yes
+Aiden Shoppel,1,$10,Aiden Shoppel,LOL Pink,Yes,Yes
+Christine Nguyen,1,$10,Christine Nguyen,LOL Pink,Yes,Yes
+Claire EA,1,$10,Coach Romero,President,No,No
+Lunch Sales,2,$20,Club,Lunch Sale,Yes,Yes
+Kyle Mann,2,$20,Kyle Mann,Smash Bros Varsity,Yes,Yes
+Caroline Nguyen,1,$20,Caroline Nguyen,LOL Pink,Yes,Yes

@@ -1,6 +1,10 @@
 package com.company;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
@@ -71,7 +75,7 @@ public class Main {
         for (Team team : teams) for (Player p : team.members) if (p.numSold >= 5) System.out.printf("\tName: %20s, Number Sold: %s%n", p.name, p.numSold);
                                                               else peopleWhoHaventSoldFiveYet.add(p);
 
-        // Output a list of people who havne't sold their five yet, but have sold at least one.
+        // Output a list of people who haven't sold their five yet, but have sold at least one.
         System.out.println("\nPeople who have sold at least one, but not five:");
         for (Player p : peopleWhoHaventSoldFiveYet) System.out.printf("\tName: %20s, Number Sold: %s%n", p.name, p.numSold);
 
@@ -106,6 +110,23 @@ public class Main {
         System.out.println("\nPeople who have not sold any:");
         for (int i = 0; i < listOfPeople.size(); i++) {
             System.out.printf("\tName: %-10s%n", listOfPeople.get(i));
+        }
+
+        // Create a list of people who have sold *anything* and then write it to the disk.
+        StringBuilder outputCSV = new StringBuilder("\"Player Name\", \"Number Sold\"\n");
+        for (Team t : teams) for (Player p : t.members) {
+            outputCSV.append('"').append(p.name).append("\", \"").append(p.numSold).append("\"\n");
+        }
+
+        System.out.println("Consolidated List:\n" + outputCSV);
+
+        Path path = Paths.get("Consolidated List.csv");
+        byte[] strToBytes = outputCSV.toString().getBytes();
+
+        try {
+            Files.write(path, strToBytes);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         System.out.println("\nDone.");
