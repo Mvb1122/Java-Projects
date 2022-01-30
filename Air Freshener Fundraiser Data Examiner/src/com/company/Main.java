@@ -41,6 +41,9 @@ public class Main {
                 extData[i].add(unit);
                 place = 0;
             }
+
+            // Add the remaining data to the array, since it still contains the payment information.
+            extData[i].add(line);
         }
 
         // Figure out Teams.
@@ -57,6 +60,7 @@ public class Main {
         // Figure out Players and add their sold goods to the tally.
         int playersColumn = CVSIndex("Seller");
         int soldColumn = CVSIndex("Quantity");
+        int isSoldColumn = CVSIndex("Paid?");
             // Loop through each column, add the player to their team if they aren't already on it.
         for (int i = 1; i < extData.length; i++) {
             Team playersTeam = findTeam(extData[i].get(teamsColumn).trim(), teams);
@@ -64,7 +68,8 @@ public class Main {
                 playersTeam.addMember(new Player(extData[i].get(playersColumn).trim()));
             }
 
-            for (int soldNum = 0; soldNum < Integer.parseInt(extData[i].get(soldColumn)); soldNum++)
+            // Load that player's sales in, only if they've paid for them.
+            for (int soldNum = 0; soldNum < Integer.parseInt(extData[i].get(soldColumn)) && extData[i].get(isSoldColumn).equals("Yes"); soldNum++)
                 playersTeam.increasePlayer(extData[i].get(playersColumn).trim());
         }
 
@@ -112,13 +117,13 @@ public class Main {
             System.out.printf("\tName: %-10s%n", listOfPeople.get(i));
         }
 
-        // Create a list of people who have sold *anything* and then write it to the disk.
+        // Create a list of people who have sold and paid, then write it to the disk.
         StringBuilder outputCSV = new StringBuilder("\"Player Name\", \"Number Sold\"\n");
         for (Team t : teams) for (Player p : t.members) {
-            outputCSV.append('"').append(p.name).append("\", \"").append(p.numSold).append("\"\n");
+            if (p.numSold > 0) outputCSV.append('"').append(p.name).append("\", \"").append(p.numSold).append("\"\n");
         }
 
-        System.out.println("Consolidated List:\n" + outputCSV);
+        // System.out.println("Consolidated List:\n" + outputCSV);
 
         Path path = Paths.get("Consolidated List.csv");
         byte[] strToBytes = outputCSV.toString().getBytes();
