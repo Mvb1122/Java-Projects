@@ -32,7 +32,7 @@ public class getSeriesInfo implements Runnable {
      */
     public getSeriesInfo(int StrigoiNum) {
         this.strigoiNum = StrigoiNum;
-        this.url = "https://ihaveawebsite.tk/json/" + strigoiNum + "/seriesInfo.json";
+        this.url = "https://micahb.dev/json/" + strigoiNum + "/seriesInfo.json";
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -51,8 +51,8 @@ public class getSeriesInfo implements Runnable {
             try {
                 imageURL = seriesJSON.getString("thumbURL");
             } catch (JSONException e) {
-                System.out.println("Strigoi " + strigoiNum + " does not have an image!!!");
-                imageURL = "https://ihaveawebsite.tk/favicon.ico";
+                System.out.println("Strigoi " + strigoiNum + " does not have an image!");
+                imageURL = "https://micahb.dev/favicon.ico";
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -66,7 +66,7 @@ public class getSeriesInfo implements Runnable {
      */
     @RequiresApi(api = Build.VERSION_CODES.N)
     public String getCreatorName(int id) {
-        Requests getName = new Requests("https://ihaveawebsite.tk/users/" + id + ".json", "GET", "None.");
+        Requests getName = new Requests("https://micahb.dev/users/" + id + ".json", "GET", "None.");
         getName.run();
         try {
             JSONObject userInfo = new JSONObject(getName.response);

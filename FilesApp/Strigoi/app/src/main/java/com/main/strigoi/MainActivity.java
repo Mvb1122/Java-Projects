@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 registrarString = reader.readFile("Registrar.json");
                 JSONObject registrar = new JSONObject(registrarString);
-                Requests getUserInfo = new Requests("https://ihaveawebsite.tk/users/" + registrar.getInt("userId") + ".json", "GET", "None");
+                Requests getUserInfo = new Requests("https://micahb.dev/users/" + registrar.getInt("userId") + ".json", "GET", "None");
                 getUserInfo.run();
                 onlineUserInfo = new JSONObject(getUserInfo.response);
                 if (usernameDisplay != null) {
@@ -342,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
         String data = "{\n\t\"content\": [\n\t" + output.substring(0, output.length() - 1) + "\n\t]\n}";
 
         // Get the info for the spirit from panel1.
-        Requests baseInfo = new Requests("https://ihaveawebsite.tk/json/" + strigoiNum + "/" + spiritNum + "/1.json", "GET", "None");
+        Requests baseInfo = new Requests("https://micahb.dev/json/" + strigoiNum + "/" + spiritNum + "/1.json", "GET", "None");
         baseInfo.response = "";
         final int[] panelNum = new int[1];
         int finalStrigoiNum = strigoiNum;
@@ -372,7 +372,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             // Post data.
-            Requests postReq = new Requests("https://ihaveawebsite.tk/json/" + finalStrigoiNum + "/" + finalSpiritNum + "/" + panelNum[0] + ".json", "POST", data);
+            Requests postReq = new Requests("https://micahb.dev/json/" + finalStrigoiNum + "/" + finalSpiritNum + "/" + panelNum[0] + ".json", "POST", data);
             postReq.run();
 
             // Increase length counter on panel1.
@@ -384,7 +384,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            Requests postPanel1 = new Requests("https://ihaveawebsite.tk/json/" + finalStrigoiNum + "/" + finalSpiritNum + "/1.json", "POST", panel1Json);
+            Requests postPanel1 = new Requests("https://micahb.dev/json/" + finalStrigoiNum + "/" + finalSpiritNum + "/1.json", "POST", panel1Json);
             postPanel1.run();
 
             // Update Content display after 1 second.
@@ -434,7 +434,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try {
-            Requests getUserInf = new Requests("https://ihaveawebsite.tk/users/" + userInfo.getInt("userId") + ".json", "GET", "None");
+            Requests getUserInf = new Requests("https://micahb.dev/users/" + userInfo.getInt("userId") + ".json", "GET", "None");
             Thread processor = new Thread(() -> {
                 getUserInf.run();
                 try {
@@ -443,7 +443,7 @@ public class MainActivity extends AppCompatActivity {
                     EditText newUserName = findViewById(R.id.userNameInputBox);
 
                     String jsonData = "{\n\t\"userId\": \"" + userId + "\",\n\t\"username\": \"" + newUserName.getText().toString().replace("\"", "\\\"") + "\"\n}";
-                    Requests poster = new Requests("https://ihaveawebsite.tk/users/" + userInfo1.getInt("userId") + ".json", "POST", jsonData);
+                    Requests poster = new Requests("https://micahb.dev/users/" + userInfo1.getInt("userId") + ".json", "POST", jsonData);
                     Thread posterT = new Thread(poster);
                     posterT.start();
                 } catch (JSONException e) {
@@ -594,7 +594,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast error = Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT);
                 error.show();
             }
-
         });
         handler.start();
 
@@ -607,7 +606,7 @@ public class MainActivity extends AppCompatActivity {
         fm2t.replace(R.id.contentFragment, new seriesCardViewer());
         fm2t.commit();
 
-        Requests getNumberOfSeries = new Requests("https://ihaveawebsite.tk/seriesNumber.json", "GET");
+        Requests getNumberOfSeries = new Requests("https://micahb.dev/seriesNumber.json", "GET");
         Thread getter = new Thread(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override

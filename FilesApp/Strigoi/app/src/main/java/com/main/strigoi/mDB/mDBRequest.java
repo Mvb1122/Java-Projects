@@ -30,7 +30,7 @@ public class mDBRequest implements Runnable {
         this.sectionNum = 1;
         this.spiritNum = spiritNum;
         this.strigoiNum = strigoiNum;
-        address = "https://ihaveawebsite.tk/json/" + strigoiNum + "/" + spiritNum + "/1.json";
+        address = "https://micahb.dev/json/" + strigoiNum + "/" + spiritNum + "/1.json";
         self = new Requests(address, "GET", "None");
     }
 
@@ -50,7 +50,7 @@ public class mDBRequest implements Runnable {
                 if (numSec > 1) {
                     for (int i = 2; i <= numSec; i++) {
                         try {
-                            Requests nextSec = new Requests("https://ihaveawebsite.tk/json/" + strigoiNum + "/" + spiritNum + "/" + i + ".json", "GET", "None");
+                            Requests nextSec = new Requests("https://micahb.dev/json/" + strigoiNum + "/" + spiritNum + "/" + i + ".json", "GET", "None");
                             nextSec.run();
                             JSONObject nextSecJSON = new JSONObject(nextSec.response);
                             parseResponse(nextSecJSON);

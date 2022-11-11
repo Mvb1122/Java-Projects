@@ -27,7 +27,7 @@ public class pushToDB implements Runnable {
         inputArr = input;
         this.spiritNum = spiritNum;
         this.strigoiNum = strigoiNum;
-        address = "https://ihaveawebsite.tk/json/" + strigoiNum + "/" + spiritNum + "/";
+        address = "https://micahb.dev/json/" + strigoiNum + "/" + spiritNum + "/";
     }
 
     /**

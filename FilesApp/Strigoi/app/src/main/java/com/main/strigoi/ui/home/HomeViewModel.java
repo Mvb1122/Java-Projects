@@ -36,7 +36,7 @@ public class HomeViewModel extends ViewModel {
                 @RequiresApi(api = Build.VERSION_CODES.N)
                 @Override
                 public void run() {
-                    Requests uDP = new Requests("https://ihaveawebsite.tk/users/" + userId + ".json", "POST", jsonData);
+                    Requests uDP = new Requests("https://micahb.dev/users/" + userId + ".json", "POST", jsonData);
                     uDP.run();
                 }
             });

@@ -18,7 +18,7 @@ public class createSeries implements Runnable {
     private String name;
 
     public createSeries(String name, int creatorId) {
-        this(name, creatorId, "https://ihaveawebsite.tk/favicon.ico");
+        this(name, creatorId, "https://micahb.dev/favicon.ico");
     }
 
     public createSeries(String name, int creatorId, String thumbURL) {
@@ -31,7 +31,7 @@ public class createSeries implements Runnable {
     @Override
     public void run() {
         // Get the date of creation.
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/YYYY");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         LocalDateTime now = LocalDateTime.now();
         String date = dtf.format(now);
 
@@ -39,13 +39,13 @@ public class createSeries implements Runnable {
         String outputJSON = "{\n\t\"creatorId\": " + creatorId + ",\n\t\"name\": \"" + name + "\",\n\t\"creationDate\": \"" + date + "\",\n\t\"thumbURL\": \"" + thumbURL + "\"\n}";
 
         // Get the number for a new Series.
-        Requests getNewSeriesNumber = new Requests("https://ihaveawebsite.tk/seriesNumber.json", "GET", "None.");
+        Requests getNewSeriesNumber = new Requests("https://micahb.dev/seriesNumber.json", "GET", "None.");
         getNewSeriesNumber.run();
 
         // Post Data to server.
         try {
             JSONObject seriesNumber = new JSONObject(getNewSeriesNumber.response);
-            Requests postInformationToDB = new Requests("https://ihaveawebsite.tk/json/" + seriesNumber.getInt("number") + "/seriesInfo.json", "POST", outputJSON);
+            Requests postInformationToDB = new Requests("https://micahb.dev/json/" + seriesNumber.getInt("number") + "/seriesInfo.json", "POST", outputJSON);
             postInformationToDB.run();
         } catch (JSONException e) {
             e.printStackTrace();
